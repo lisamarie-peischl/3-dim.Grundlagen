@@ -1,17 +1,31 @@
 
-let countries
-let investments
-let AImodels
+let countries;
+let ai;
+let invest;
 
 function preload() {
     // data aufrufen
 }
 
 function setup () {
-    createCanvas(1000, 1000);
+    createCanvas(400, 400);
+
+    ai = new AIModels([10, 30, 20, 50]);
+    invest = new Investments([5, 25, 15, 40]);
 
 }
 
 function draw () {
-    
+    background(255);
+
+    const cx = width / 2;
+    const cy = height / 2;
+
+    const globalMax = Math.max(
+        ...ai.data,
+        ...invest.data
+    );
+
+    ai.draw(cx, cy, 150, globalMax);
+    invest.draw(cx, cy, 150, globalMax);
 }
