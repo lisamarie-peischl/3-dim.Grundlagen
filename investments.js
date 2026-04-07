@@ -1,6 +1,19 @@
+class Investments extends base {
+    constructor(data) {
+        super(data);
+    }
 
-class Investments {
-    constructor () {
-        
+    draw(cx, cy, maxLength) {
+        strokeWeight(6);
+
+        for (let i = 0; i < this.data.length; i++) {
+            const angle = this.getAngle(i);
+            const length = this.getLength(this.data[i], maxLength);
+
+            const x = cx + Math.cos(angle) * length;
+            const y = cy + Math.sin(angle) * length;
+
+            line(cx, cy, x, y);
+        }
     }
 }

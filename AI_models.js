@@ -1,35 +1,19 @@
-class AI_models {
-    constructor () {
-        this.myCode = "";
-        this.myColor = color(128);
-        this.arrayOfData = [];
-        this.myWidth = 150;
-    }
-    setData(data) {
-        this.arrayOfData = data;
+class AIModels extends base {
+    constructor(data) {
+        super(data);
     }
 
-    setColor(c) {
-        this.myColor = c;
-    }
+    draw(cx, cy, maxLength) {
+        strokeWeight(1);
 
-    setWidth(w) {
-        this.myWidth = w;
-    }
+        for (let i = 0; i < this.data.length; i++) {
+            const angle = this.getAngle(i);
+            const length = this.getLength(this.data[i], maxLength);
 
-    draw(centerX, centerY) {
-        const n = this.arrayOfData.length;
-        const maxValue = Math.max(...this.arrayOfData);
+            const x = cx + Math.cos(angle) * length;
+            const y = cy + Math.sin(angle) * length;
 
-        for (let i = 0; i < n; i++) {
-            const angle = (i / n) * Math.PI * 2;
-            const length = (this.arrayOfData[i] / maxValue) * this.myWidth;
-
-            const x = centerX + Math.cos(angle) * length;
-            const y = centerY + Math.sin(angle) * length;
-
-            stroke(this.myColor);
-            line(centerX, centerY, x, y);
+            line(cx, cy, x, y);
         }
     }
 }
