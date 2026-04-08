@@ -17,15 +17,4 @@ function setup () {
 
 function draw () {
     background(255);
-
-    const cx = width / 2;
-    const cy = height / 2;
-
-    const globalMax = Math.max(
-        ...ai.data,
-        ...invest.data
-    );
-
-    ai.draw(cx, cy, 150, globalMax);
-    invest.draw(cx, cy, 150, globalMax);
 }
