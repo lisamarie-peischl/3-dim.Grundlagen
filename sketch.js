@@ -26,3 +26,5 @@ function windowResized() {
     resizeCanvas(windowWidth, windowHeight);
     redraw();
 }
+
+// lol
