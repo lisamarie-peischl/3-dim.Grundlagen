@@ -1,5 +1,6 @@
 let investmentLines;
 let invest;
+let angle = 0;
 
 function preload() {
     investmentLines = loadStrings('data/investment.csv');
