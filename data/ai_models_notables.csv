@@ -1,0 +1,825 @@
+country;country;year;model_name;organization
+United States ;US ;2026;Nemotron 3 Super;NVIDIA
+United States ;US ;2026;Gemini 3.0 Flash-lite;Google DeepMind
+United States ;US ;2026;SWE 1.6;Cognition
+China;CN;2026;Qwen3.5-122B-A10B;Alibaba
+United States ;US ;2026;Gemini 3.1 Pro;Google DeepMind
+China;CN;2026;GLM-5;Z.ai (Zhipu AI)
+China;CN;2026;Qwen3.5 397B-A17B;Alibaba
+China;CN;2026;Seedance 2.0;ByteDance
+United States;US;2026;"GPT-5.3 Codex
+";OpenAI
+China;CN;2026;Qwen3-Coder-Next;Alibaba
+China;CN;2026;Kimi K2.5;Moonshot
+China;CN;2026;Qwen3-Max-Thinking;Alibaba
+South Korea;KR;2025;"Solar Open 100B
+";Upstage
+South Korea;KR;2025;K-EXAONE;LG AI Research
+South Korea;KR;2025;"VAETKI
+";NC AI
+South Korea;KR;2025;A.X K1;SK Telecom
+South Korea;KR;2025;HyperCLOVA X SEED 32B Think;NAVER
+China;CN;2025;MiniMax-M2.1;MiniMax
+China;CN;2025;GLM-4.7;Z.ai (Zhipu AI)
+United States;US;2025;GPT-5.2 Codex;OpenAI
+United States;US;2025;Nemotron 3-Nano-30B-A3B;NVIDIA
+United States;US;2025;GPT-5.2;OpenAI
+United States;US;2025;SIMA 2;Google DeepMind
+China;CN;2025;DeepSeekMath-V2;DeepSeek
+United States;US;2025;Claude Opus 4.5;Anthropic
+United States;US;2025;Olmo 3;Allen Institute for AI
+United States;US;2025;Gemini 3 Pro Image (Nano Banana Pro);Google DeepMind
+United States;US;2025;Grok 4.1 Fast;xAI
+United States;US;2025;GPT-5.1-Codex-Max;OpenAI
+United States;US;2025;Gemini 3 Pro;Google DeepMind
+United States;US;2025;π0.6 (pi-0.6);Physical Intelligence
+China;CN;2025;P1-235B-A22B;Shanghai AI Lab
+United States;US;2025;Grok 4.1;xAI
+United States;US;2025;GPT-5.1 Instant;OpenAI
+United States;US;2025;GPT-5.1;OpenAI
+United States;US;2025;GPT-5.1-Codex;OpenAI
+United States;US;2025;Meta's Generative Ads Model (GEM);Meta AI
+China;CN;2025;Kimi K2 Thinking;Moonshot
+China;CN;2025;Tongyi DeepResearch;Alibaba
+China;CN;2025;MiniMax-M2;MiniMax
+United States;US;2025;Veo 3.1;Google DeepMind
+United States;US;2025;Claude Haiku 4.5;Anthropic
+China;CN;2025;Ling-1T;Ant Group
+United States;US;2025;GPT-5 Pro;OpenAI
+United States;US;2025;Sora 2.0;OpenAI
+China;CN;2025;GLM-4.6;Z.ai (Zhipu AI),Tsinghua University
+United States;US;2025;Claude Sonnet 4.5;Anthropic
+United States;US;2025;Gemini Robotics-ER 1.5;Google DeepMind
+China;CN;2025;Qwen3-Omni-30B-A3B;Alibaba
+China;CN;2025;AgentFounder-30B;Alibaba
+China;CN;2025;Qwen3-Max;Alibaba
+China;CN;2025;LongCat-Flash;Meituan Inc
+United States;US;2025;Gemini 2.5 Flash Image (Nano Banana);Google
+United States;US;2025;GPT-5 nano;OpenAI
+United States;US;2025;GPT-5 mini;OpenAI
+United States;US;2025;GPT-5;OpenAI
+United States;US;2025;gpt-oss-120b;OpenAI
+United States;US;2025;gpt-oss-20b;OpenAI
+China;CN;2025;GLM-4.5;Z.ai (Zhipu AI),Tsinghua University
+United States;US;2025;Claude Opus 4.1;Anthropic
+China;CN;2025;Qwen Image;Alibaba
+Singapore;SG;2025;Hierarchical Reasoning Model (HPM);Sapient Intelligence
+China;CN;2025;MindLink-72B;Kunlun Inc.
+United States;US;2025;Gemini 2.5 Deep Think;Google,Google DeepMind
+China;CN;2025;Qwen3-235B-A22B-Thinking (Jul 2025);Alibaba
+China;CN;2025;Qwen3-235B-A22B (Jul 2025);Alibaba
+China;CN;2025;Qwen3-Coder-480B-A35B;Alibaba
+South Korea;KR;2025;EXAONE 4.0 (32B);LG AI Research
+United States;US;2025;Gemini Embedding;Google DeepMind
+China;CN;2025;Kimi K2;Moonshot
+United States;US;2025;Grok 4 Heavy;xAI
+United States;US;2025;Grok 4;xAI
+South Korea;KR;2025;EXAONE Path 2.0;LG AI Research
+United States;US;2025;FGN;Google DeepMind
+China;CN;2025;Seed-1.6-Thinking;ByteDance
+China;CN;2025;Qwen3 Embedding;Alibaba
+United States;US;2025;Gemini 2.5 Pro (Jun 2025);Google DeepMind
+China;CN;2025;DeepSeek-R1 (May 2025);DeepSeek
+United States;US;2025;Claude Sonnet 4;Anthropic
+United States;US;2025;Claude Opus 4;Anthropic
+United States;US;2025;Veo 3;Google DeepMind
+United States;US;2025;Imagen 4;Google
+China;CN;2025;Seed1.5-VL;ByteDance
+United States;US;2025;Gemini 2.5 Pro (May 2025);Google DeepMind
+China;CN;2025;Qwen3-235B-A22B;Alibaba
+United States;US;2025;gpt-image-1;OpenAI
+China;CN;2025;Pangu Ultra;Huawei
+United States;US;2025;Llama 4 Scout;Meta AI
+United States;US;2025;Llama 4 Maverick;Meta AI
+United States;US;2025;Llama 4 Behemoth (preview);Meta AI
+United States;US;2025;GPT-4o (Mar 2025);OpenAI
+United States;US;2025;Gemini 2.5 Pro (Mar 2025);Google DeepMind
+China;CN;2025;DeepSeek-V3 (Mar 2025);DeepSeek
+"Canada;United States";US;2025;Diffusion Renderer;NVIDIA,University of Toronto,Vector Institute,University of Illinois Urbana-Champaign (UIUC)
+United States;US;2025;o1-pro;OpenAI
+South Korea;KR;2025;EXAONE Deep 32B;LG AI Research
+China;CN;2025;ERNIE-4.5-VL-424B-A47B (文心大模型4.5);Baidu
+China;CN;2025;Hunyuan-TurboS;Tencent
+China;CN;2025;QwQ-32B;Alibaba
+European Union;EU;2025;Mistral OCR;Mistral AI
+United States;US;2025;Mercury;Inception Labs
+United States;US;2025;GPT-4.5;OpenAI
+United States;US;2025;Claude 3.7 Sonnet;Anthropic
+United States;US;2025;Grok 3;xAI
+"China;United States";"CN;US";2025;Eurus-2-7B-PRIME;Tsinghua University,University of Illinois Urbana-Champaign (UIUC),Shanghai AI Lab,Peking University,Shanghai Jiao Tong University,CUHK Shenzhen Research Institute
+United States;US;2025;o3-mini;OpenAI
+United States;US;2025;GPT-4o (Jan 2025);OpenAI
+United States;US;2025;Computer-Using Agent (CUA);OpenAI
+China;CN;2025;Kimi k1.5;Moonshot
+China;CN;2025;Doubao-1.5-pro;ByteDance
+"China;Hong Kong;United States";"CN;US";2025;Eagle 2;NVIDIA,Nanjing University,Tsinghua University,Hong Kong Polytechnic University,Johns Hopkins University,New York University (NYU)
+China;CN;2025;DeepSeek-R1;DeepSeek
+United States;US;2025;INTELLECT-MATH;Prime Intellect
+"United Kingdom;United States";"UK;US";2025;Stable Point Aware 3D (SPAR3D);Stability AI,University of Illinois Urbana-Champaign (UIUC)
+United States;US;2024;STORM-B/8;University of Southern California,Georgia Institute of Technology,Stanford University,NVIDIA
+China;CN;2024;DeepSeek-V3;DeepSeek
+United States;US;2024;o3;OpenAI
+United States;US;2024;Veo 2;Google DeepMind
+United States;US;2024;Apollo 7B;Meta AI,Stanford University
+United States;US;2024;Gemini 2.0 Pro;Google DeepMind
+United States;US;2024;Sora Turbo;OpenAI
+South Korea;KR;2024;EXAONE 3.5 32B;LG AI Research
+United States;US;2024;Llama 3.3 70B;Meta AI
+United States;US;2024;o1;OpenAI
+"China;United States";"CN;US";2024;NVILA 15B;NVIDIA,Massachusetts Institute of Technology (MIT),University of California (UC) Berkeley,University of California San Diego,University of Washington,Tsinghua University
+China;CN;2024;Infinity;ByteDance
+United States;US;2024;Amazon Nova Pro;Amazon
+United States;US;2024;Fugatto 1;NVIDIA
+United States;US;2024;GPT-4o (Nov 2024);OpenAI
+United States;US;2024;Suno v4;Suno
+European Union;EU;2024;Pixtral Large;Mistral AI
+China;CN;2024;k0-math;Moonshot
+United States;US;2024;Gemini-Exp-1114;Google DeepMind
+China;CN;2024;SeedEdit;ByteDance
+China;CN;2024;Hunyuan-Large;Tencent
+China;CN;2024;Doubao-pro;ByteDance
+United States;US;2024;NVLM-X 72B;NVIDIA
+United States;US;2024;NVLM-H 72B;NVIDIA
+United States;US;2024;NVLM-D 72B;NVIDIA
+China;CN;2024;Yi-Lightning;01.AI
+United States;US;2024;CHAI-1;Chai discovery
+China;CN;2024;RDT-1B;Tsinghua University
+United States;US;2024;Palmyra X 004;Writer
+China;CN;2024;GR-2;ByteDance
+United States;US;2024;Movie Gen Video;Meta AI
+China;CN;2024;PixelDance;ByteDance
+United States;US;2024;Llama 3.2 11B;Meta AI
+China;CN;2024;Telechat2-115B;China Telecom
+China;CN;2024;Qwen2.5-72B;Alibaba
+China;CN;2024;Qwen2.5 Instruct (72B);Alibaba
+"China;Singapore";"CN;SG";2024;Oryx 34B;Tsinghua University,Tencent,Nanyang Technological University
+China;CN;2024;Qwen2.5-32B;Alibaba
+United States;US;2024;o1-preview;OpenAI
+United States;US;2024;o1-mini;OpenAI
+China;CN;2024;DeepSeek-V2.5;DeepSeek
+China;CN;2024;Hunyuan Turbo;Tencent
+United States;US;2024;AlphaProteo;Google DeepMind
+China;CN;2024;Hairuo;Inspur
+China;CN;2024;GLM-4-Plus;Z.ai (Zhipu AI)
+Israel;IL;2024;Jamba 1.5-Large;AI21 Labs
+United States;US;2024;Grok-2;xAI
+United States;US;2024;Table Tennis Agent;Google DeepMind
+"China;Hong Kong;Singapore";"CN;SG";2024;LLaVA-OV-72B;ByteDance,Nanyang Technological University,Chinese University of Hong Kong (CUHK),Hong Kong University of Science and Technology (HKUST)
+United States;US;2024;GPT-4o (Aug 2024);OpenAI
+United States;US;2024;AFM-server;Apple
+United States;US;2024;AFM-on-device;Apple
+European Union;EU;2024;Mistral Large 2;Mistral AI
+United States;US;2024;Llama 3.1-405B;Meta AI
+United States;US;2024;GPT-4o mini;OpenAI
+European Union;EU;2024;Mathstral;Mistral AI
+European Union;EU;2024;DeepL LLM;DeepL
+China;CN;2024;Ernie 4.0 Turbo;Baidu
+United States;US;2024;ESM3 (98B);EvolutionaryScale,University of California (UC) Berkeley
+United States;US;2024;Cambrian-1-34B;New York University (NYU)
+United States;US;2024;Claude 3.5 Sonnet;Anthropic
+China;CN;2024;DeepSeek-Coder-V2 236B;DeepSeek
+United States;US;2024;Nemotron-4 340B;NVIDIA
+United States;US;2024;OpenVLA;Stanford University,University of California (UC) Berkeley,Toyota Research Institute,Google DeepMind,Massachusetts Institute of Technology (MIT),Physical Intelligence
+United States;US;2024;Llama-3.1-Nemotron-70B-Instruct;NVIDIA,Meta AI
+China;CN;2024;Qwen2-72B;Alibaba
+"United Kingdom;United States";"UK;US";2024;Octo-Base;University of California (UC) Berkeley,Stanford University,Carnegie Mellon University (CMU),DeepMind
+China;CN;2024;GLM-4 (0520);Z.ai (Zhipu AI)
+China;CN;2024;Yi-Large;01.AI
+United States;US;2024;GPT-4o;OpenAI
+"United Kingdom;United States";"UK;US";2024;AlphaFold 3;Google DeepMind,Isomorphic Labs
+United States;US;2024;VILA1.5-13B;NVIDIA,Massachusetts Institute of Technology (MIT)
+United States;US;2024;GenCast;Google DeepMind
+United States;US;2024;Llama 3-70B;Meta AI
+United States;US;2024;Reka Core;Reka AI
+United States;US;2024;GPT-4 Turbo (Apr 2024);OpenAI
+United States;US;2024;ReALM;Apple
+United States;US;2024;DBRX;Databricks
+United States;US;2024;MM1-30B;Apple
+"China;Singapore;United States";"CN;SG;US";2024;ManiGaussian;Tsinghua University,Nanyang Technological University,Carnegie Mellon University (CMU)
+United States;US;2024;Inflection-2.5;Inflection AI
+United States;US;2024;Claude 3 Sonnet;Anthropic
+United States;US;2024;Claude 3 Opus;Anthropic
+European Union;EU;2024;Mistral Large;Mistral AI
+China;CN;2024;MegaScale (Production);ByteDance,Peking University
+United Kingdom;UK;2024;Stable Diffusion 3;Stability AI
+United States;US;2024;Sora;OpenAI
+United States;US;2024;Gemini 1.5 Pro;Google DeepMind
+"Canada;United States";US;2024;Aya;Cohere for AI,Brown University,Cohere,Carnegie Mellon University (CMU),Massachusetts Institute of Technology (MIT)
+China;CN;2024;Qwen1.5-72B;Alibaba
+China;CN;2024;Qwen-VL-Max;Alibaba
+United States;US;2024;AlphaGeometry;Google DeepMind,New York University (NYU)
+United States;US;2024;Palmyra X 003;Writer
+China;CN;2024;Kimi Explorer;Moonshot
+China;CN;2023;CoRe;Tsinghua University
+United States;US;2023;GQA-8-XXL;Google Research
+United States;US;2023;Gemini Nano-2;Google DeepMind
+United States;US;2023;Gemini Nano-1;Google DeepMind
+United States;US;2023;FunSearch;Google DeepMind
+China;CN;2023;CogAgent;Tsinghua University,Z.ai (Zhipu AI)
+United States;US;2023;VILA-13B;NVIDIA,Massachusetts Institute of Technology (MIT)
+United States;US;2023;W.A.L.T;Stanford University,Google Research,Georgia Institute of Technology
+European Union;EU;2023;Mixtral 8x7B;Mistral AI
+"European Union;United States";"EU;US";2023;SeamlessM4T;Facebook,INRIA,University of California (UC) Berkeley
+United States;US;2023;Llama Guard;Meta AI
+United States;US;2023;Gemini 1.0 Ultra;Google DeepMind
+United States;US;2023;Gemini 1.0 Pro;Google DeepMind
+United States;US;2023;Mamba-24M (SC09);Carnegie Mellon University (CMU),Princeton University
+China;CN;2023;Qwen-72B;Alibaba
+United States;US;2023;PPLX-70B-Online;Perplexity
+United States;US;2023;GNoME for crystal discovery;Google DeepMind
+United States;US;2023;Inflection-2;Inflection AI
+United States;US;2023;Claude 2.1;Anthropic
+China;CN;2023;AndesGPT;Oppo Mobile Telecommunications
+United States;US;2023;Nemotron-3-8B;NVIDIA
+China;CN;2023;Qwen-Audio-Chat;Alibaba
+United States;US;2023;GraphCast;Google DeepMind
+South Korea;KR;2023;Volcano 13B;Korea University,Korea Advanced Institute of Science and Technology (KAIST),LG
+"China;Hong Kong";CN;2023;SPHINX (Llama 2 13B);Shanghai AI Lab,Chinese University of Hong Kong (CUHK),ShanghaiTech University
+China;CN;2023;RoFormer;Zhuiyi Technology
+"European Union;Israel;United States";"EU;IL;US";2023;MultiBand Diffusion;Meta AI,Hebrew University of Jerusalem,LORIA
+United States;US;2023;OmniVec;TensorTour
+China;CN;2023;mPLUG-Owl2;Alibaba
+United States;US;2023;GPT-4 Turbo (Nov 2023);OpenAI
+China;CN;2023;CogVLM-17B;Tsinghua University,Z.ai (Zhipu AI),Beihang University
+United States;US;2023;LLaVA 1.5;University of Wisconsin Madison,Microsoft Research
+United States;US;2023;Grok-1;xAI
+United States;US;2023;RT-Trajectory;Google DeepMind,University of California San Diego,Stanford University
+"European Union;United States";"EU;US";2023;BLUUMI;University of Turku,Hugging Face
+China;CN;2023;Yi-34B;01.AI
+China;CN;2023;Skywork-13B;Kunlun Inc.
+China;CN;2023;ChatGLM3-6B;Z.ai (Zhipu AI)
+"Switzerland;United States";US;2023;DiT-XL/2 + CADS;ETH Zurich,Disney Research
+United States;US;2023;CODEFUSION (Python);Microsoft,Microsoft Research
+United States;US;2023;DALL·E 3;OpenAI
+United States;US;2023;PaLI-3;Google DeepMind,Google Research,Google Cloud
+China;CN;2023;ERNIE 4.0;Baidu
+United States;US;2023;RT-2-X;Google DeepMind
+United States;US;2023;Ferret (13B);Columbia University,Apple
+"South Korea;United Kingdom;United States";"KR;UK;US";2023;RoseTTAFold All-Atom (RFAA);University of Washington,Seoul National University,University of Sheffield
+United States;US;2023;FinGPT-13B;University of California Los Angeles (UCLA),Columbia University,New York University (NYU)
+"United States;Japan";"US;";2023;CTM (CIFAR-10);Stanford University,Sony
+United States;US;2023;GPT-3.5 Turbo Instruct;OpenAI
+United States;US;2023;Amazon Titan;Amazon
+Singapore;SG;2023;Show-1;National University of Singapore
+United States;US;2023;GPT-4V;OpenAI
+United States;US;2023;AlphaMissense;Google DeepMind
+"China;United States";"CN;US";2023;Robot Parkour;Shanghai Qi Zhi institute,Stanford University,Carnegie Mellon University (CMU),Tsinghua University
+United Arab Emirates;AE;2023;Falcon-180B;Technology Innovation Institute
+United States;US;2023;Swift;Intel Labs
+"United Arab Emirates;United States";"AE;US";2023;Jais;Cerebras Systems,Mohamed bin Zayed University of Artificial Intelligence (MBZUAI),Inception G42
+United States;US;2023;PeptideBERT;Carnegie Mellon University (CMU)
+China;CN;2023;Qwen-VL;Alibaba
+"China;United States";"CN;US";2023;GGNN;Westlake University,Tsinghua University,Toyota Technological Institute at Chicago
+United States;US;2023;RT-2;Google DeepMind
+United States;US;2023;AudioLM;Google Research
+United States;US;2023;Llama 2-70B;Meta AI
+United States;US;2023;Llama 2-7B;Meta AI
+United States;US;2023;GPT3-2.7B (FlashAttention-2);Stanford University,Princeton University
+United States;US;2023;Claude 2;Anthropic
+China;CN;2023;xTrimoPGLM -100B;Tsinghua University,BioMap Research
+"China;Hong Kong";CN;2023;InternLM;Shanghai AI Lab,SenseTime
+China;CN;2023;Pangu-Weather;Huawei
+United Kingdom;UK;2023;Stable Diffusion XL (SDXL);Stability AI
+"Canada;United States";US;2023;HyenaDNA;Stanford University,Harvard University,Mila - Quebec AI (originally Montreal Institute for Learning Algorithms),University of Montreal / Université de Montréal
+China;CN;2023;ERNIE 3.5;Baidu
+United States;US;2023;GPT-3.5 Turbo;OpenAI
+United States;US;2023;MusicGen;Meta AI
+United States;US;2023;LTM-1;Magic
+United States;US;2023;PaLI-X;Google Research
+United States;US;2023;DPO on Pythia-2.8B;Stanford University,CZ Biohub Network
+Singapore;SG;2023;Goat-7B;National University of Singapore
+United States;US;2023;CodeT5+;Salesforce
+China;CN;2023;ONE-PEACE;Alibaba,Huazhong University of Science and Technology
+United States;US;2023;CoEdiT-xxl;University of Minnesota,Grammarly
+"United Kingdom;United States";"UK;US";2023;Med-PaLM 2;Google Research,DeepMind
+"Hong Kong;Singapore;United States";"SG;US";2023;InstructBLIP;Salesforce Research,Hong Kong University of Science and Technology (HKUST),Nanyang Technological University
+United States;US;2023;PaLM 2;Google
+"Australia;Canada;European Union;India;Israel;Singapore;United Kingdom;United States;";"EU;IN;IL;SG;UK;US";2023;StarCoder;Hugging Face,ServiceNow,Northeastern University,Mila - Quebec AI (originally Montreal Institute for Learning Algorithms),Carnegie Mellon University (CMU),Johns Hopkins University,Leipzig University,ScaDS.AI,Queen Mary University of London,Roblox,Sea AI Lab,Technion - Israel Institute of Technology,Monash University,CSIRO,Data61,McGill University,Saama,University of British Columbia (UBC),Massachusetts Institute of Technology (MIT),Technical University of Munich,IBM,University of Vermont,UnfoldML,SAP,University of Notre Dame,Columbia University,New York University (NYU),University of Allahabad,Discover Dollar,Toloka,Telefonica,Stanford University,Weizmann Institute of Science,Alan Turing Institute,Wellesley College,EleutherAI,Forschungszentrum Julich
+United States;US;2023;ImageBind;Meta AI
+United States;US;2023;Agile Soccer Robot;Google DeepMind
+United States;US;2023;LLaVA;University of Wisconsin Madison,Microsoft Research,Columbia University
+"European Union;United States";"EU;US";2023;DINOv2;Facebook AI Research,INRIA
+"European Union;United States";"EU;US";2023;Incoder-6.7B;Facebook AI Research,University of Washington,University of California (UC) Berkeley,Carnegie Mellon University (CMU),Toyota Technological Institute at Chicago
+United States;US;2023;Segment Anything Model;Meta AI
+United States;US;2023;BloombergGPT;Bloomberg,Johns Hopkins University
+China;CN;2023;VideoMAE V2;Nanjing University,Shenzhen Institute of Advanced Technology,Shanghai AI Lab
+United States;US;2023;SigLIP 400M;Google DeepMind
+United States;US;2023;Firefly;Adobe
+China;CN;2023;PanGu-Σ;Huawei Noah's Ark Lab
+United States;US;2023;Gen-2;Runway
+"Saudi Arabia;European Union";EU;2023;LEP-AD;King Abdullah University of Science and Technology (KAUST),Karolinska Institute
+United States;US;2023;GPT-4 (Mar 2023);OpenAI
+United States;US;2023;GPT-4 (Jun 2023);OpenAI
+United Arab Emirates;AE;2023;Falcon-40B;Technology Innovation Institute
+United States;US;2023;Claude;Anthropic
+"European Union;United States";"EU;US";2023;PaLM-E;Google,TU Berlin
+"Israel;United States";"IL;US";2023;AudioGen;Meta AI,Hebrew University of Jerusalem
+United States;US;2023;DiT-XL/2;New York University (NYU),University of California (UC) Berkeley
+United States;US;2023;LLaMA-65B;Meta AI
+United States;US;2023;BASIC-L + Lion;Google,University of California Los Angeles (UCLA)
+United States;US;2023;ViT-22B;Google
+"Canada;United States";US;2023;ProteinDT;University of California (UC) Berkeley,California Institute of Technology,University of Toronto,University of Wisconsin Madison,Texas A&M,NVIDIA,Mila - Quebec AI (originally Montreal Institute for Learning Algorithms)
+United States;US;2023;Gen-1;Runway
+United States;US;2023;BLIP-2 (Q-Former);Salesforce Research
+United States;US;2023;MusicLM;Google
+"European Union;United States";"EU;US";2023;Ankh_large;Technical University of Munich,Columbia University
+"European Union;United Kingdom;United States";"EU;UK;US";2023;Nucleotide Transformer;NVIDIA,Technical University of Munich,InstaDeep
+"Canada;United Kingdom";UK;2023;DreamerV3;DeepMind,University of Toronto
+United States;US;2023;VALL-E;Microsoft
+United States;US;2022;Hybrid H3-2.7B;Stanford University,University at Buffalo
+United Kingdom;UK;2022;CaLM;University of Oxford
+United States;US;2022;RT-1;Google
+"United Kingdom;United States";"UK;US";2022;TranceptEve;University of Oxford,Harvard Medical School
+"Australia;China;Singapore;United States";"CN;SG;US";2022;Vega v2;Wuhan University,JD Explore Academy,Shanghai AI Lab,Nanyang Technological University,Washington University in St Louis,Chongqing University of Posts and Telecommunications,University of Sydney
+United Kingdom;UK;2022;DeepNash;DeepMind
+South Korea;KR;2022;DiT-XL/2 + Discriminator Guidance;Korea Advanced Institute of Science and Technology (KAIST),NAVER
+South Korea;KR;2022;Discriminator Guidance;Korea Advanced Institute of Science and Technology (KAIST),NAVER
+China;CN;2022;ALM 1.0;Beijing Academy of Artificial Intelligence / BAAI
+United States;US;2022;CICERO;Meta AI
+"Canada;China";CN;2022;AR-LDM;Alibaba,University of Waterloo,Vector Institute
+South Korea;KR;2022;Fusion in Encoder;Samsung
+United States;US;2022;Galactica;Meta AI
+China;CN;2022;EVA-01;Beijing Academy of Artificial Intelligence / BAAI,Huazhong University of Science and Technology,Zhejiang University (ZJU),Beijing Institute of Technology
+China;CN;2022;AltCLIP_M9;Beijing Academy of Artificial Intelligence / BAAI
+"China;Hong Kong";CN;2022;InternImage;Shanghai AI Lab,Tsinghua University,Nanjing University,SenseTime,Chinese University of Hong Kong (CUHK)
+"European Union;United States";"EU;US";2022;mT0-13B;Hugging Face,BigScience
+United Kingdom;UK;2022;Mogrifier RLSTM (WT2);DeepMind
+United States;US;2022;eDiff-I;NVIDIA
+United States;US;2022;EnCodec;Meta AI
+United States;US;2022;U-PaLM (540B);Google
+United States;US;2022;LMSI-Palm;Google,University of Illinois Urbana-Champaign (UIUC)
+United States;US;2022;Flan-PaLM 540B;Google
+"European Union;United States";"EU;US";2022;GenSLM;University of Chicago,NVIDIA,Harvard University,Cerebras Systems,Technical University of Munich,California Institute of Technology
+United States;US;2022;Diplodocus;Meta AI,Massachusetts Institute of Technology (MIT)
+"United Kingdom;United States";"UK;US";2022;Phenaki;University College London (UCL),University of Michigan,Google Brain
+United Kingdom;UK;2022;AlphaTensor;DeepMind
+United States;US;2022;DiffDock;Massachusetts Institute of Technology (MIT)
+United States;US;2022;Make-A-Video;Meta AI
+United States;US;2022;Whisper;OpenAI
+United States;US;2022;PaLI;Google
+United States;US;2022;BEIT-3;Microsoft
+"Canada;United States";US;2022;BlenderBot 3;McGill University,Meta AI,Mila - Quebec AI (originally Montreal Institute for Learning Algorithms)
+China;CN;2022;GLM-130B;Tsinghua University
+United States;US;2022;AlexaTM 20B;Amazon
+"China;United States";"CN;US";2022;OmegaPLM;Massachusetts Institute of Technology (MIT),Westlake University
+United States;US;2022;ESM2-15B;Meta AI,New York University (NYU),Stanford University,Massachusetts Institute of Technology (MIT)
+"European Union;United States";"EU;US";2022;BLOOM-176B;Hugging Face,BigScience
+United States;US;2022;NLLB;Meta AI
+United States;US;2022;CodeT5-large;Salesforce
+United States;US;2022;Minerva (540B);Google
+United States;US;2022;ProGen2-xlarge;Salesforce Research,Columbia University,Johns Hopkins University
+United States;US;2022;Parti;Google Research
+United States;US;2022;CoCa;Google Research
+United States;US;2022;MetaLM;Microsoft Research
+"China;Hong Kong;United States";"CN;US";2022;DITTO;Tsinghua University,Apple,Westlake University,Chinese University of Hong Kong (CUHK)
+United States;US;2022;Diffusion-GAN;UT Austin,Microsoft
+China;CN;2022;CogVideo;Tsinghua University,Beijing Academy of Artificial Intelligence / BAAI
+"United Kingdom;United States;Canada";"UK;US";2022;Tranception;University of Oxford,Harvard Medical School,Cohere
+United States;US;2022;GPT-2 Medium (FlashAttention);Stanford University,University at Buffalo
+United States;US;2022;Imagen;Google Brain
+"China;United States";"CN;US";2022;SimCSE;Princeton University,Tsinghua University
+United Kingdom;UK;2022;Gato;DeepMind
+United States;US;2022;UL2;Google Research,Google Brain
+United States;US;2022;DeBERTaV3large + KEAR;Microsoft
+United States;US;2022;OPT-175B;Meta AI
+United Kingdom;UK;2022;Flamingo;DeepMind
+United States;US;2022;XMC-GAN;Google Research
+United States;US;2022;Sparse all-MLP;Meta AI
+"European Union;United States";"EU;US";2022;Stable Diffusion (LDM-KL-8-G);Runway,Ludwig Maximilian University of Munich,Heidelberg University
+United States;US;2022;DALL·E 2;OpenAI
+United States;US;2022;PaLM (540B);Google Research
+United Kingdom;UK;2022;Chinchilla;DeepMind
+United States;US;2022;Make-A-Scene;Meta AI
+"Canada;United States";US;2022;Segatron-XL large, M=384 + HCP;Microsoft Research,University of Waterloo
+United States;US;2022;"GPT-3.5 (davinci-002)
+";OpenAI
+"Israel;United States";"IL;US";2022;ViT-G (model soup);University of Washington,Columbia University,Google,Meta AI,Tel Aviv University
+United States;US;2022;MegaSyn;Collaborations Pharmaceuticals
+United States;US;2022;Statement Curriculum Learning;OpenAI
+United States;US;2022;DeepNet;Microsoft Research
+United States;US;2022;PolyCoder;Carnegie Mellon University (CMU)
+United States;US;2022;FourCastNet;NVIDIA,NERSC, Lawrence Berkeley National Laboratory,University of Michigan,Rice University,California Institute of Technology,Purdue University
+United States;US;2022;ST-MoE;Google,Google Brain,Google Research
+United States;US;2022;Midjourney V1;Midjourney
+"Israel;United States";"IL;US";2022;ProteinBERT;Hebrew University of Jerusalem,Ben-Gurion University of the Negev,Deep Trading
+United States;US;2022;LaMDA;Google
+United States;US;2022;GPT-NeoX-20B;EleutherAI
+United States;US;2022;MaskGIT (ImageNet);Google Research
+United Kingdom;UK;2022;RETRO-7B;DeepMind
+United Kingdom;UK;2022;AlphaCode;DeepMind
+United States;US;2022;InstructGPT 175B;OpenAI
+United States;US;2022;InstructGPT 6B;OpenAI
+United States;US;2022;InstructGPT 1.3B;OpenAI
+China;CN;2022;OntoProtein;Zhejiang University (ZJU)
+United Kingdom;UK;2022;AbLang (heavy sequences);University of Oxford
+United States;US;2022;data2vec (vision);Meta AI
+United States;US;2022;data2vec (speech);Meta AI
+United States;US;2022;data2vec (language);Meta AI
+United States;US;2022;Detic;Meta AI,University of Texas at Austin
+China;CN;2021;ERNIE-ViLG;Baidu
+China;CN;2021;ERNIE 3.0 Titan;Baidu,Peng Cheng Laboratory
+"European Union;United States";"EU;US";2021;XGLM-7.5B;Meta AI,Facebook AI Research
+"European Union;United States";"EU;US";2021;LDM-1.45B;Heidelberg University,Runway
+"European Union;United Kingdom;United States";"EU;UK;US";2021;Contriever;Meta AI,University College London (UCL),PSL University,Université Grenoble Alpes
+United States;US;2021;LongT5;Google Research
+United States;US;2021;GLaM;Google
+United Kingdom;UK;2021;Gopher (280B);DeepMind
+United Kingdom;UK;2021;Student of Games;DeepMind
+United States;US;2021;T-NLRv5 XXL;Microsoft
+"China;United States";"CN;US";2021;NÜWA;Microsoft Research,Peking University
+United States;US;2021;Florence;Microsoft
+United States;US;2021;BASIC-L;Google
+China;CN;2021;Swin Transformer V2 (SwinV2-G);Microsoft Research Asia
+United States;US;2021;ViT-G/14 (LiT);Google Research
+"European Union;United States";"EU;US";2021;Masked Autoencoders ViT-H;Facebook AI Research
+European Union;EU;2021;Projected GAN;Heidelberg University
+"Singapore;United States";"SG;US";2021;CodeT5-base;Salesforce,Nanyang Technological University
+United States;US;2021;S4;Stanford University
+"China;United States";"CN;US";2021;EfficientZero;Tsinghua University,University of California (UC) Berkeley,Shanghai Qi Zhi institute
+"United Kingdom;United States";"UK;US";2021;Eve;Harvard Medical School,University of Oxford
+"China;Singapore";"CN;SG";2021;base LM+GNN+kNN;Shannon.AI,Nanjing University,Nanyang Technological University,Zhejiang University (ZJU)
+China;CN;2021;Yuan 1.0;Inspur
+United States;US;2021;Megatron-Turing NLG 530B;Microsoft,NVIDIA
+"United Kingdom;United States";"UK;US";2021;AlphaFold-Multimer;Google DeepMind,DeepMind
+United States;US;2021;Turing ULRv5;Microsoft
+China;CN;2021;TrOCR;Beihang University,Microsoft Research Asia
+China;CN;2021;PLATO-XL;Baidu
+South Korea;KR;2021;HyperCLOVA 204B;NAVER
+China;CN;2021;PermuteFormer;Peking University
+United States;US;2021;MEB;Microsoft
+United States;US;2021;FLAN 137B;Google Research
+"European Union;United States";"EU;US";2021;XLMR-XXL;Facebook AI Research
+United States;US;2021;DNABERT;Northeastern University
+China;CN;2021;Zidong Taichu;Chinese Academy of Sciences,Wuhan AI Computing Center
+Israel;IL;2021;Jurassic-1-Jumbo;AI21 Labs
+United States;US;2021;W2v-BERT;Google Brain,Massachusetts Institute of Technology (MIT)
+China;CN;2021;YOLOX-X;Megvii Inc
+"European Union;United States";"EU;US";2021;6-Act Tether;Facebook AI Research,Georgia Institute of Technology
+"European Union;United States";"EU;US";2021;SEER;Facebook AI Research,INRIA
+"European Union;United States";"EU;US";2021;HuBERT;Facebook AI Research
+United Kingdom;UK;2021;GOAT;DeepMind
+United States;US;2021;Codex;OpenAI
+China;CN;2021;ERNIE 3.0;Baidu
+"China;Taiwan";"CN;";2021;Adaptive Input Transformer + RD;Microsoft Research Asia,Soochow University
+United States;US;2021;Fold2Seq;IBM,Texas A&M
+United States;US;2021;EfficientNetV2-XL;Google,Google Brain
+"United States;European Union";"US;EU";2021;StyleGAN3-T;NVIDIA,Aalto University
+"United States;European Union";"US;EU";2021;StyleGAN3-R;NVIDIA,Aalto University
+United States;US;2021;Denoising Diffusion Probabilistic Models (LSUN Bedroom);University of California (UC) Berkeley
+United States;US;2021;ALIGN;Google Research
+United States;US;2021;DeBERTa;Microsoft
+"Canada;United Kingdom";";UK";2021;EMDR;Mila - Quebec AI (originally Montreal Institute for Learning Algorithms),McGill University,DeepMind
+United States;US;2021;CoAtNet;Google,Google Research,Google Brain
+United States;US;2021;ViT-G/14;Google Brain,Google Research
+United States;US;2021;ByT5-XXL;Google,Google Research
+United States;US;2021;Transformer local-attention (NesT-B);Google Cloud,Google Research
+China;CN;2021;CogView;Tsinghua University,Alibaba DAMO Academy
+"China;United States";"CN;US";2021;MedBERT;Peng Cheng Laboratory,University of Texas at Houston
+United States;US;2021;ADM;OpenAI
+"China;European Union;South Korea;United States";"CN;EU;KR;US";2021;ProtT5-XL-U50;Technical University of Munich,Med AI Technology,NVIDIA,Oak Ridge National Laboratory,Google,Seoul National University
+"China;European Union;South Korea;United States";"CN;EU;KR;US";2021;ProtBERT-BFD;Technical University of Munich,NVIDIA,Seoul National University,Google,Oak Ridge National Laboratory,Med AI Technology
+China;CN;2021;PLUG;Alibaba
+United States;US;2021;Unicorn;Allen Institute for AI
+China;CN;2021;M6-T;Alibaba
+"European Union;United States";"EU;US";2021;Generative BST;Facebook AI Research
+United States;US;2021;Meta Pseudo Labels;Google Brain,Google AI
+United States;US;2021;SRU++ Large;ASAPP
+European Union;EU;2021;Rational DQN Average;TU Darmstadt
+"European Union;United States";"EU;US";2021;MSA Transformer;Facebook AI Research,University of California (UC) Berkeley,New York University (NYU)
+United Kingdom;UK;2021;top-down frozen classifier;University of Edinburgh,Toshiba Cambridge Research Laboratory
+United States;US;2021;DLWP;University of Washington,Microsoft Research
+"European Union;United States";"EU;US";2021;DeiT-B;Meta AI,Sorbonne University
+United States;US;2021;Switch;Google
+United States;US;2021;BigSSL;Google,Apple
+United States;US;2021;DALL-E;OpenAI
+United States;US;2021;CLIP (ViT L/14@336px);OpenAI
+United States;US;2021;CLIP (ResNet-50);OpenAI
+China;CN;2020;ERNIE-Doc (247M);Baidu
+"Taiwan;United States";US;2020;CT-MoS (WT2);Google,National Tsing Hua University
+"South Korea;United States";"KR;US";2020;DensePhrases;Korea University,Princeton University
+European Union;EU;2020;VQGAN + CLIP;Heidelberg University
+"European Union;United States";"EU;US";2020;ESM1b;Facebook AI Research,New York University (NYU)
+China;CN;2020;CPM-Large;Tsinghua University,Beijing Academy of Artificial Intelligence / BAAI
+United Kingdom;UK;2020;AlphaFold 2;DeepMind
+"Canada;China;European Union;United States";"CN;EU;US";2020;KEPLER;Tsinghua University,Mila - Quebec AI (originally Montreal Institute for Learning Algorithms),HEC,CIFAR AI Research,Princeton University,University of Montreal / Université de Montréal
+United States;US;2020;wave2vec 2.0 LARGE;Facebook
+United States;US;2020;ViT-Huge/14;Google Brain,Google Research
+United States;US;2020;ViT-Base/32;Google Brain
+European Union;EU;2020;German ELECTRA Large;deepset,Bayerische Staatsbibliothek Muenchen
+United States;US;2020;mT5-XXL;Google,Google Research
+United States;US;2020;Conformer + Wav2vec 2.0 + Noisy Student;Google,Google Research,Google Brain
+"Japan;United States";US;2020;LUKE;University of Washington,National Institute of Informatics
+United States;US;2020;ProBERTa;University of Illinois Urbana-Champaign (UIUC),Reed College
+China;CN;2020;ERNIE-GEN (large);Baidu
+"European Union;United States";"EU;US";2020;DeLighT;University of Washington,Allen Institute for AI,Facebook AI Research
+United States;US;2020;EfficientDet;Google Brain
+"European Union;Norway";"EU;Norway";2020;Hopfield Networks (2020);Johannes Kepler University Linz,Institute of Advanced Research in Artificial Intelligence,University of Oslo
+"European Union;United States";"EU;US";2020;SemExp;Carnegie Mellon University (CMU),Facebook AI Research
+United States;US;2020;GShard (dense);Google
+United States;US;2020;GPT-3 175B (davinci);OpenAI
+United States;US;2020;DETR;Facebook
+"United Kingdom;United States";"UK;US";2020;Retrieval-Augmented Generator;Facebook,New York University (NYU),University College London (UCL)
+United States;US;2020;Conformer;Google
+United States;US;2020;ContextNet;Google
+China;CN;2020;NAS+ESS (23M);Northeastern University (China),NiuTrans Research,Kingsoft
+United States;US;2020;UnifiedQA;Allen Institute for AI,University of Washington
+United States;US;2020;Once for All;MIT-IBM Watson AI Lab,Massachusetts Institute of Technology (MIT),IBM
+United States;US;2020;Go-explore;Uber AI,OpenAI
+United States;US;2020;CURL;University of California (UC) Berkeley
+United Kingdom;UK;2020;Agent57;DeepMind
+United States;US;2020;MetNet;Google
+United States;US;2020;ELECTRA;Stanford University,Google,Google Brain
+United States;US;2020;Tensor-Transformer(1core)+PN (WT103);University of California (UC) Berkeley
+United States;US;2020;Routing Transformer (WT-103);Google Research
+"China;United States";"CN;US";2020;TransformerXL + spectrum control;University of California Los Angeles (UCLA),JD.com
+China;CN;2020;TCAN (WT2);Nanjing University,Ant Group
+"European Union;United States";"EU;US";2020;Feedback Transformer;LORIA,University of Lorraine,Facebook AI Research
+United States;US;2020;FFN SwiGLU;Google
+United States;US;2020;Turing-NLG;Microsoft
+United States;US;2020;SimCLR;Google Brain
+United States;US;2020;ALBERT-xxlarge;Toyota Technological Institute at Chicago,Google
+United Kingdom;UK;2020;Perceiver IO (optical flow);DeepMind
+"China;United States";"CN;US";2020;Theseus 6/768;University of California San Diego,Beihang University,Microsoft
+United States;US;2020;Meena;Google Brain
+United States;US;2020;ContextNet + Noisy Student;Google
+United Kingdom;UK;2020;AlphaFold;DeepMind
+United States;US;2019;Big Transfer (BiT-L);Google Brain
+"Canada;European Union;United States";"EU;US";2019;DD-PPO;Georgia Institute of Technology,Facebook AI Research,Oregon State University,Simon Fraser University
+United States;US;2019;OpenAI Five Rerun;OpenAI
+United States;US;2019;OpenAI Five;OpenAI
+"China;United Kingdom";"CN;UK";2019;MMLSTM (WT-2);Beijing University of Posts and Telecommunications,University of West London
+"China;United Kingdom";"CN;UK";2019;MMLSTM (PTB);Beijing University of Posts and Telecommunications,University of West London
+"South Korea;Switzerland";"KR;";2019;StarGAN v2;NAVER,Yonsei University,Swiss Federal Institute of Technology
+"European Union;United States";"EU;US";2019;StyleGAN2;NVIDIA,Aalto University
+United States;US;2019;Transformer-XL DeFINE (141M);University of Washington,Allen Institute for AI
+United Kingdom;UK;2019;Photo-Geometric Autoencoder;University of Oxford
+United States;US;2019;Transformer - LibriVox + Decoding/Rescoring;Facebook
+United Kingdom;UK;2019;MuZero;DeepMind
+United States;US;2019;MoCo;Facebook AI
+United States;US;2019;Noisy Student (L2);Carnegie Mellon University (CMU),Google
+"European Union;United States";"EU;US";2019;Sandwich Transformer;Allen Institute for AI,Facebook AI Research
+"European Union;United States";"EU;US";2019;CamemBERT;Facebook,INRIA,Sorbonne University
+United States;US;2019;XLM-RoBERTa;Facebook AI
+"European Union;United States";"EU;US";2019;Base LM + kNN LM + Continuous Cache;Stanford University,Facebook AI Research
+United Kingdom;UK;2019;AlphaStar;DeepMind
+United States;US;2019;BART-large;Facebook AI
+United States;US;2019;T5-11B;Google
+United States;US;2019;T5-3B;Google
+United States;US;2019;M4-50B;Google
+United States;US;2019;DistilBERT;Hugging Face
+"European Union;United States";"EU;US";2019;AlphaX-1;Facebook AI Research,Brown University
+United States;US;2019;ALBERT;Toyota Technological Institute at Chicago,Google Research
+"European Union;United States";"EU;US";2019;Adaptive Inputs + LayerDrop;Facebook AI Research,LORIA
+United States;US;2019;Megatron-LM (8.3B);NVIDIA
+United States;US;2019;Megatron-LM (1.2B);NVIDIA
+United States;US;2019;Megatron-BERT;NVIDIA
+European Union;EU;2019;UDSMProt;Fraunhofer Heinrich Hertz Institute
+United Kingdom;UK;2019;Mogrifier (d2, MoS2, MC) + dynamic eval;DeepMind,University of Oxford
+"China;United States";"CN;US";2019;trRosetta;Nankai University,University of Washington,Tianjin University,Harvard University
+"Australia;China";CN;2019;EN^2AS with performance reward;Beijing Institute of Technology,University of Technology Sydney,Monash University
+"European Union;United States";"EU;US";2019;Pluribus;Facebook AI Research
+United States;US;2019;BigBiGAN;Google
+United States;US;2019;RoBERTa Large;Facebook,University of Washington
+United States;US;2019;Walking Minotaur robot;University of California (UC) Berkeley,Google Brain
+United States;US;2019;LaNet-L (CIFAR-10);Brown University,Facebook
+United States;US;2019;FixRes ResNeXt-101 WSL;Facebook AI
+United States;US;2019;Char-CNN-BiLSTM;Capital One
+United States;US;2019;AWD-LSTM + MoS + Partial Shuffled;University of Texas at Austin
+United States;US;2019;Transformer-XL Large + Phrase Induction;Massachusetts Institute of Technology (MIT),University of Illinois Urbana-Champaign (UIUC)
+United States;US;2019;XLNet;Carnegie Mellon University (CMU),Google Brain
+United States;US;2019;XLM;Facebook
+United States;US;2019;DLRM-2020;Facebook AI
+United States;US;2019;EfficientNet-L2;Google
+"United Kingdom;United States";"UK;US";2019;CPC v2;DeepMind,University of California (UC) Berkeley
+United States;US;2019;ResNeXt-101 Billion-scale;Facebook AI
+United States;US;2019;RaptorX-Contact;Toyota Technological Institute at Chicago
+"China;United Kingdom; United States ";"CN;UK; US ";2019;Neuro-Symbolic Concept Learner;Massachusetts Institute of Technology (MIT),Tsinghua University,MIT-IBM Watson AI Lab,DeepMind
+United States;US;2019;MuseNet;OpenAI
+United States;US;2019;BERT-Large-CAS (PTB+WT2+WT103);Amazon
+United Kingdom;UK;2019;Transformer-XL + RMS dynamic eval;University of Edinburgh
+United States;US;2019;WeNet (Penn Treebank);Amazon
+"China;United States";"CN;US";2019;True-Regularization+Finetune+Dynamic-Eval;Mobvoi,Williams College
+"Israel;United States";"IL;US";2019;Cross-lingual alignment;Tel Aviv University,Massachusetts Institute of Technology (MIT)
+United States;US;2019;SciBERT;Allen Institute for AI
+"Israel;United States";"IL;US";2019;NMT Transformer 437M;Google,Bar-Ilan University
+United States;US;2019;KataGo;Jane Street
+United States;US;2019;GPT-2 (1.5B);OpenAI
+"Australia;United States";US;2019;SDE;Carnegie Mellon University (CMU),Google Brain,Monash University
+"United Kingdom;United States";"UK;US";2019;Hanabi 4 player;DeepMind,University of Oxford,Carnegie Mellon University (CMU),Google Brain
+United States;US;2019;MT-DNN;Microsoft
+United States;US;2019;Transformer-XL (257M);Carnegie Mellon University (CMU),Google Brain
+United States;US;2019;Transformer ELMo;Allen Institute for AI,University of Washington
+United States;US;2018;StyleGAN;NVIDIA
+"United Kingdom;United States";"UK;US";2018;SPN (ImageNet 128);Google Brain,DeepMind
+United States;US;2018;GPipe (Transformer);Google
+India;IN;2018;Multi-cell LSTM;University of Hyderabad
+United States;US;2018;Mesh-TensorFlow Transformer 4.9B (language);Google Brain
+United States;US;2018;Mesh-TensorFlow Transformer 2.9B (translation);Google Brain
+South Korea;KR;2018;MemoReader;Samsung,Korea University
+"European Union;United States";"EU;US";2018;TrellisNet;Carnegie Mellon University (CMU),Bosch Center for Artificial Intelligence,Intel Labs
+United States;US;2018;MetaMimic;Google
+United States;US;2018;BERT-Large;Google
+"European Union;United States";"EU;US";2018;Transformer (Adaptive Input Embeddings) WT103;Facebook AI Research
+"European Union;United States";"EU;US";2018;LSTM+NeuralCache;KU Leuven,ESAT - PSI,Apple
+China;CN;2018;AWD-LSTM-MoS + dynamic evaluation (WT2, 2018);Peking University,Microsoft Research Asia
+United States;US;2018;Transformer + Simple Recurrent Unit;ASAPP,Cornell University,Google,Princeton University
+"Argentina;European Union;Malaysia";EU;2018;NetSurfP-2.0;Technical University of Denmark,University of Copenhagen,Universidad Nacional de San Martín,AIMST University
+"European Union;United States";"EU;US";2018;Big Transformer for Back-Translation;Facebook AI Research,Google Brain
+United States;US;2018;AWD-LSTM-MoS+PDR + dynamic evaluation (WT2);IBM
+United States;US;2018;Big-Little Net (speech);IBM
+United States;US;2018;Big-Little Net;IBM
+United Kingdom;UK;2018;FTW (For The Win);DeepMind
+United States;US;2018;MobileNetV2;Google
+United Kingdom;UK;2018;Relational Memory Core;DeepMind,University College London (UCL)
+United States;US;2018;GPT-1;OpenAI
+United Kingdom;UK;2018;aLSTM(depth-2)+RecurrentPolicy (WT2);University of Manchester,Alan Turing Institute
+United States;US;2018;Dropout-LSTM+Noise(Bernoulli) (WT2);Columbia University,New York University (NYU),Princeton University
+United States;US;2018;ResNeXt-101 32x48d;Facebook
+United States;US;2018;YOLOv3;University of Washington
+United States;US;2018;4 layer QRNN (h=2500);Salesforce Research
+United States;US;2018;Chinese - English translation;Microsoft
+United States;US;2018;TCN (P-MNIST);Carnegie Mellon University (CMU),Intel Labs
+United States;US;2018;DeepLabV3+;Google
+United Kingdom;UK;2018;IMPALA;DeepMind
+United States;US;2018;QRNN;Salesforce Research
+United States;US;2018;ELMo;University of Washington,Allen Institute for AI
+United States;US;2018;T-DMCA;Google Brain
+United Kingdom;UK;2017;AlphaZero;DeepMind
+China;CN;2017;DL scaling speech;Baidu
+China;CN;2017;DL scaling LM;Baidu
+China;CN;2017;DL scaling Image;Baidu
+European Union;EU;2017;TriNet;Visual Computing Institute,RWTH Aachen University
+United States;US;2017;AWD-LSTM-MoS + dynamic evaluation (WT2, 2017);Carnegie Mellon University (CMU)
+United Kingdom;UK;2017;VQ-VAE;DeepMind
+"Canada;European Union";EU;2017;Fraternal dropout + AWD-LSTM 3-layer (WT2);Jagiellonian University,Mila - Quebec AI (originally Montreal Institute for Learning Algorithms),University of Montreal / Université de Montréal
+United States;US;2017;DCN+;Salesforce Research
+United States;US;2017;S-Norm;University of Washington,Allen Institute for AI
+United States;US;2017;PhraseCond;Carnegie Mellon University (CMU),University of Pittsburgh
+United States;US;2017;ProgressiveGAN;NVIDIA
+United Kingdom;UK;2017;AlphaGo Master;DeepMind
+United Kingdom;UK;2017;AlphaGo Zero;DeepMind
+United Kingdom;UK;2017;Rainbow DQN;DeepMind
+United Kingdom;UK;2017;LSTM + dynamic eval;University of Edinburgh
+United States;US;2017;ISS;Duke University,Microsoft
+South Korea;KR;2017;PyramidNet;Korea Advanced Institute of Science and Technology (KAIST)
+"China;United Kingdom";"CN;UK";2017;SENet (ImageNet);Chinese Academy of Sciences,University of Oxford
+Israel;IL;2017;GL-LWGC-AWD-MoS-LSTM + dynamic evaluation (WT2);Ben-Gurion University of the Negev
+United States;US;2017;Libratus;Carnegie Mellon University (CMU)
+"China;Singapore;United States";"CN;SG;US";2017;NeuMF (Pinterest);Shandong University,Texas A&M,National University of Singapore,Columbia University
+South Korea;KR;2017;EI-REHN-1000D;Korea Advanced Institute of Science and Technology (KAIST)
+United States;US;2017;OpenAI TI7 DOTA 1v1;OpenAI
+"European Union;United States";"EU;US";2017;RetinaNet-R101;Facebook AI Research
+"European Union;United States";"EU;US";2017;RetinaNet-R50;Facebook AI Research
+United States;US;2017;AWD-LSTM - 3-layer LSTM (tied) + continuous cache pointer (WT2);Salesforce Research
+"China;United States";"CN;US";2017;GSM;Peking University,Microsoft Research
+United States;US;2017;ConvS2S (ensemble of 8 models);Meta AI
+United States;US;2017;NASNet-A;Google Brain
+United Kingdom;UK;2017;AWD-LSTM;DeepMind,University of Oxford
+United States;US;2017;JFT;Google Research,Carnegie Mellon University (CMU)
+European Union;EU;2017;DeepLoc;Technical University of Denmark,University of Copenhagen
+China;CN;2017;ShuffleNet v1;Megvii Inc
+United Kingdom;UK;2017;NoisyNet-Dueling;DeepMind
+United States;US;2017;DeepLabV3;Google
+"Canada;United States";US;2017;HRA;Maluuba,Microsoft
+United States;US;2017;Transformer;Google Research,Google Brain
+South Korea;KR;2017;EDSR;Seoul National University
+United Kingdom;UK;2017;Reading Twice for NLU;DeepMind
+United States;US;2017;PointNet++;Stanford University
+United Kingdom;UK;2017;Inflated 3D ConvNet;DeepMind,University of Oxford
+United States;US;2017;SRGAN;Twitter
+"China;United States";"CN;US";2017;Mnemonic Reader;Fudan University,Microsoft Research
+"United Kingdom;United States";"UK;US";2017;DeepLab (2017);Johns Hopkins University,Google,University College London (UCL)
+United States;US;2017;MobileNet;Google
+"Canada;United States";US;2017;WGAN-GP;Courant Institute of Mathematical Sciences,Mila - Quebec AI (originally Montreal Institute for Learning Algorithms)
+"European Union;United States";"EU;US";2017;Mask R-CNN;Facebook AI Research
+"Canada;United States";US;2017;Prototypical networks;University of Toronto,Twitter
+"China;Hong Kong";CN;2017;DnCNN;Harbin Institute of Technology,Hong Kong Polytechnic University,ULSee Inc.,Xi’an Jiaotong University
+"European Union;United States";"EU;US";2017;MoE-Multi;Jagiellonian University,Google Brain
+"China;United States";"CN;US";2017;OR-WideResNet;Duke University,University of Chinese Academy of Sciences
+"Canada;European Union";EU;2017;DeepStack;University of Alberta,Charles University,Czech Technical University
+United States;US;2016;YOLOv2;University of Washington,Allen Institute for AI
+European Union;EU;2016;EnhanceNet;Max Planck Institute for Intelligent Systems
+United States;US;2016;3DMM-CNN;University of Southern California
+United States;US;2016;HR-ResNet101;Carnegie Mellon University (CMU)
+United States;US;2016;GAN-Advancer;OpenAI
+United States;US;2016;PointNet;Stanford University
+United Kingdom;UK;2016;Elastic weight consolidation;DeepMind
+United States;US;2016;Image-to-image cGAN;University of California (UC) Berkeley
+United States;US;2016;ResNeXt-101 (64×4d);University of California San Diego,Facebook
+United States;US;2016;ResNeXt-50;University of California San Diego,Facebook
+"China;United Kingdom";"CN;UK";2016;DAC-CSR;Jiangnan University,University of Surrey
+";European Union;United States";"EU;US";2016;DTN (Domain Transfer Network);Facebook AI Research
+United Kingdom;UK;2016;DLDL (PASCAL);University of Oxford
+United States;US;2016;NASv3 (CIFAR-10);Google Brain
+United States;US;2016;NAS with base 8 and shared embeddings;Google Brain
+United States;US;2016;BIDAF;University of Washington,Allen Institute for AI
+United States;US;2016;VD-LSTM+REAL Large;Salesforce Research,Stanford University
+"Australia;China;United States";"CN;US";2016;SPIDER2;Griffith University,University of Iowa,Dezhou University
+"European Union;United States";"EU;US";2016;GAWWN;University of Michigan,Max Planck Institute for Informatics
+United States;US;2016;Xception;Google
+United States;US;2016;Pointer Sentinel-LSTM (medium);MetaMind Inc,Salesforce
+United States;US;2016;GNMT;Google
+European Union;EU;2016;Wide Residual Network;Université Paris-Est
+United States;US;2016;ResNet-1001;Microsoft
+China;CN;2016;ResNet-200;Microsoft Research Asia
+United States;US;2016;Youtube recommendation model;Google
+United States;US;2016;WaveNet;Google DeepMind
+United States;US;2016;MS-ensemble-speech-recognition;Microsoft
+United States;US;2016;LF-MMI;Johns Hopkins University,Cornell University
+"China;European Union;United States";"CN;EU;US";2016;DenseNet-264;Tsinghua University,Facebook AI Research,Cornell University
+"European Union;Iran";"EU;Iran";2016;SimpleNet;Sensifai,Islamic Azad University,Technicolor R&I,Institute for Research in Fundamental Sciences (IPM)
+"European Union;United States";"EU;US";2016;Character-enriched word2vec;Facebook AI Research
+"China;Hong Kong";CN;2016;CCL;SenseTime,Chinese University of Hong Kong (CUHK),Chinese Academy of Sciences
+"China;United States";"CN;US";2016;R-FCN;Tsinghua University,Microsoft Research
+"United Kingdom;United States";"UK;US";2016;Segmental RNN;University of Edinburgh,Carnegie Mellon University (CMU),University of Washington
+United States;US;2016;PixelCNN;Google DeepMind
+United States;US;2016;LRR-4X;UC Irvine
+United States;US;2016;Dueling DQN;Google DeepMind
+United Kingdom;UK;2016;"Template Adaptation
+";University of Oxford
+United States;US;2016;Named Entity Recognition model;Carnegie Mellon University (CMU)
+United States;US;2016;Double DQN;Google DeepMind
+United States;US;2016;SqueezeNet;DeepScale,University of California (UC) Berkeley,Stanford University
+United States;US;2016;Inceptionv4;Google
+United States;US;2016;Inception-ResNet-V2;Google
+"Canada;United States";US;2016;A3C FF hs;Google,University of Montreal / Université de Montréal
+United Kingdom;UK;2016;AlphaGo Lee;DeepMind
+United Kingdom;UK;2015;Variational (untied weights, MC) LSTM (Large);University of Cambridge
+United States;US;2015;Advantage Learning;Google DeepMind
+United States;US;2015;ResNet-152 (ImageNet);Microsoft
+United States;US;2015;ResNet-110 (CIFAR-10);Microsoft
+United States;US;2015;ResNet-101 (ImageNet);Microsoft
+"United Kingdom;United States";"UK;US";2015;Inception v3;Google,University College London (UCL)
+United States;US;2015;Netflix Recommender System;Netflix
+United States;US;2015;Multi-scale Dilated CNN;Princeton University,Intel Labs
+"China;United States";"CN;US";2015;3DDFA;Chinese Academy of Sciences,Michigan State University
+"China;Singapore";"CN;SG";2015;SAF R-CNN;Beijing Institute of Technology,Sun Yat-sen University,Panasonic R&D,National University of Singapore
+United Kingdom;UK;2015;AlphaGo Fan;DeepMind
+United States;US;2015;Deep Deterministic Policy Gradients;Google DeepMind
+United Kingdom;UK;2015;BPE;University of Edinburgh
+United States;US;2015;DCNN;University of Maryland,Rutgers University
+United States;US;2015;CompACT-Deep;University of California San Diego
+United States;US;2015;BatchNorm;Google
+"European Union;United States";"EU;US";2015;YOLO;University of Washington,Allen Institute for AI,Facebook AI Research
+"China;Hong Kong";CN;2015;CFSS;SenseTime,Chinese University of Hong Kong (CUHK),Shenzhen Institute of Advanced Technology
+United States;US;2015;Faster R-CNN;Microsoft Research
+European Union;EU;2015;U-Net;University of Freiburg
+United States;US;2015;Fast R-CNN;Microsoft Research
+United States;US;2015;TC-DNN-BLSTM-DNN;Carnegie Mellon University (CMU)
+"China;Ireland";CN;2015;genCNN + dyn eval;Chinese Academy of Sciences,Huawei Noah's Ark Lab,Dublin City University
+United States;US;2015;DQN-2015;Google
+United States;US;2015;TRPO;University of California (UC) Berkeley
+United States;US;2015;MSRA (C, PReLU);Microsoft Research
+United Kingdom;UK;2015;VGG-Face;University of Oxford
+"Canada;European Union;United States";"EU;US";2014;ADAM (CIFAR-10);University of Amsterdam,OpenAI,University of Toronto
+United Kingdom;UK;2014;Fractional Max-Pooling;University of Warwick
+United States;US;2014;SNM-skip;Google
+United States;US;2014;Fully Convolutional Networks;University of California (UC) Berkeley
+United States;US;2014;LRCN;UT Austin,University of Massachusetts Lowell,University of California (UC) Berkeley
+United Kingdom;UK;2014;Spatially-Sparse CNN;University of Warwick
+United States;US;2014;Deeply-supervised nets;Microsoft Research
+United States;US;2014;GoogLeNet / InceptionV1;Google,University of Michigan,University of North Carolina
+Singapore;SG;2014;SPN-4+KN5;Singapore University of Technology & Design,DSO National Laboratories
+United States;US;2014;Seq2Seq LSTM;Google
+United Kingdom;UK;2014;VGG19;University of Oxford
+United Kingdom;UK;2014;VGG16;University of Oxford
+"Canada;European Union";EU;2014;RNNsearch-50*;Jacobs University Bremen,University of Montreal / Université de Montréal
+China;CN;2014;ACF-WIDER;Chinese Academy of Sciences
+United Kingdom;UK;2014;SmooCT;University College London (UCL)
+United States;US;2014;Multiresolution CNN;Google,Stanford University
+"Israel;United States";"IL;US";2014;DeepFace;Tel Aviv University,Facebook
+"Canada;United Kingdom";UK;2014;RNN-WER;DeepMind,University of Toronto
+United States;US;2014;Fragment embedding;Stanford University
+"China;United States";"CN;US";2014;SPPNet;Microsoft,Xi’an Jiaotong University,University of Science and Technology of China (USTC)
+United Kingdom;UK;2014;Two-stream ConvNets for action recognition;University of Oxford
+"Canada;European Union;United States";"EU;US";2014;GRUs;University of Montreal / Université de Montréal,Jacobs University,University of Maine
+China;CN;2014;AdaRNN;Beihang University
+United States;US;2014;Paragraph Vector;Google
+United States;US;2014;HyperNEAT;University of Texas at Austin
+United States;US;2014;GloVe (32B);Stanford University
+United States;US;2014;GloVe (6B);Stanford University
+United States;US;2013;OverFeat;New York University (NYU)
+European Union;EU;2013;Image generation;University of Amsterdam
+United Kingdom;UK;2013;DQN;DeepMind
+Singapore;SG;2013;Network in Network;National University of Singapore
+United States;US;2013;RNN for 1B words;Google
+"European Union;United States";"EU;US";2013;TransE;Universite de Technologie de Compiègne – CNRS,Google
+United States;US;2013;DeViSE;Google
+United States;US;2013;Visualizing CNNs;New York University (NYU)
+United States;US;2013;R-CNN (T-net);University of California (UC) Berkeley
+United States;US;2013;Word2Vec (small);Google
+United States;US;2013;Word2Vec (large);Google
+United States;US;2013;RNTN;Stanford University
+United Kingdom;UK;2013;RCTM;University of Oxford
+United States;US;2013;Hierarchical Scene Labeling (Stanford Background);New York University (NYU)
+"Canada;United States";US;2013;ReLU-Speech;Google,University of Toronto,New York University (NYU)
+United States;US;2013;Multilingual DNN;Google
+European Union;EU;2013;Selective Search;University of Trento,University of Amsterdam
+United States;US;2013;DistBelief NNLM;Google
+United States;US;2012;DistBelief Vision;Google
+United States;US;2012;DistBelief Speech;Google
+"Canada;United States";US;2012;Bayesian automated hyperparameter tuning;University of Toronto,University of Sherbrooke,Harvard University
+"European Union;United States";"EU;US";2012;RNN+LDA+KN5+cache;Microsoft,Brno University of Technology
+European Union;EU;2012;LSTM LM;RWTH Aachen University
+"European Union;United States";"EU;US";2012;Context-dependent RNN;Microsoft Research,Brno University of Technology
+United States;US;2012;Unsupervised High-level Feature Learner;Google

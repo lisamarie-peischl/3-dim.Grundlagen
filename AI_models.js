@@ -1,6 +1,4 @@
-class AIModels extends base {
+class AIModels {
     constructor(data) {
-        super(data);
-    }
-    
+    };  
 }

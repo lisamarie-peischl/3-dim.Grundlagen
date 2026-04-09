@@ -1,0 +1,151 @@
+country;country_code;year;investment
+United States;US;2012;6614
+United States;US;2013;8712
+United States;US;2014;21094
+United States;US;2015;26445
+United States;US;2016;20464
+United States;US;2017;30702
+United States;US;2018;44987
+United States;US;2019;52130
+United States;US;2020;62010
+United States;US;2021;135207
+United States;US;2022;76071
+United States;US;2023;71499
+United States;US;2024;98580
+United States;US;2025;180305
+United States;US;2026;29968
+China;CN;2012;209
+China;CN;2013;559
+China;CN;2014;3103
+China;CN;2015;11269
+China;CN;2016;19470
+China;CN;2017;33384
+China;CN;2018;38405
+China;CN;2019;25921
+China;CN;2020;33055
+China;CN;2021;53356
+China;CN;2022;25387
+China;CN;2023;21339
+China;CN;2024;17761
+China;CN;2025;15687
+China;CN;2026;8004
+European Union;EU;2012;244
+European Union;EU;2013;390
+European Union;EU;2014;944
+European Union;EU;2015;1450
+European Union;EU;2016;1259
+European Union;EU;2017;2063
+European Union;EU;2018;3668
+European Union;EU;2019;5998
+European Union;EU;2020;6406
+European Union;EU;2021;17475
+European Union;EU;2022;20416
+European Union;EU;2023;10196
+European Union;EU;2024;12041
+European Union;EU;2025;16850
+European Union;EU;2026;2296
+United Kingdom;UK;2012;240
+United Kingdom;UK;2013;277
+United Kingdom;UK;2014;332
+United Kingdom;UK;2015;843
+United Kingdom;UK;2016;969
+United Kingdom;UK;2017;2156
+United Kingdom;UK;2018;2373
+United Kingdom;UK;2019;3890
+United Kingdom;UK;2020;3398
+United Kingdom;UK;2021;9518
+United Kingdom;UK;2022;8695
+United Kingdom;UK;2023;4250
+United Kingdom;UK;2024;5464
+United Kingdom;UK;2025;15175
+United Kingdom;UK;2026;3073
+Israel;IL;2012;278
+Israel;IL;2013;142
+Israel;IL;2014;331
+Israel;IL;2015;458
+Israel;IL;2016;623
+Israel;IL;2017;1078
+Israel;IL;2018;1286
+Israel;IL;2019;1889
+Israel;IL;2020;2514
+Israel;IL;2021;5197
+Israel;IL;2022;5289
+Israel;IL;2023;1899
+Israel;IL;2024;1911
+Israel;IL;2025;3682
+Israel;IL;2026;660
+India;IN;2012;176
+India;IN;2013;126
+India;IN;2014;124
+India;IN;2015;550
+India;IN;2016;406
+India;IN;2017;500
+India;IN;2018;1197
+India;IN;2019;1541
+India;IN;2020;2138
+India;IN;2021;5837
+India;IN;2022;5649
+India;IN;2023;2086
+India;IN;2024;2167
+India;IN;2025;2598
+India;IN;2026;483
+Korea;KR;2012;98
+Korea;KR;2013;18
+Korea;KR;2014;110
+Korea;KR;2015;122
+Korea;KR;2016;204
+Korea;KR;2017;734
+Korea;KR;2018;1151
+Korea;KR;2019;1061
+Korea;KR;2020;1206
+Korea;KR;2021;4426
+Korea;KR;2022;4091
+Korea;KR;2023;2458
+Korea;KR;2024;2750
+Korea;KR;2025;2108
+Korea;KR;2026;401
+Singapore;SG;2012;75
+Singapore;SG;2013;30
+Singapore;SG;2014;68
+Singapore;SG;2015;96
+Singapore;SG;2016;152
+Singapore;SG;2017;329
+Singapore;SG;2018;744
+Singapore;SG;2019;925
+Singapore;SG;2020;994
+Singapore;SG;2021;3513
+Singapore;SG;2022;2023
+Singapore;SG;2023;2165
+Singapore;SG;2024;3505
+Singapore;SG;2025;2265
+Singapore;SG;2026;348
+Brazil;BR;2012;33
+Brazil;BR;2013;39
+Brazil;BR;2014;83
+Brazil;BR;2015;36
+Brazil;BR;2016;49
+Brazil;BR;2017;90
+Brazil;BR;2018;134
+Brazil;BR;2019;321
+Brazil;BR;2020;849
+Brazil;BR;2021;1414
+Brazil;BR;2022;902
+Brazil;BR;2023;731
+Brazil;BR;2024;1035
+Brazil;BR;2025;854
+Brazil;BR;2026;104
+United Arab Emirates;AE;2012;0
+United Arab Emirates;AE;2013;1
+United Arab Emirates;AE;2014;0
+United Arab Emirates;AE;2015;12
+United Arab Emirates;AE;2016;18
+United Arab Emirates;AE;2017;61
+United Arab Emirates;AE;2018;19
+United Arab Emirates;AE;2019;74
+United Arab Emirates;AE;2020;73
+United Arab Emirates;AE;2021;171
+United Arab Emirates;AE;2022;539
+United Arab Emirates;AE;2023;114
+United Arab Emirates;AE;2024;350
+United Arab Emirates;AE;2025;794
+United Arab Emirates;AE;2026;328

@@ -1,5 +1,4 @@
-class Investments extends base {
+class Investments {
     constructor(data) {
-        super(data);
-    }
+    };
 }
