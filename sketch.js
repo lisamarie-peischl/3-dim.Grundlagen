@@ -27,4 +27,4 @@ function windowResized() {
     redraw();
 }
 
-// lol
+// lol Hallo
