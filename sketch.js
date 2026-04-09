@@ -1,6 +1,7 @@
 let investmentLines;
 let invest;
-let angle = 0;
+let hoveredBar = null;
+let selectedBar = null;
 
 function preload() {
     investmentLines = loadStrings('data/investment.csv');
@@ -19,11 +20,32 @@ function draw () {
     background(0);
 
     const size = min(width, height);
-    invest.drawRingBars(width * 0.5, height * 0.5, size);
+    const cx = width * 0.5;
+    const cy = height * 0.5;
+
+    hoveredBar = invest.pickBar(mouseX, mouseY, cx, cy, size);
+    invest.drawRingBars(cx, cy, size, hoveredBar, selectedBar);
+
+    const tooltipBar = selectedBar || hoveredBar;
+    invest.drawTooltip(tooltipBar);
 }
 
 function windowResized() {
     resizeCanvas(windowWidth, windowHeight);
+    redraw();
+}
+
+function mouseMoved() {
+    redraw();
+}
+
+function mousePressed() {
+    const size = min(width, height);
+    const cx = width * 0.5;
+    const cy = height * 0.5;
+    const picked = invest.pickBar(mouseX, mouseY, cx, cy, size);
+
+    selectedBar = picked;
     redraw();
 }
 
