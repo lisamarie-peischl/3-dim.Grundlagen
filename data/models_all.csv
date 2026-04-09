@@ -1,4 +1,4 @@
-﻿"""country""";"""country_code""";year;model_name;organization
+"""country""";"""country_code""";year;model_name;organization
 """United States""";"""US""";2026;Gemma 4 31B IT;Google DeepMind
 """United States""";"""US""";2026;Nemotron 3 Super;NVIDIA
 """United States""";"""US""";2026;GPT-5.4;OpenAI

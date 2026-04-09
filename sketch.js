@@ -2,9 +2,17 @@ let investmentLines;
 let invest;
 let hoveredBar = null;
 let selectedBar = null;
+let allmodels;
+let notablemodels;
+let aiModels;
+let hoveredModelPoint = null;
+let selectedModelPoint = null;
+let yearsSlider;
 
 function preload() {
     investmentLines = loadStrings('data/investment.csv');
+    allmodels = loadStrings('data/models_all.csv');
+    notablemodels = loadStrings('data/models_notable.csv');
 }
 
 function setup () {
@@ -13,6 +21,8 @@ function setup () {
     textFont('Helvetica');
 
     invest = new Investments(investmentLines);
+    aiModels = new AIModels(allmodels, invest);
+        yearsSlider = new YearsSlider(2012, 2025);
     noLoop();
 }
 
@@ -23,11 +33,23 @@ function draw () {
     const cx = width * 0.5;
     const cy = height * 0.5;
 
-    hoveredBar = invest.pickBar(mouseX, mouseY, cx, cy, size);
-    invest.drawRingBars(cx, cy, size, hoveredBar, selectedBar);
+    aiModels.drawRings(cx, cy, size);
 
+    hoveredBar = invest.pickBar(mouseX, mouseY, cx, cy, size, yearsSlider.maxYear);
+    invest.drawRingBars(cx, cy, size, hoveredBar, selectedBar, yearsSlider.maxYear);
+
+    hoveredModelPoint = aiModels.pickPoint(mouseX, mouseY);
+    aiModels.drawPoints(cx, cy, size, hoveredModelPoint, selectedModelPoint, yearsSlider.maxYear);
+
+    const tooltipModel = selectedModelPoint || hoveredModelPoint;
     const tooltipBar = selectedBar || hoveredBar;
-    invest.drawTooltip(tooltipBar);
+    if (tooltipModel) {
+        aiModels.drawTooltip(tooltipModel);
+    } else {
+        invest.drawTooltip(tooltipBar);
+
+        yearsSlider.draw(width, height);
+    }
 }
 
 function windowResized() {
@@ -36,17 +58,42 @@ function windowResized() {
 }
 
 function mouseMoved() {
+        if (yearsSlider.isDragging) {
+            yearsSlider.setFromMouse(mouseX, width);
+        }
     redraw();
 }
 
 function mousePressed() {
+        if (yearsSlider.isOver(mouseX, mouseY, width, height)) {
+            yearsSlider.isDragging = true;
+            yearsSlider.setFromMouse(mouseX, width);
+            redraw();
+            return;
+        }
+    
     const size = min(width, height);
     const cx = width * 0.5;
     const cy = height * 0.5;
-    const picked = invest.pickBar(mouseX, mouseY, cx, cy, size);
+    const pickedModel = aiModels.pickPoint(mouseX, mouseY);
+
+    if (pickedModel) {
+        selectedModelPoint = pickedModel;
+        selectedBar = null;
+        redraw();
+        return;
+    }
+
+    const picked = invest.pickBar(mouseX, mouseY, cx, cy, size, yearsSlider.maxYear);
 
     selectedBar = picked;
+    selectedModelPoint = null;
     redraw();
 }
 
 // lol Hallo
+
+function mouseReleased() {
+    yearsSlider.isDragging = false;
+    redraw();
+}

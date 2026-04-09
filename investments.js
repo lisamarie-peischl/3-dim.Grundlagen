@@ -68,7 +68,8 @@ class Investments {
             }
         }
 
-        this.countries.sort((a, b) => a.name.localeCompare(b.name, 'de', { sensitivity: 'base' }));
+        // Clockwise order by country code, starting with AE.
+        this.countries.sort((a, b) => a.code.localeCompare(b.code, 'en', { sensitivity: 'base' }));
     }
 
     polarX(angle, radius) {
@@ -95,13 +96,13 @@ class Investments {
     }
 
     getLayout(size) {
-        const margin = size * 0.05;
+        const margin = size * 0.025;
         const maxOuterRadius = size * 0.5 - margin;
-        const baseRadius = size * 0.30;
-        const desiredMaxBarHeight = size * 0.14;
+        const baseRadius = size * 0.24;
         const availableHeight = max(8, maxOuterRadius - baseRadius);
-        const maxBarHeight = min(desiredMaxBarHeight, availableHeight);
-        const minBarHeight = min(size * 0.028, maxBarHeight * 0.45);
+        // Use almost full available radius so all countries are visible while preserving true proportions.
+        const maxBarHeight = availableHeight;
+        const minBarHeight = 0;
 
         return {
             margin,
@@ -136,12 +137,15 @@ class Investments {
     }
 
     getBarHeight(value, layout) {
-        const normalizedValue = this.maxInvestment > 0 ? value / this.maxInvestment : 0;
-        const scaledValue = Math.sqrt(constrain(normalizedValue, 0, 1));
-        return value > 0 ? layout.minBarHeight + scaledValue * (layout.maxBarHeight - layout.minBarHeight) : 0;
+        if (this.maxInvestment <= 0 || value <= 0) {
+            return 0;
+        }
+
+        const normalizedValue = constrain(value / this.maxInvestment, 0, 1);
+        return layout.minBarHeight + normalizedValue * (layout.maxBarHeight - layout.minBarHeight);
     }
 
-    pickBar(mx, my, cx, cy, size) {
+    pickBar(mx, my, cx, cy, size, maxYear = 2025) {
         if (!this.countries.length) {
             return null;
         }
@@ -159,6 +163,10 @@ class Investments {
 
             for (let yearIndex = 0; yearIndex < yearCount; yearIndex += 1) {
                 const year = this.years[yearIndex];
+                               if (year > maxYear) {
+                                   continue;
+                               }
+               
                 const value = country.byYear.has(year) ? country.byYear.get(year) : 0;
                 const barHeight = this.getBarHeight(value, layout);
                 if (barHeight <= 0) {
@@ -190,7 +198,7 @@ class Investments {
         return null;
     }
 
-    drawRingBars(cx, cy, size, hoveredBar, selectedBar) {
+    drawRingBars(cx, cy, size, hoveredBar, selectedBar, maxYear = 2025) {
         if (!this.countries.length) {
             return;
         }
@@ -207,7 +215,7 @@ class Investments {
         stroke(65, 70, 78);
         strokeWeight(1);
         circle(0, 0, layout.baseRadius * 2);
-        circle(0, 0, (layout.baseRadius + layout.maxBarHeight + 8) * 2);
+        circle(0, 0, (layout.baseRadius + layout.maxBarHeight) * 2);
 
         textAlign(CENTER, CENTER);
         textSize(size * 0.024);
@@ -219,6 +227,11 @@ class Investments {
 
             for (let yearIndex = 0; yearIndex < yearCount; yearIndex += 1) {
                 const year = this.years[yearIndex];
+                
+                if (year > maxYear) {
+                    continue;
+                }
+                
                 const value = country.byYear.has(year) ? country.byYear.get(year) : 0;
                 const barHeight = this.getBarHeight(value, layout);
                 const geometry = this.getBarGeometry(countryIndex, yearIndex, yearCount, countryCount, layout);
@@ -240,8 +253,9 @@ class Investments {
                 const y4 = this.polarY(angleStart, layout.baseRadius + barHeight);
 
                 const hue = map(countryIndex, 0, countryCount, 0, 255);
-                const sat = 170 + 85 * (yearIndex / (yearCount - 1));
-                const bri = 220;
+                const yearProgress = (year - this.years[0]) / (this.years[this.years.length - 1] - this.years[0]);
+                const sat = map(yearProgress, 0, 1, 60, 220);
+                const bri = map(yearProgress, 0, 1, 100, 245);
                 const barKey = `${country.code}-${year}`;
                 const isActive = activeKey === barKey;
 
