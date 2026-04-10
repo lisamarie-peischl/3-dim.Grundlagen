@@ -98,7 +98,8 @@ class Investments {
     getLayout(size) {
         const margin = size * 0.025;
         const maxOuterRadius = size * 0.5 - margin;
-        const baseRadius = size * 0.24;
+        const targetRadius = width / 6;
+        const baseRadius = min(targetRadius, maxOuterRadius);
         const availableHeight = max(8, maxOuterRadius - baseRadius);
         // Use almost full available radius so all countries are visible while preserving true proportions.
         const maxBarHeight = availableHeight;
@@ -211,12 +212,6 @@ class Investments {
         push();
         translate(cx, cy);
 
-        noFill();
-        stroke(65, 70, 78);
-        strokeWeight(1);
-        circle(0, 0, layout.baseRadius * 2);
-        circle(0, 0, (layout.baseRadius + layout.maxBarHeight) * 2);
-
         textAlign(CENTER, CENTER);
         textSize(size * 0.024);
 
@@ -282,8 +277,10 @@ class Investments {
                 labelRotation += PI;
             }
 
-            const hue = map(countryIndex, 0, countryCount, 0, 255);
-            fill(hue, 180, 255);
+            textFont('Helvetica');
+            textStyle(NORMAL);
+            textSize(20);
+            fill(255);
             noStroke();
 
             push();

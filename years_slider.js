@@ -5,69 +5,60 @@ class YearsSlider {
         this.endYear = endYear;
         this.maxYear = endYear;
         this.isDragging = false;
-        this.sliderHeight = 60;
+        this.sliderHeight = 120;
         this.padding = 20;
     }
 
-    isOver(mx, my, canvasWidth, canvasHeight) {
-        const sliderY = canvasHeight - this.sliderHeight;
-        return mx >= this.padding && 
-               mx <= canvasWidth - this.padding && 
-               my >= sliderY && 
-               my <= canvasHeight;
+    getTrackBounds(canvasWidth) {
+        const columnWidth = canvasWidth / 3;
+        const trackStart = columnWidth;
+        const trackEnd = columnWidth * 2;
+        return { trackStart, trackEnd, trackWidth: columnWidth };
+    }
+
+    isOver(mx, my, canvasWidth, sliderY) {
+        const { trackStart, trackEnd } = this.getTrackBounds(canvasWidth);
+        return mx >= trackStart && 
+               mx <= trackEnd && 
+               my >= sliderY - this.sliderHeight * 0.5 && 
+               my <= sliderY + this.sliderHeight * 0.5;
     }
 
     setFromMouse(mx, canvasWidth) {
-        const trackStart = this.padding;
-        const trackEnd = canvasWidth - this.padding;
-        const trackWidth = trackEnd - trackStart;
+        const { trackStart, trackWidth } = this.getTrackBounds(canvasWidth);
         const normalized = constrain((mx - trackStart) / trackWidth, 0, 1);
         this.maxYear = Math.round(lerp(this.startYear, this.endYear, normalized));
     }
 
-    draw(canvasWidth, canvasHeight) {
-        const sliderY = canvasHeight - this.sliderHeight;
-        const trackStart = this.padding;
-        const trackEnd = canvasWidth - this.padding;
-        const trackWidth = trackEnd - trackStart;
+    draw(canvasWidth, canvasHeight, sliderY) {
+        const { trackStart, trackEnd, trackWidth } = this.getTrackBounds(canvasWidth);
         
-        // Background
         push();
-        rectMode(CORNER);
-        fill(15);
-        rect(0, sliderY, canvasWidth, this.sliderHeight);
-        
-        // Track
-        stroke(60);
-        strokeWeight(1);
+        stroke(255);
+        strokeWeight(2);
         noFill();
-        line(trackStart, sliderY + 24, trackEnd, sliderY + 24);
+        line(trackStart, sliderY, trackEnd, sliderY);
         
-        // Progress bar (filled portion)
         const normalized = (this.maxYear - this.startYear) / (this.endYear - this.startYear);
         const thumbX = trackStart + normalized * trackWidth;
-        stroke(100, 100, 200);
-        strokeWeight(3);
-        line(trackStart, sliderY + 24, thumbX, sliderY + 24);
+        stroke(255);
+        strokeWeight(4);
+        line(trackStart, sliderY, thumbX, sliderY);
         
-        // Thumb (slider button)
-        fill(100, 100, 255);
         noStroke();
-        circle(thumbX, sliderY + 24, 14);
+        fill(255);
+        circle(thumbX, sliderY, 14);
         
-        // Year labels
-        fill(200);
+        fill(255);
         textSize(12);
         textAlign(CENTER, TOP);
-        text(String(this.startYear), trackStart, sliderY + 32);
-        text(String(this.endYear), trackEnd, sliderY + 32);
+        text(String(this.startYear), trackStart, sliderY + 14);
+        text(String(this.endYear), trackEnd, sliderY + 14);
         
-        // Current year display
         textSize(14);
-        textAlign(CENTER, BOTTOM);
-        fill(150, 150, 255);
-        text(`Selected: ${this.maxYear}`, canvasWidth * 0.5, sliderY + 20);
-        
+        textAlign(CENTER, TOP);
+        fill(255);
+        text(String(this.maxYear), thumbX, sliderY + 22);
         pop();
     }
 }

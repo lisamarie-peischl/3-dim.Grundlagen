@@ -29,9 +29,44 @@ function setup () {
 function draw () {
     background(0);
 
+    // Draw column separator lines
+    const colWidth = width / 3;
+    const line1X = colWidth;
+    const line2X = colWidth * 2;
+    
+    push();
+    stroke(255, 80);
+    strokeWeight(1);
+    line(line1X, 0, line1X, height);
+    line(line2X, 0, line2X, height);
+    pop();
+
+    // Top left titles
+    push();
+    textFont('Helvetica');
+    fill(255);
+    textAlign(LEFT, TOP);
+    
+    textStyle(BOLD);
+    textSize(40);
+    text('VOM INVESTMENT\nZUM KI-MODELL', 50, 50);
+    
+    textStyle(NORMAL);
+    textSize(28);
+    const titleHeight = 40 * 2 + 12;
+    const subtitleY = 50 + titleHeight + 20;
+    text('WER DOMINIERT KI?', 50, subtitleY);
+    text('TOP 3', line2X + 50, subtitleY);
+    pop();
+
     const size = min(width, height);
     const cx = width * 0.5;
     const cy = height * 0.5;
+    const investLayout = invest.getLayout(size);
+    const baseCircleRadius = investLayout.baseRadius;
+    const sliderAreaTop = cy + baseCircleRadius;
+    const sliderAreaBottom = height;
+    const sliderY = sliderAreaTop + (sliderAreaBottom - sliderAreaTop) * 0.5;
 
     aiModels.drawRings(cx, cy, size);
 
@@ -47,9 +82,9 @@ function draw () {
         aiModels.drawTooltip(tooltipModel);
     } else {
         invest.drawTooltip(tooltipBar);
-
-        yearsSlider.draw(width, height);
     }
+
+    yearsSlider.draw(width, height, sliderY);
 }
 
 function windowResized() {
@@ -65,16 +100,22 @@ function mouseMoved() {
 }
 
 function mousePressed() {
-        if (yearsSlider.isOver(mouseX, mouseY, width, height)) {
-            yearsSlider.isDragging = true;
-            yearsSlider.setFromMouse(mouseX, width);
-            redraw();
-            return;
-        }
-    
     const size = min(width, height);
     const cx = width * 0.5;
     const cy = height * 0.5;
+    const investLayout = invest.getLayout(size);
+    const baseCircleRadius = investLayout.baseRadius;
+    const sliderAreaTop = cy + baseCircleRadius;
+    const sliderAreaBottom = height;
+    const sliderY = sliderAreaTop + (sliderAreaBottom - sliderAreaTop) * 0.5;
+
+    if (yearsSlider.isOver(mouseX, mouseY, width, sliderY)) {
+        yearsSlider.isDragging = true;
+        yearsSlider.setFromMouse(mouseX, width);
+        redraw();
+        return;
+    }
+    
     const pickedModel = aiModels.pickPoint(mouseX, mouseY);
 
     if (pickedModel) {
