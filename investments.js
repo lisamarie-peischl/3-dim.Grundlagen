@@ -6,6 +6,7 @@ class Investments {
         this.countries = [];
         this.countryMap = new Map();
         this.maxInvestment = 0;
+        this.renderedCountryLabels = [];
 
         this.parseCsv();
     }
@@ -199,7 +200,24 @@ class Investments {
         return null;
     }
 
-    drawRingBars(cx, cy, size, hoveredBar, selectedBar, maxYear = 2025, selectedCountryCode = null) {
+    pickCountryLabel(mx, my) {
+        if (!this.renderedCountryLabels || this.renderedCountryLabels.length === 0) {
+            return null;
+        }
+
+        for (let i = 0; i < this.renderedCountryLabels.length; i += 1) {
+            const label = this.renderedCountryLabels[i];
+            const dx = mx - label.x;
+            const dy = my - label.y;
+            if (Math.sqrt(dx * dx + dy * dy) <= label.hitRadius) {
+                return label.countryCode;
+            }
+        }
+
+        return null;
+    }
+
+    drawRingBars(cx, cy, size, hoveredBar, selectedBar, maxYear = 2025, selectedCountryCode = null, collectForPicking = false, exactYear = null) {
         if (!this.countries.length) {
             return;
         }
@@ -208,6 +226,11 @@ class Investments {
         const countryCount = this.countries.length;
         const yearCount = this.years.length;
         const activeKey = selectedBar ? selectedBar.key : (hoveredBar ? hoveredBar.key : null);
+        const dimAlpha = 13;
+
+        if (collectForPicking) {
+            this.renderedCountryLabels = [];
+        }
 
         push();
         translate(cx, cy);
@@ -217,15 +240,18 @@ class Investments {
 
         for (let countryIndex = 0; countryIndex < countryCount; countryIndex += 1) {
             const country = this.countries[countryIndex];
-            if (selectedCountryCode && country.code !== selectedCountryCode) {
-                continue;
-            }
+            const isCountrySelected = !selectedCountryCode || country.code === selectedCountryCode;
+            const countryAlpha = isCountrySelected ? 255 : dimAlpha;
 
             let segmentLabelStart = 0;
             let segmentLabelEnd = 0;
 
             for (let yearIndex = 0; yearIndex < yearCount; yearIndex += 1) {
                 const year = this.years[yearIndex];
+
+                if (exactYear !== null && year !== exactYear) {
+                    continue;
+                }
                 
                 if (year > maxYear) {
                     continue;
@@ -257,7 +283,7 @@ class Investments {
                 const isActive = activeKey === barKey;
 
                 noStroke();
-                fill(0, 0, bri);
+                fill(0, 0, bri, countryAlpha);
                 quad(x1, y1, x2, y2, x3, y3, x4, y4);
 
                 if (isActive) {
@@ -281,9 +307,20 @@ class Investments {
 
             textFont('Helvetica');
             textStyle(NORMAL);
-            textSize(min(20, max(10, size * 0.032)));
-            fill(255);
+            const labelSize = min(20, max(10, size * 0.032));
+            textSize(labelSize);
+            fill(255, countryAlpha);
             noStroke();
+
+            if (collectForPicking) {
+                const labelWidth = textWidth(country.code);
+                this.renderedCountryLabels.push({
+                    countryCode: country.code,
+                    x: cx + lx,
+                    y: cy + ly,
+                    hitRadius: max(labelSize * 0.8, labelWidth * 0.55)
+                });
+            }
 
             push();
             translate(lx, ly);

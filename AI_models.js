@@ -171,9 +171,13 @@ class AIModels {
         return mapping;
     }
 
-    getTopCountriesByModelCount(limit = 3) {
+    getTopCountriesByModelCount(limit = 3, exactYear = null) {
         const counts = new Map();
         for (const model of this.models) {
+            if (exactYear !== null && model.year !== exactYear) {
+                continue;
+            }
+
             for (const code of model.countryCodes) {
                 counts.set(code, (counts.get(code) || 0) + 1);
             }
@@ -189,6 +193,34 @@ class AIModels {
             }));
 
         return sorted;
+    }
+
+    getCountryModelStats(countryCode, exactYear = null) {
+        let own = 0;
+        let cooperation = 0;
+
+        for (let i = 0; i < this.models.length; i += 1) {
+            const model = this.models[i];
+            if (exactYear !== null && model.year !== exactYear) {
+                continue;
+            }
+
+            if (!model.countryCodes.includes(countryCode)) {
+                continue;
+            }
+
+            if (model.countryCodes.length > 1) {
+                cooperation += 1;
+            } else {
+                own += 1;
+            }
+        }
+
+        return {
+            own,
+            cooperation,
+            total: own + cooperation
+        };
     }
 
     getColorForCountryIndex(countryIndex, countryCount, sat = 180, bri = 235) {
@@ -244,7 +276,7 @@ class AIModels {
         // Intentionally empty: no inner guide lines for model rings.
     }
 
-    drawPoints(cx, cy, size, hoveredPoint, selectedPoint, maxYear = 2025, selectedCountryCode = null, collectForPicking = true) {
+    drawPoints(cx, cy, size, hoveredPoint, selectedPoint, maxYear = 2025, selectedCountryCode = null, collectForPicking = true, strictCountryFilter = false, exactYear = null) {
         if (!this.investments || this.investments.countries.length === 0) {
             return;
         }
@@ -263,6 +295,10 @@ class AIModels {
 
         for (let yearIndex = 0; yearIndex < this.years.length; yearIndex += 1) {
             const year = this.years[yearIndex];
+
+            if (exactYear !== null && year !== exactYear) {
+                continue;
+            }
             
             if (year > maxYear) {
                 continue;
@@ -282,7 +318,8 @@ class AIModels {
 
                 for (let modelIndex = 0; modelIndex < models.length; modelIndex += 1) {
                     const model = models[modelIndex];
-                    if (selectedCountryCode && !model.countryCodes.includes(selectedCountryCode)) {
+                    const belongsToSelectedCountry = !selectedCountryCode || model.countryCodes.includes(selectedCountryCode);
+                    if (strictCountryFilter && !belongsToSelectedCountry) {
                         continue;
                     }
 
@@ -317,10 +354,18 @@ class AIModels {
                     }
 
                     const isActive = activeModelId && activeModelId === model.id;
+                    const pointAlpha = belongsToSelectedCountry ? 255 : 13;
 
-                    stroke(strokeColor);
+                    const fillHue = hue(fillColor);
+                    const fillSat = saturation(fillColor);
+                    const fillBri = brightness(fillColor);
+                    const strokeHue = hue(strokeColor);
+                    const strokeSat = saturation(strokeColor);
+                    const strokeBri = brightness(strokeColor);
+
+                    stroke(strokeHue, strokeSat, strokeBri, pointAlpha);
                     strokeWeight(isActive ? 2.2 : 1.2);
-                    fill(fillColor);
+                    fill(fillHue, fillSat, fillBri, pointAlpha);
                     circle(localX, localY, layout.dotRadius * 2);
 
                     if (isActive) {

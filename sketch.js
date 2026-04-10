@@ -9,6 +9,7 @@ let notableModelsData;
 let currentModels;
 let hoveredModelPoint = null;
 let selectedModelPoint = null;
+let selectedCountryCode = null;
 let yearsSlider;
 let modelSelector;
 
@@ -96,10 +97,10 @@ function draw () {
     currentModels.drawRings(cx, cy, size);
 
     hoveredBar = invest.pickBar(mouseX, mouseY, cx, cy, size, yearsSlider.maxYear);
-    invest.drawRingBars(cx, cy, size, hoveredBar, selectedBar, yearsSlider.maxYear);
+    invest.drawRingBars(cx, cy, size, hoveredBar, selectedBar, yearsSlider.maxYear, selectedCountryCode, true);
 
     hoveredModelPoint = currentModels.pickPoint(mouseX, mouseY);
-    currentModels.drawPoints(cx, cy, size, hoveredModelPoint, selectedModelPoint, yearsSlider.maxYear);
+    currentModels.drawPoints(cx, cy, size, hoveredModelPoint, selectedModelPoint, yearsSlider.maxYear, selectedCountryCode, true, false);
 
     const tooltipModel = selectedModelPoint || hoveredModelPoint;
     const tooltipBar = selectedBar || hoveredBar;
@@ -115,7 +116,8 @@ function draw () {
 }
 
 function drawTopCountryMiniViews(rightColumnStartX, rightColumnWidth, topY) {
-    const topCountries = currentModels.getTopCountriesByModelCount(3);
+    const selectedYear = Math.round(yearsSlider.maxYear);
+    const topCountries = currentModels.getTopCountriesByModelCount(3, selectedYear);
     if (!topCountries || topCountries.length === 0) {
         return;
     }
@@ -132,17 +134,27 @@ function drawTopCountryMiniViews(rightColumnStartX, rightColumnWidth, topY) {
 
     for (let i = 0; i < topCountries.length; i += 1) {
         const country = topCountries[i];
+        const stats = currentModels.getCountryModelStats(country.code, selectedYear);
         const slotTop = topY + i * (slotHeight + slotGap);
         const miniSize = min(rightColumnWidth * 0.86, slotHeight * 0.86);
         const centerY = slotTop + slotHeight * 0.56;
+        const textX = centerX + miniSize * 0.5 + 14;
+        const textY = centerY - miniSize * 0.3;
+
+        invest.drawRingBars(centerX, centerY, miniSize, null, null, yearsSlider.maxYear, null, false, selectedYear);
+        currentModels.drawPoints(centerX, centerY, miniSize, null, null, yearsSlider.maxYear, country.code, false, true, selectedYear);
 
         fill(255);
         noStroke();
-        textSize(14);
-        text(`${i + 1}. ${country.name} (${country.code})`, centerX, slotTop);
+        textAlign(LEFT, TOP);
 
-        invest.drawRingBars(centerX, centerY, miniSize, null, null, yearsSlider.maxYear, null);
-        currentModels.drawPoints(centerX, centerY, miniSize, null, null, yearsSlider.maxYear, country.code, false);
+        textSize(14);
+        text(`${i + 1}. ${country.name} (${country.code})`, textX, textY);
+
+        textSize(12);
+        text(`Eigene KI-Modelle: ${stats.own}`, textX, textY + 24);
+        text(`Kooperationen: ${stats.cooperation}`, textX, textY + 42);
+        text(`Insgesamt: ${stats.total}`, textX, textY + 60);
     }
 
     pop();
@@ -176,6 +188,13 @@ function mousePressed() {
         redraw();
         return;
     }
+
+    const pickedCountryCode = invest.pickCountryLabel(mouseX, mouseY);
+    if (pickedCountryCode) {
+        selectedCountryCode = selectedCountryCode === pickedCountryCode ? null : pickedCountryCode;
+        redraw();
+        return;
+    }
     
     const pickedModel = currentModels.pickPoint(mouseX, mouseY);
 
@@ -188,8 +207,14 @@ function mousePressed() {
 
     const picked = invest.pickBar(mouseX, mouseY, cx, cy, size, yearsSlider.maxYear);
 
-    selectedBar = picked;
-    selectedModelPoint = null;
+    if (picked) {
+        selectedBar = picked;
+        selectedModelPoint = null;
+    } else {
+        selectedBar = null;
+        selectedModelPoint = null;
+        selectedCountryCode = null;
+    }
     redraw();
 }
 
