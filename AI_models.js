@@ -177,11 +177,9 @@ class AIModels {
     }
 
     getColorWithYearGradient(countryIndex, countryCount, year, startYear, endYear) {
-        const hue = map(countryIndex, 0, countryCount, 0, 255);
         const yearProgress = (year - startYear) / (endYear - startYear);
-        const sat = map(yearProgress, 0, 1, 60, 220);
-        const bri = map(yearProgress, 0, 1, 100, 245);
-        return color(hue, sat, bri);
+        const bri = map(yearProgress, 0, 1, 100, 255);
+        return color(0, 0, bri);
     }
 
     hashToUnit(seed) {
@@ -198,9 +196,9 @@ class AIModels {
 
     getLayout(size) {
         const investmentsLayout = this.investments.getLayout(size);
-        const innerRadius = max(14, size * 0.038);
+        const innerRadius = size * 0.02;
         // Keep only a small gap between country-code track and model-point area.
-        const outerRadius = max(innerRadius + 16, investmentsLayout.baseRadius - size * 0.045);
+        const outerRadius = max(innerRadius + 16, investmentsLayout.baseRadius - size * 0.025);
         const ringCount = this.years.length;
         const ringStep = ringCount > 1 ? (outerRadius - innerRadius) / (ringCount - 1) : 0;
         const dotRadius = max(0.4, size * 0.001);

@@ -247,27 +247,25 @@ class Investments {
                 const x4 = this.polarX(angleStart, layout.baseRadius + barHeight);
                 const y4 = this.polarY(angleStart, layout.baseRadius + barHeight);
 
-                const hue = map(countryIndex, 0, countryCount, 0, 255);
                 const yearProgress = (year - this.years[0]) / (this.years[this.years.length - 1] - this.years[0]);
-                const sat = map(yearProgress, 0, 1, 60, 220);
                 const bri = map(yearProgress, 0, 1, 100, 245);
                 const barKey = `${country.code}-${year}`;
                 const isActive = activeKey === barKey;
 
                 noStroke();
-                fill(hue, sat, bri);
+                fill(0, 0, bri);
                 quad(x1, y1, x2, y2, x3, y3, x4, y4);
 
                 if (isActive) {
                     noFill();
-                    stroke(0, 0, 255);
+                    stroke(0, 0, 0);
                     strokeWeight(1.5);
                     quad(x1, y1, x2, y2, x3, y3, x4, y4);
                 }
             }
 
             const labelAngle = (segmentLabelStart + segmentLabelEnd) * 0.5;
-            const labelRadius = layout.baseRadius - size * 0.024;
+            const labelRadius = layout.baseRadius - size * 0.0125;
             const lx = this.polarX(labelAngle, labelRadius);
             const ly = this.polarY(labelAngle, labelRadius);
             let labelRotation = labelAngle + HALF_PI;

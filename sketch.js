@@ -132,6 +132,13 @@ function mousePressed() {
     redraw();
 }
 
+function mouseDragged() {
+    if (yearsSlider.isDragging) {
+        yearsSlider.setFromMouse(mouseX, width);
+        redraw();
+    }
+}
+
 // lol Hallo
 
 function mouseReleased() {

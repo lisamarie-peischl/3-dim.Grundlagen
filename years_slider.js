@@ -27,7 +27,7 @@ class YearsSlider {
     setFromMouse(mx, canvasWidth) {
         const { trackStart, trackWidth } = this.getTrackBounds(canvasWidth);
         const normalized = constrain((mx - trackStart) / trackWidth, 0, 1);
-        this.maxYear = Math.round(lerp(this.startYear, this.endYear, normalized));
+        this.maxYear = lerp(this.startYear, this.endYear, normalized);
     }
 
     draw(canvasWidth, canvasHeight, sliderY) {
@@ -58,7 +58,7 @@ class YearsSlider {
         textSize(14);
         textAlign(CENTER, TOP);
         fill(255);
-        text(String(this.maxYear), thumbX, sliderY + 22);
+        text(String(Math.round(this.maxYear)), thumbX, sliderY + 22);
         pop();
     }
 }
