@@ -199,7 +199,7 @@ class Investments {
         return null;
     }
 
-    drawRingBars(cx, cy, size, hoveredBar, selectedBar, maxYear = 2025) {
+    drawRingBars(cx, cy, size, hoveredBar, selectedBar, maxYear = 2025, selectedCountryCode = null) {
         if (!this.countries.length) {
             return;
         }
@@ -217,6 +217,10 @@ class Investments {
 
         for (let countryIndex = 0; countryIndex < countryCount; countryIndex += 1) {
             const country = this.countries[countryIndex];
+            if (selectedCountryCode && country.code !== selectedCountryCode) {
+                continue;
+            }
+
             let segmentLabelStart = 0;
             let segmentLabelEnd = 0;
 
@@ -277,7 +281,7 @@ class Investments {
 
             textFont('Helvetica');
             textStyle(NORMAL);
-            textSize(20);
+            textSize(min(20, max(10, size * 0.032)));
             fill(255);
             noStroke();
 

@@ -171,6 +171,26 @@ class AIModels {
         return mapping;
     }
 
+    getTopCountriesByModelCount(limit = 3) {
+        const counts = new Map();
+        for (const model of this.models) {
+            for (const code of model.countryCodes) {
+                counts.set(code, (counts.get(code) || 0) + 1);
+            }
+        }
+
+        const sorted = Array.from(counts.entries())
+            .sort((a, b) => b[1] - a[1])
+            .slice(0, limit)
+            .map(([code, count]) => ({
+                code,
+                count,
+                name: this.investments.countryMap.has(code) ? this.investments.countryMap.get(code).name : code
+            }));
+
+        return sorted;
+    }
+
     getColorForCountryIndex(countryIndex, countryCount, sat = 180, bri = 235) {
         const hue = map(countryIndex, 0, countryCount, 0, 255);
         return color(hue, sat, bri);
@@ -224,7 +244,7 @@ class AIModels {
         // Intentionally empty: no inner guide lines for model rings.
     }
 
-    drawPoints(cx, cy, size, hoveredPoint, selectedPoint, maxYear = 2025) {
+    drawPoints(cx, cy, size, hoveredPoint, selectedPoint, maxYear = 2025, selectedCountryCode = null, collectForPicking = true) {
         if (!this.investments || this.investments.countries.length === 0) {
             return;
         }
@@ -234,7 +254,9 @@ class AIModels {
         const countryCount = countries.length;
         const codeToIndex = this.getCountryIndexByCode();
         const activeModelId = selectedPoint ? selectedPoint.model.id : (hoveredPoint ? hoveredPoint.model.id : null);
-        this.renderedPoints = [];
+        if (collectForPicking) {
+            this.renderedPoints = [];
+        }
 
         push();
         translate(cx, cy);
@@ -260,6 +282,10 @@ class AIModels {
 
                 for (let modelIndex = 0; modelIndex < models.length; modelIndex += 1) {
                     const model = models[modelIndex];
+                    if (selectedCountryCode && !model.countryCodes.includes(selectedCountryCode)) {
+                        continue;
+                    }
+
                     const t = (modelIndex + 1) / (models.length + 1);
                     const baseAngle = lerp(angleRange.start, angleRange.end, t);
                     const segmentWidth = abs(angleRange.end - angleRange.start);
@@ -304,13 +330,15 @@ class AIModels {
                         circle(localX, localY, layout.dotRadius * 3.4);
                     }
 
-                    this.renderedPoints.push({
-                        model,
-                        countryCode: code,
-                        x,
-                        y,
-                        radius: layout.dotRadius
-                    });
+                    if (collectForPicking) {
+                        this.renderedPoints.push({
+                            model,
+                            countryCode: code,
+                            x,
+                            y,
+                            radius: layout.dotRadius
+                        });
+                    }
                 }
             }
         }
