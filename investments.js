@@ -242,9 +242,9 @@ class Investments {
             const country = this.countries[countryIndex];
             const isCountrySelected = !selectedCountryCode || country.code === selectedCountryCode;
             const countryAlpha = isCountrySelected ? 255 : dimAlpha;
-
-            let segmentLabelStart = 0;
-            let segmentLabelEnd = 0;
+            const labelGeometry = this.getBarGeometry(countryIndex, 0, yearCount, countryCount, layout);
+            const segmentLabelStart = labelGeometry.usableStart;
+            const segmentLabelEnd = labelGeometry.usableEnd;
 
             for (let yearIndex = 0; yearIndex < yearCount; yearIndex += 1) {
                 const year = this.years[yearIndex];
@@ -262,11 +262,6 @@ class Investments {
                 const geometry = this.getBarGeometry(countryIndex, yearIndex, yearCount, countryCount, layout);
                 const angleStart = geometry.angleStart;
                 const angleEnd = geometry.angleEnd;
-
-                if (yearIndex === 0) {
-                    segmentLabelStart = geometry.usableStart;
-                    segmentLabelEnd = geometry.usableEnd;
-                }
 
                 const x1 = this.polarX(angleStart, layout.baseRadius);
                 const y1 = this.polarY(angleStart, layout.baseRadius);
