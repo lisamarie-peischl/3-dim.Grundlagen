@@ -32,15 +32,15 @@ class YearsSlider {
 
     draw(canvasWidth, canvasHeight, sliderY) {
         const { trackStart, trackEnd, trackWidth } = this.getTrackBounds(canvasWidth);
-        
-        push();
-        stroke(255);
-        strokeWeight(2);
-        noFill();
-        line(trackStart, sliderY, trackEnd, sliderY);
-        
         const normalized = (this.maxYear - this.startYear) / (this.endYear - this.startYear);
         const thumbX = trackStart + normalized * trackWidth;
+        
+        push();
+        stroke(255, 127);
+        strokeWeight(2);
+        noFill();
+        line(thumbX, sliderY, trackEnd, sliderY);
+
         stroke(255);
         strokeWeight(4);
         line(trackStart, sliderY, thumbX, sliderY);
@@ -55,10 +55,13 @@ class YearsSlider {
         text(String(this.startYear), trackStart, sliderY + 14);
         text(String(this.endYear), trackEnd, sliderY + 14);
         
-        textSize(14);
+        textSize(12);
         textAlign(CENTER, TOP);
         fill(255);
-        text(String(Math.round(this.maxYear)), thumbX, sliderY + 22);
+        const roundedYear = Math.round(this.maxYear);
+        if (roundedYear !== this.startYear && roundedYear !== this.endYear) {
+            text(String(roundedYear), thumbX, sliderY + 14);
+        }
         pop();
     }
 }
