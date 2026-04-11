@@ -147,7 +147,7 @@ function drawTopCountryMiniViews(rightColumnStartX, rightColumnWidth, topY) {
         const blockHeight = headingLineHeight + paragraphGap + infoLineHeight * infoLineCount;
         const textY = centerY - blockHeight * 0.5;
 
-        invest.drawRingBars(centerX, centerY, miniSize, null, null, yearsSlider.maxYear, null, false, selectedYear);
+        invest.drawRingBars(centerX, centerY, miniSize, null, null, yearsSlider.maxYear, null, false, selectedYear, 0.02);
         currentModels.drawPoints(centerX, centerY, miniSize, null, null, yearsSlider.maxYear, country.code, false, true, selectedYear);
 
         fill(255);

@@ -217,7 +217,7 @@ class Investments {
         return null;
     }
 
-    drawRingBars(cx, cy, size, hoveredBar, selectedBar, maxYear = 2025, selectedCountryCode = null, collectForPicking = false, exactYear = null) {
+    drawRingBars(cx, cy, size, hoveredBar, selectedBar, maxYear = 2025, selectedCountryCode = null, collectForPicking = false, exactYear = null, labelRadiusFactor = -0.0125) {
         if (!this.countries.length) {
             return;
         }
@@ -290,7 +290,7 @@ class Investments {
             }
 
             const labelAngle = (segmentLabelStart + segmentLabelEnd) * 0.5;
-            const labelRadius = layout.baseRadius - size * 0.0125;
+            const labelRadius = layout.baseRadius + size * labelRadiusFactor;
             const lx = this.polarX(labelAngle, labelRadius);
             const ly = this.polarY(labelAngle, labelRadius);
             let labelRotation = labelAngle + HALF_PI;
