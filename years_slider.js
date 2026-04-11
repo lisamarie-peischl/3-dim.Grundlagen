@@ -44,6 +44,12 @@ class YearsSlider {
         stroke(255);
         strokeWeight(4);
         line(trackStart, sliderY, thumbX, sliderY);
+
+        // Left boundary marker to make the selected range visually explicit.
+        if (thumbX > trackStart) {
+            const markerHalfHeight = 7;
+            line(trackStart, sliderY - markerHalfHeight, trackStart, sliderY + markerHalfHeight);
+        }
         
         noStroke();
         fill(255);

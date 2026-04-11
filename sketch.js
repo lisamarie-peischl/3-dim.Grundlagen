@@ -12,6 +12,12 @@ let selectedModelPoint = null;
 let selectedCountryCode = null;
 let yearsSlider;
 let modelSelector;
+let playButton;
+let isPlayingTimeline = false;
+let timelineStartMs = 0;
+const PLAYBACK_START_YEAR = 2012;
+const PLAYBACK_END_YEAR = 2025;
+const PLAYBACK_DURATION_MS = 4500;
 
 function preload() {
     investmentLines = loadStrings('data/investment.csv');
@@ -44,6 +50,7 @@ function setup () {
     const chooseY = subtitleY + 100;
     modelSelector.position(50, chooseY);
     modelSelector.changed(() => {
+        stopTimelinePlayback();
         selectedModelPoint = null;
         hoveredModelPoint = null;
         if (modelSelector.value() === 'Alle KI-Modelle') {
@@ -54,10 +61,23 @@ function setup () {
         redraw();
     });
 
+    playButton = createButton('Play');
+    playButton.addClass('timeline-play-button');
+    playButton.style('font-family', 'Helvetica');
+    playButton.style('font-size', '14px');
+    playButton.style('font-weight', '400');
+    playButton.style('padding', '6px 16px');
+    playButton.style('border', '1px solid #b7b7b7');
+    playButton.style('background', '#000000');
+    playButton.style('color', '#ffffff');
+    playButton.style('cursor', 'pointer');
+    playButton.mousePressed(startTimelinePlayback);
+
     noLoop();
 }
 
 function draw () {
+    updateTimelinePlayback();
     background(0);
 
     // Draw column separator lines
@@ -105,6 +125,7 @@ function draw () {
     const sliderAreaTop = cy + baseCircleRadius;
     const sliderAreaBottom = height;
     const sliderY = sliderAreaTop + (sliderAreaBottom - sliderAreaTop) * 0.5;
+    const sliderTrackLeftX = line1X;
 
     currentModels.drawRings(cx, cy, size);
 
@@ -138,6 +159,37 @@ function draw () {
     pop();
 
     yearsSlider.draw(width, height, sliderY);
+
+    if (playButton) {
+        playButton.position(sliderTrackLeftX + 16, sliderY + 52);
+    }
+}
+
+function startTimelinePlayback() {
+    if (isPlayingTimeline) {
+        return;
+    }
+
+    yearsSlider.maxYear = PLAYBACK_START_YEAR;
+    isPlayingTimeline = true;
+    timelineStartMs = millis();
+    if (playButton) {
+        playButton.attribute('disabled', '');
+        playButton.style('opacity', '0.65');
+        playButton.style('cursor', 'default');
+    }
+    loop();
+}
+
+function stopTimelinePlayback() {
+    isPlayingTimeline = false;
+    timelineStartMs = 0;
+    if (playButton) {
+        playButton.removeAttribute('disabled');
+        playButton.style('opacity', '1');
+        playButton.style('cursor', 'pointer');
+    }
+    noLoop();
 }
 
 function drawTopCountryMiniViews(rightColumnStartX, rightColumnWidth, topY) {
@@ -219,6 +271,7 @@ function mousePressed() {
     const sliderY = sliderAreaTop + (sliderAreaBottom - sliderAreaTop) * 0.5;
 
     if (yearsSlider.isOver(mouseX, mouseY, width, sliderY)) {
+        stopTimelinePlayback();
         yearsSlider.isDragging = true;
         yearsSlider.setFromMouse(mouseX, width);
         redraw();
@@ -266,4 +319,23 @@ function mouseDragged() {
 function mouseReleased() {
     yearsSlider.isDragging = false;
     redraw();
+}
+
+function updateTimelinePlayback() {
+    if (!isPlayingTimeline) {
+        return;
+    }
+
+    const elapsedMs = max(0, millis() - timelineStartMs);
+    const t = constrain(elapsedMs / PLAYBACK_DURATION_MS, 0, 1);
+    const easedT = t < 0.5
+        ? 4 * t * t * t
+        : 1 - pow(-2 * t + 2, 3) / 2;
+
+    yearsSlider.maxYear = lerp(PLAYBACK_START_YEAR, PLAYBACK_END_YEAR, easedT);
+
+    if (t >= 1) {
+        yearsSlider.maxYear = PLAYBACK_END_YEAR;
+        stopTimelinePlayback();
+    }
 }
