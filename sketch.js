@@ -122,9 +122,10 @@ function draw () {
     const cy = height * 0.5;
     const investLayout = invest.getLayout(size);
     const baseCircleRadius = investLayout.baseRadius;
-    const sliderAreaTop = cy + baseCircleRadius;
-    const sliderAreaBottom = height;
-    const sliderY = sliderAreaTop + (sliderAreaBottom - sliderAreaTop) * 0.5;
+    const circleBottomY = cy + baseCircleRadius;
+    const playButtonHeight = playButton && playButton.elt ? playButton.elt.offsetHeight : 0;
+    const playButtonTopY = height - 50 - playButtonHeight;
+    const sliderY = (circleBottomY + playButtonTopY) * 0.5;
     const sliderTrackLeftX = line1X;
 
     currentModels.drawRings(cx, cy, size);
@@ -289,9 +290,10 @@ function mousePressed(event) {
     const cy = height * 0.5;
     const investLayout = invest.getLayout(size);
     const baseCircleRadius = investLayout.baseRadius;
-    const sliderAreaTop = cy + baseCircleRadius;
-    const sliderAreaBottom = height;
-    const sliderY = sliderAreaTop + (sliderAreaBottom - sliderAreaTop) * 0.5;
+    const circleBottomY = cy + baseCircleRadius;
+    const playButtonHeight = playButton && playButton.elt ? playButton.elt.offsetHeight : 0;
+    const playButtonTopY = height - 50 - playButtonHeight;
+    const sliderY = (circleBottomY + playButtonTopY) * 0.5;
 
     if (yearsSlider.isOver(mouseX, mouseY, width, sliderY)) {
         stopTimelinePlayback();
