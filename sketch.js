@@ -32,20 +32,21 @@ function setup () {
 
     // Model selector
     modelSelector = createRadio();
-    modelSelector.option('Alle KI Modelle');
-    modelSelector.option('Notable KI-Modelle');
-    modelSelector.selected('Alle KI Modelle');
+    modelSelector.option('Alle KI-Modelle');
+    modelSelector.option('Bedeutende KI-Modelle');
+    modelSelector.selected('Alle KI-Modelle');
     modelSelector.addClass('model-selector');
     modelSelector.style('color', 'white');
     modelSelector.style('font-family', 'Helvetica');
     const titleHeight = 40 * 2 + 12;
     const subtitleFontSize = 28;
     const subtitleY = 50 + titleHeight + 50;
-    modelSelector.position(50, subtitleY + subtitleFontSize + 50);
+    const chooseY = subtitleY + 100;
+    modelSelector.position(50, chooseY);
     modelSelector.changed(() => {
         selectedModelPoint = null;
         hoveredModelPoint = null;
-        if (modelSelector.value() === 'Alle KI Modelle') {
+        if (modelSelector.value() === 'Alle KI-Modelle') {
             currentModels = allModelsData;
         } else {
             currentModels = notableModelsData;
@@ -79,14 +80,21 @@ function draw () {
     
     textStyle(BOLD);
     textSize(40);
-    text('VOM INVESTMENT\nZUM KI-MODELL', 50, 50);
+    const titleTopY = 50;
+    const titleAscent = textAscent();
+    const titleLineHeight = titleAscent + textDescent();
+    const titleSecondLineY = titleTopY + titleLineHeight + 12;
+    const titleSecondLineBottomY = titleSecondLineY + titleAscent;
+    text('VOM INVESTMENT\nZUM KI-MODELL', 50, titleTopY);
     
     textStyle(NORMAL);
     textSize(28);
     const titleHeight = 40 * 2 + 12;
     const subtitleY = 50 + titleHeight + 50;
+    const top3Ascent = textAscent();
+    const top3Y = titleSecondLineBottomY - top3Ascent;
     text('WER DOMINIERT KI?', 50, subtitleY);
-    text('TOP 3 in ' + Math.round(yearsSlider.maxYear), line2X + 50, subtitleY);
+    text('TOP 3 in ' + Math.round(yearsSlider.maxYear), line2X + 50, top3Y);
     pop();
 
     const size = min(width, height);
@@ -114,7 +122,20 @@ function draw () {
         invest.drawTooltip(tooltipBar);
     }
 
-    drawTopCountryMiniViews(line2X, colWidth, subtitleY + 70);
+    drawTopCountryMiniViews(line2X, colWidth, top3Y + 50);
+
+    push();
+    textFont('Helvetica');
+    textStyle(NORMAL);
+    textSize(14);
+    textAlign(LEFT, BOTTOM);
+    fill(255);
+    text(
+        'OECD (2026): VC investments in AI by country. OECD.AI Data Explorer.\nEpoch AI (2026): Data on AI Models.',
+        50,
+        height - 50
+    );
+    pop();
 
     yearsSlider.draw(width, height, sliderY);
 }
@@ -146,7 +167,7 @@ function drawTopCountryMiniViews(rightColumnStartX, rightColumnWidth, topY) {
 
         const headingLineHeight = 14;
         const paragraphGap = 16;
-        const infoLineHeight = 18;
+        const infoLineHeight = 20;
         const cooperationTotalGap = 10;
         const info1Offset = headingLineHeight + paragraphGap;
         const info2Offset = info1Offset + infoLineHeight;
@@ -166,7 +187,7 @@ function drawTopCountryMiniViews(rightColumnStartX, rightColumnWidth, topY) {
         text(`${i + 1}. ${country.name.toUpperCase()} (${country.code.toUpperCase()})`, textX, textY);
 
         textStyle(NORMAL);
-        textSize(12);
+        textSize(14);
         text(`Eigene KI-Modelle: ${stats.own}`, textX, textY + info1Offset);
         text(`Kooperationen: ${stats.cooperation}`, textX, textY + info2Offset);
         text(`Insgesamt: ${stats.total}`, textX, textY + info3Offset);

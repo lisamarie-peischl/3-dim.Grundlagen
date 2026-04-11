@@ -376,6 +376,7 @@ class AIModels {
 
                     const isActive = activeModelId && activeModelId === model.id;
                     const pointAlpha = belongsToSelectedCountry ? 255 : 13;
+                    const isCooperationModel = model.countryCodes.length > 1;
 
                     const fillHue = hue(fillColor);
                     const fillSat = saturation(fillColor);
@@ -385,7 +386,11 @@ class AIModels {
                     const strokeBri = brightness(strokeColor);
 
                     stroke(strokeHue, strokeSat, strokeBri, pointAlpha);
-                    strokeWeight(isActive ? 2.2 : 1.2);
+                    if (isActive) {
+                        strokeWeight(isCooperationModel ? 1.7 : 2.2);
+                    } else {
+                        strokeWeight(isCooperationModel ? 0.9 : 1.2);
+                    }
                     fill(fillHue, fillSat, fillBri, pointAlpha);
                     circle(localX, localY, layout.dotRadius * 2);
 
