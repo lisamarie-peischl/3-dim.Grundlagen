@@ -442,17 +442,66 @@ class AIModels {
         }
 
         const model = point.model;
-        const line1 = `${model.modelName} (${model.year})`;
-        const line2 = `Org: ${model.organization || 'Unknown'}`;
-        const line3 = `Country: ${model.countryCodes.join(', ')}`;
+        const titleText = `${model.modelName} (${model.year})`;
+        const countryText = `Country: ${model.countryCodes.join(', ')}`;
+        const orgText = `Org: ${model.organization || 'Unknown'}`;
 
-        textSize(13);
         textAlign(LEFT, TOP);
 
         const paddingX = 10;
         const paddingY = 8;
-        const tooltipW = max(textWidth(line1), textWidth(line2), textWidth(line3)) + paddingX * 2;
-        const tooltipH = 62;
+        const lineHeight = 20;
+        const maxLineWidth = min(430, width * 0.34);
+
+        const wrapByWords = (value, maxWidth) => {
+            const words = String(value).split(/\s+/).filter((entry) => entry.length > 0);
+            if (words.length === 0) {
+                return [''];
+            }
+
+            const lines = [];
+            let current = words[0];
+
+            for (let i = 1; i < words.length; i += 1) {
+                const candidate = `${current} ${words[i]}`;
+                if (textWidth(candidate) <= maxWidth) {
+                    current = candidate;
+                } else {
+                    lines.push(current);
+                    current = words[i];
+                }
+            }
+
+            lines.push(current);
+            return lines;
+        };
+
+        textFont('Helvetica');
+        textStyle(BOLD);
+        textSize(14);
+        const titleLines = wrapByWords(titleText, maxLineWidth);
+
+        textStyle(NORMAL);
+        textSize(14);
+        const countryLines = wrapByWords(countryText, maxLineWidth);
+        const orgLines = wrapByWords(orgText, maxLineWidth);
+
+        let contentWidth = 0;
+        textStyle(BOLD);
+        for (let i = 0; i < titleLines.length; i += 1) {
+            contentWidth = max(contentWidth, textWidth(titleLines[i]));
+        }
+        textStyle(NORMAL);
+        for (let i = 0; i < countryLines.length; i += 1) {
+            contentWidth = max(contentWidth, textWidth(countryLines[i]));
+        }
+        for (let i = 0; i < orgLines.length; i += 1) {
+            contentWidth = max(contentWidth, textWidth(orgLines[i]));
+        }
+
+        const totalLineCount = titleLines.length + countryLines.length + orgLines.length;
+        const tooltipW = contentWidth + paddingX * 2;
+        const tooltipH = paddingY * 2 + lineHeight * totalLineCount;
 
         let tx = point.x + 12;
         let ty = point.y + 12;
@@ -469,8 +518,24 @@ class AIModels {
         rect(tx, ty, tooltipW, tooltipH, 6);
 
         fill(0, 0, 255);
-        text(line1, tx + paddingX, ty + paddingY);
-        text(line2, tx + paddingX, ty + paddingY + 18);
-        text(line3, tx + paddingX, ty + paddingY + 36);
+        textFont('Helvetica');
+        textSize(14);
+
+        let lineCursor = 0;
+        textStyle(BOLD);
+        for (let i = 0; i < titleLines.length; i += 1) {
+            text(titleLines[i], tx + paddingX, ty + paddingY + lineCursor * lineHeight);
+            lineCursor += 1;
+        }
+
+        textStyle(NORMAL);
+        for (let i = 0; i < countryLines.length; i += 1) {
+            text(countryLines[i], tx + paddingX, ty + paddingY + lineCursor * lineHeight);
+            lineCursor += 1;
+        }
+        for (let i = 0; i < orgLines.length; i += 1) {
+            text(orgLines[i], tx + paddingX, ty + paddingY + lineCursor * lineHeight);
+            lineCursor += 1;
+        }
     }
 }

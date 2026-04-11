@@ -305,8 +305,8 @@ class Investments {
 
                 if (isActive) {
                     noFill();
-                    stroke(0, 0, 0);
-                    strokeWeight(1.5);
+                    stroke(0, 0, 255);
+                    strokeWeight(1.1);
                     quad(x1, y1, x2, y2, x3, y3, x4, y4);
                 }
             }
@@ -326,7 +326,7 @@ class Investments {
             textStyle(NORMAL);
             const labelSize = labelSizeOverride !== null ? labelSizeOverride : min(20, max(10, size * 0.032));
             textSize(labelSize);
-            fill(255, countryAlpha);
+            fill(255);
             noStroke();
 
             if (collectForPicking) {

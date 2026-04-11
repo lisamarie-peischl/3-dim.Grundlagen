@@ -13,7 +13,7 @@
         display: grid;
         grid-template-columns: max-content auto;
         column-gap: 10px;
-        row-gap: 50px;
+        row-gap: 25px;
         align-items: start;
     }
 
@@ -23,8 +23,8 @@
         width: 19px;
         height: 19px;
         border-radius: 50%;
-        border: none;
-        background: #ffffff;
+        border: 1.1px solid #ffffff;
+        background: #000000;
         display: grid;
         place-items: center;
         margin: 0;
@@ -32,16 +32,12 @@
         cursor: pointer;
     }
 
-    .model-selector input[type="radio"]:checked {
-        border: 1.8px solid #b7b7b7;
-    }
-
     .model-selector input[type="radio"]::before {
         content: "";
-        width: 13px;
-        height: 13px;
+        width: 12px;
+        height: 12px;
         border-radius: 50%;
-        background: #b7b7b7;
+        background: #ffffff;
         transform: scale(0);
     }
 

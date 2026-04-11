@@ -48,7 +48,7 @@ function setup () {
     const subtitleFontSize = 28;
     const subtitleY = 50 + titleHeight + 50;
     const chooseY = subtitleY + 100;
-    modelSelector.position(50, chooseY);
+    modelSelector.position(50, chooseY + 50);
     modelSelector.changed(() => {
         stopTimelinePlayback();
         selectedModelPoint = null;
@@ -107,9 +107,13 @@ function draw () {
     textSize(28);
     const titleHeight = 40 * 2 + 12;
     const subtitleY = 50 + titleHeight + 50;
+    const chooseY = subtitleY + 100;
     const top3Ascent = textAscent();
     const top3Y = titleSecondLineBottomY - top3Ascent;
     text('WER DOMINIERT KI?', 50, subtitleY);
+    textSize(22);
+    text('Überschrift', 50, chooseY);
+    textSize(28);
     text('TOP 3 in ' + Math.round(yearsSlider.maxYear), line2X + 50, top3Y);
     pop();
 
@@ -251,9 +255,9 @@ function windowResized() {
 }
 
 function mouseMoved() {
-        if (yearsSlider.isDragging) {
-            yearsSlider.setFromMouse(mouseX, width);
-        }
+    if (yearsSlider.isDragging) {
+        yearsSlider.setFromMouse(mouseX, width);
+    }
     redraw();
 }
 
