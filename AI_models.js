@@ -236,10 +236,8 @@ class AIModels {
 
     getCountryColor(countryCode, year) {
         const yearProgress = constrain((year - this.startYear) / (this.endYear - this.startYear), 0, 1);
-        const usHue = 128;
-        const usSat = 190;
         const bri = lerp(125, 245, yearProgress);
-        return color(usHue, usSat, bri);
+        return color(128, 190, bri);
     }
 
     hashToUnit(seed) {
