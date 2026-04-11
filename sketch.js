@@ -88,13 +88,6 @@ function draw () {
     const line1X = colWidth;
     const line2X = colWidth * 2;
     
-    push();
-    stroke(255, 80);
-    strokeWeight(1);
-    line(line1X, 0, line1X, height);
-    line(line2X, 0, line2X, height);
-    pop();
-
     // Top left titles
     push();
     textFont('Helvetica');
