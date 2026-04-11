@@ -161,7 +161,7 @@ function draw () {
     yearsSlider.draw(width, height, sliderY);
 
     if (playButton) {
-        playButton.position(sliderTrackLeftX + 16, sliderY + 52);
+        playButton.position(sliderTrackLeftX, sliderY + 50);
     }
 }
 
@@ -199,7 +199,7 @@ function drawTopCountryMiniViews(rightColumnStartX, rightColumnWidth, topY) {
         return;
     }
 
-    const bottomPadding = 30;
+    const bottomPadding = 50;
     const availableHeight = max(120, height - topY - bottomPadding);
     const slotGap = 18;
     const slotHeight = (availableHeight - slotGap * 2) / 3;
@@ -328,11 +328,8 @@ function updateTimelinePlayback() {
 
     const elapsedMs = max(0, millis() - timelineStartMs);
     const t = constrain(elapsedMs / PLAYBACK_DURATION_MS, 0, 1);
-    const easedT = t < 0.5
-        ? 4 * t * t * t
-        : 1 - pow(-2 * t + 2, 3) / 2;
 
-    yearsSlider.maxYear = lerp(PLAYBACK_START_YEAR, PLAYBACK_END_YEAR, easedT);
+    yearsSlider.maxYear = lerp(PLAYBACK_START_YEAR, PLAYBACK_END_YEAR, t);
 
     if (t >= 1) {
         yearsSlider.maxYear = PLAYBACK_END_YEAR;

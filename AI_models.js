@@ -321,7 +321,7 @@ class AIModels {
                 continue;
             }
             
-            if (year > maxYear) {
+            if (exactYear === null && year > maxYear) {
                 continue;
             }
             
