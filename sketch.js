@@ -143,8 +143,11 @@ function drawTopCountryMiniViews(rightColumnStartX, rightColumnWidth, topY) {
         const headingLineHeight = 14;
         const paragraphGap = 16;
         const infoLineHeight = 18;
-        const infoLineCount = 3;
-        const blockHeight = headingLineHeight + paragraphGap + infoLineHeight * infoLineCount;
+        const cooperationTotalGap = 10;
+        const info1Offset = headingLineHeight + paragraphGap;
+        const info2Offset = info1Offset + infoLineHeight;
+        const info3Offset = info2Offset + infoLineHeight + cooperationTotalGap;
+        const blockHeight = info3Offset + headingLineHeight;
         const textY = centerY - blockHeight * 0.5;
 
         invest.drawRingBars(centerX, centerY, miniSize, null, null, yearsSlider.maxYear, null, false, selectedYear, 0.02, 12);
@@ -160,10 +163,9 @@ function drawTopCountryMiniViews(rightColumnStartX, rightColumnWidth, topY) {
 
         textStyle(NORMAL);
         textSize(12);
-        const infoStartY = textY + headingLineHeight + paragraphGap;
-        text(`Eigene KI-Modelle: ${stats.own}`, textX, infoStartY);
-        text(`Kooperationen: ${stats.cooperation}`, textX, infoStartY + infoLineHeight);
-        text(`Insgesamt: ${stats.total}`, textX, infoStartY + infoLineHeight * 2);
+        text(`Eigene KI-Modelle: ${stats.own}`, textX, textY + info1Offset);
+        text(`Kooperationen: ${stats.cooperation}`, textX, textY + info2Offset);
+        text(`Insgesamt: ${stats.total}`, textX, textY + info3Offset);
     }
 
     pop();
