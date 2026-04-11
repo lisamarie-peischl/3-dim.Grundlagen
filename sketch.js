@@ -296,7 +296,7 @@ function mousePressed(event) {
     if (yearsSlider.isOver(mouseX, mouseY, width, sliderY)) {
         stopTimelinePlayback();
         yearsSlider.isDragging = true;
-        yearsSlider.setFromMouse(mouseX, width);
+        yearsSlider.setFromMouse(mouseX, width, true);
         redraw();
         return;
     }

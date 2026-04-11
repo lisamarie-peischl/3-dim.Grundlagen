@@ -24,10 +24,11 @@ class YearsSlider {
                my <= sliderY + this.sliderHeight * 0.5;
     }
 
-    setFromMouse(mx, canvasWidth) {
+    setFromMouse(mx, canvasWidth, snapToYear = false) {
         const { trackStart, trackWidth } = this.getTrackBounds(canvasWidth);
         const normalized = constrain((mx - trackStart) / trackWidth, 0, 1);
-        this.maxYear = lerp(this.startYear, this.endYear, normalized);
+        const yearValue = lerp(this.startYear, this.endYear, normalized);
+        this.maxYear = snapToYear ? Math.round(yearValue) : yearValue;
     }
 
     draw(canvasWidth, canvasHeight, sliderY) {
@@ -54,19 +55,15 @@ class YearsSlider {
         noStroke();
         fill(255);
         circle(thumbX, sliderY, 14);
-        
-        fill(255);
+
         textSize(12);
         textAlign(CENTER, TOP);
-        text(String(this.startYear), trackStart, sliderY + 14);
-        text(String(this.endYear), trackEnd, sliderY + 14);
-        
-        textSize(12);
-        textAlign(CENTER, TOP);
-        fill(255);
         const roundedYear = Math.round(this.maxYear);
-        if (roundedYear !== this.startYear && roundedYear !== this.endYear) {
-            text(String(roundedYear), thumbX, sliderY + 14);
+        for (let year = this.startYear; year <= this.endYear; year += 1) {
+            const yearNormalized = (year - this.startYear) / (this.endYear - this.startYear);
+            const yearX = trackStart + yearNormalized * trackWidth;
+            fill(year === roundedYear ? 255 : 180);
+            text(String(year), yearX, sliderY + 25);
         }
         pop();
     }
