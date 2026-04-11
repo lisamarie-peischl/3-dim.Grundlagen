@@ -66,11 +66,14 @@ function setup () {
     playButton.style('font-family', 'Helvetica');
     playButton.style('font-size', '14px');
     playButton.style('font-weight', '400');
+    playButton.style('font-style', 'normal');
     playButton.style('padding', '6px 16px');
     playButton.style('border', '1px solid #b7b7b7');
+    playButton.style('border-radius', '6px');
     playButton.style('background', '#000000');
     playButton.style('color', '#ffffff');
     playButton.style('cursor', 'pointer');
+    playButton.style('z-index', '20');
     playButton.mousePressed(startTimelinePlayback);
 
     noLoop();
@@ -161,7 +164,8 @@ function draw () {
     yearsSlider.draw(width, height, sliderY);
 
     if (playButton) {
-        playButton.position(sliderTrackLeftX, sliderY + 50);
+        const buttonHeight = playButton.elt ? playButton.elt.offsetHeight : 0;
+        playButton.position(sliderTrackLeftX, height - 50 - buttonHeight);
     }
 }
 
@@ -260,7 +264,29 @@ function mouseMoved() {
     redraw();
 }
 
-function mousePressed() {
+function isPointerOverPlayButton(clientX, clientY) {
+    if (!playButton || !playButton.elt) {
+        return false;
+    }
+
+    const rect = playButton.elt.getBoundingClientRect();
+    const extraHitPadding = 6;
+    return (
+        clientX >= rect.left - extraHitPadding &&
+        clientX <= rect.right + extraHitPadding &&
+        clientY >= rect.top - extraHitPadding &&
+        clientY <= rect.bottom + extraHitPadding
+    );
+}
+
+function mousePressed(event) {
+    const clientX = event && Number.isFinite(event.clientX) ? event.clientX : winMouseX;
+    const clientY = event && Number.isFinite(event.clientY) ? event.clientY : winMouseY;
+
+    if (isPointerOverPlayButton(clientX, clientY)) {
+        return;
+    }
+
     const size = min(width, height);
     const cx = width * 0.5;
     const cy = height * 0.5;
