@@ -35,9 +35,13 @@ function setup () {
     modelSelector.option('Alle KI Modelle');
     modelSelector.option('Notable KI-Modelle');
     modelSelector.selected('Alle KI Modelle');
+    modelSelector.addClass('model-selector');
     modelSelector.style('color', 'white');
     modelSelector.style('font-family', 'Helvetica');
-    modelSelector.position(50, 220);
+    const titleHeight = 40 * 2 + 12;
+    const subtitleFontSize = 28;
+    const subtitleY = 50 + titleHeight + 50;
+    modelSelector.position(50, subtitleY + subtitleFontSize + 50);
     modelSelector.changed(() => {
         selectedModelPoint = null;
         hoveredModelPoint = null;
@@ -80,7 +84,7 @@ function draw () {
     textStyle(NORMAL);
     textSize(28);
     const titleHeight = 40 * 2 + 12;
-    const subtitleY = 50 + titleHeight + 20;
+    const subtitleY = 50 + titleHeight + 50;
     text('WER DOMINIERT KI?', 50, subtitleY);
     text('TOP 3 in ' + Math.round(yearsSlider.maxYear), line2X + 50, subtitleY);
     pop();

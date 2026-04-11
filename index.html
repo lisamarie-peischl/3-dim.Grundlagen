@@ -8,6 +8,48 @@
         padding: 0; 
         margin: 0;
         background-color: black;}  
+
+    .model-selector {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        row-gap: 12px;
+        column-gap: 10px;
+        align-items: start;
+    }
+
+    .model-selector input[type="radio"] {
+        transform: scale(1.7);
+        transform-origin: center;
+        margin: 6px 0 0 0;
+        align-self: start;
+    }
+
+    .model-selector label {
+        color: white;
+        font-family: Helvetica, Arial, sans-serif;
+        font-size: 24px;
+        line-height: 1.1;
+        display: block;
+        max-width: 520px;
+    }
+
+    .model-selector label::after {
+        display: block;
+        margin-top: 4px;
+        font-size: 14px;
+        line-height: 1.35;
+        font-weight: 400;
+        color: rgba(255, 255, 255, 0.78);
+        white-space: pre-line;
+    }
+
+    .model-selector label:nth-of-type(1)::after {
+        content: "Alle KI-Modelle der jeweiligen Länder";
+    }
+
+    .model-selector label:nth-of-type(2)::after {
+        content: "KI-Modelle, die:\A- den Stand der Technik verbessert haben\A- stark zitiert wurden\A- über eine Million Nutzer hatten\A- historisch wichtig waren\A- über 1 Mio. USD Entwicklungskosten hatten";
+    }
     </style>
 
     <script src="libs/p5.min.js"></script>
