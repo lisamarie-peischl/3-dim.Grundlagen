@@ -147,6 +147,14 @@ class Investments {
         return layout.minBarHeight + normalizedValue * (layout.maxBarHeight - layout.minBarHeight);
     }
 
+    getCountryColor(countryCode, year) {
+        const yearProgress = constrain((year - this.years[0]) / (this.years[this.years.length - 1] - this.years[0]), 0, 1);
+        const usHue = 128;
+        const usSat = 190;
+        const bri = lerp(125, 245, yearProgress);
+        return color(usHue, usSat, bri);
+    }
+
     pickBar(mx, my, cx, cy, size, maxYear = 2025) {
         if (!this.countries.length) {
             return null;
@@ -272,13 +280,13 @@ class Investments {
                 const x4 = this.polarX(angleStart, layout.baseRadius + barHeight);
                 const y4 = this.polarY(angleStart, layout.baseRadius + barHeight);
 
-                const yearProgress = (year - this.years[0]) / (this.years[this.years.length - 1] - this.years[0]);
-                const bri = map(yearProgress, 0, 1, 100, 245);
                 const barKey = `${country.code}-${year}`;
                 const isActive = activeKey === barKey;
 
                 noStroke();
-                fill(0, 0, bri, countryAlpha);
+                const barColor = this.getCountryColor(country.code, year);
+                barColor.setAlpha(countryAlpha);
+                fill(barColor);
                 quad(x1, y1, x2, y2, x3, y3, x4, y4);
 
                 if (isActive) {

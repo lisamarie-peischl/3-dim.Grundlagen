@@ -234,6 +234,14 @@ class AIModels {
         return color(0, 0, bri);
     }
 
+    getCountryColor(countryCode, year) {
+        const yearProgress = constrain((year - this.startYear) / (this.endYear - this.startYear), 0, 1);
+        const usHue = 128;
+        const usSat = 190;
+        const bri = lerp(125, 245, yearProgress);
+        return color(usHue, usSat, bri);
+    }
+
     hashToUnit(seed) {
         let hash = 2166136261;
         const text = String(seed);
@@ -284,7 +292,6 @@ class AIModels {
         const layout = this.getLayout(size);
         const countries = this.investments.countries;
         const countryCount = countries.length;
-        const codeToIndex = this.getCountryIndexByCode();
         const activeModelId = selectedPoint ? selectedPoint.model.id : (hoveredPoint ? hoveredPoint.model.id : null);
         if (collectForPicking) {
             this.renderedPoints = [];
@@ -343,13 +350,13 @@ class AIModels {
                     const x = cx + localX;
                     const y = cy + localY;
 
-                    const fillColor = this.getColorWithYearGradient(countryIndex, countryCount, year, this.startYear, this.endYear);
+                    const fillColor = this.getCountryColor(code, year);
                     let strokeColor = fillColor;
 
                     if (model.countryCodes.length > 1) {
                         const otherCode = model.countryCodes.find((entry) => entry !== code);
-                        if (otherCode && codeToIndex.has(otherCode)) {
-                            strokeColor = this.getColorWithYearGradient(codeToIndex.get(otherCode), countryCount, year, this.startYear, this.endYear);
+                        if (otherCode) {
+                            strokeColor = this.getCountryColor(otherCode, year);
                         }
                     }
 
