@@ -217,7 +217,7 @@ class Investments {
         return null;
     }
 
-    drawRingBars(cx, cy, size, hoveredBar, selectedBar, maxYear = 2025, selectedCountryCode = null, collectForPicking = false, exactYear = null, labelRadiusFactor = -0.0125) {
+    drawRingBars(cx, cy, size, hoveredBar, selectedBar, maxYear = 2025, selectedCountryCode = null, collectForPicking = false, exactYear = null, labelRadiusFactor = -0.0125, labelSizeOverride = null) {
         if (!this.countries.length) {
             return;
         }
@@ -302,7 +302,7 @@ class Investments {
 
             textFont('Helvetica');
             textStyle(NORMAL);
-            const labelSize = min(20, max(10, size * 0.032));
+            const labelSize = labelSizeOverride !== null ? labelSizeOverride : min(20, max(10, size * 0.032));
             textSize(labelSize);
             fill(255, countryAlpha);
             noStroke();
