@@ -138,8 +138,14 @@ function drawTopCountryMiniViews(rightColumnStartX, rightColumnWidth, topY) {
         const slotTop = topY + i * (slotHeight + slotGap);
         const miniSize = min(rightColumnWidth * 0.86, slotHeight * 0.86);
         const centerY = slotTop + slotHeight * 0.56;
-        const textX = centerX + miniSize * 0.5 + 14;
-        const textY = centerY - miniSize * 0.3;
+        const textX = centerX + miniSize * 0.5 + 20;
+
+        const headingLineHeight = 14;
+        const paragraphGap = 16;
+        const infoLineHeight = 18;
+        const infoLineCount = 3;
+        const blockHeight = headingLineHeight + paragraphGap + infoLineHeight * infoLineCount;
+        const textY = centerY - blockHeight * 0.5;
 
         invest.drawRingBars(centerX, centerY, miniSize, null, null, yearsSlider.maxYear, null, false, selectedYear);
         currentModels.drawPoints(centerX, centerY, miniSize, null, null, yearsSlider.maxYear, country.code, false, true, selectedYear);
@@ -148,13 +154,16 @@ function drawTopCountryMiniViews(rightColumnStartX, rightColumnWidth, topY) {
         noStroke();
         textAlign(LEFT, TOP);
 
-        textSize(14);
-        text(`${i + 1}. ${country.name} (${country.code})`, textX, textY);
-
+        textStyle(BOLD);
         textSize(12);
-        text(`Eigene KI-Modelle: ${stats.own}`, textX, textY + 24);
-        text(`Kooperationen: ${stats.cooperation}`, textX, textY + 42);
-        text(`Insgesamt: ${stats.total}`, textX, textY + 60);
+        text(`${i + 1}. ${country.name.toUpperCase()} (${country.code.toUpperCase()})`, textX, textY);
+
+        textStyle(NORMAL);
+        textSize(12);
+        const infoStartY = textY + headingLineHeight + paragraphGap;
+        text(`Eigene KI-Modelle: ${stats.own}`, textX, infoStartY);
+        text(`Kooperationen: ${stats.cooperation}`, textX, infoStartY + infoLineHeight);
+        text(`Insgesamt: ${stats.total}`, textX, infoStartY + infoLineHeight * 2);
     }
 
     pop();
