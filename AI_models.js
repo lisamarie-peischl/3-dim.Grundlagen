@@ -234,10 +234,26 @@ class AIModels {
         return color(0, 0, bri);
     }
 
+    getCountryBaseHex(countryCode) {
+        const palette = {
+            US: '#B8C0FF',
+            SG: '#FFC6FF',
+            UK: '#6FA8FF',
+            CN: '#F2845C',
+            IN: '#5ED3A5',
+            BR: '#E9C46A',
+            IL: '#B3E0FF',
+            AE: '#2F9E77',
+            KR: '#E0565B'
+        };
+        return palette[countryCode] || '#00D8FF';
+    }
+
     getCountryColor(countryCode, year) {
         const yearProgress = constrain((year - this.startYear) / (this.endYear - this.startYear), 0, 1);
         const bri = lerp(125, 245, yearProgress);
-        return color(128, 190, bri);
+        const base = color(this.getCountryBaseHex(countryCode));
+        return color(hue(base), saturation(base), bri);
     }
 
     hashToUnit(seed) {
