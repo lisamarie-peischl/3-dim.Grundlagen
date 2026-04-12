@@ -443,7 +443,10 @@ class AIModels {
 
         const model = point.model;
         const titleText = `${model.modelName} (${model.year})`;
-        const countryText = `Country: ${model.countryCodes.join(', ')}`;
+        const countryLabel = model.country && model.country.length > 0
+            ? model.country
+            : model.countryCodes.join(', ');
+        const countryText = `Country: ${countryLabel}`;
         const orgText = `Org: ${model.organization || 'Unknown'}`;
 
         textAlign(LEFT, TOP);
