@@ -1,4 +1,4 @@
-"""country""";"""country""";year;model_name;organization
+﻿country;country;year;model_name;organization
 """United States """;"""US """;2026;Nemotron 3 Super;NVIDIA
 """United States """;"""US """;2026;Gemini 3.0 Flash-lite;Google DeepMind
 """United States """;"""US """;2026;SWE 1.6;Cognition
@@ -95,7 +95,7 @@
 """United States""";"""US""";2025;GPT-4o (Mar 2025);OpenAI
 """United States""";"""US""";2025;Gemini 2.5 Pro (Mar 2025);Google DeepMind
 """China""";"""CN""";2025;DeepSeek-V3 (Mar 2025);DeepSeek
-"""Canada,United States""";"""US""";2025;Diffusion Renderer;NVIDIA,University of Toronto,Vector Institute,University of Illinois Urbana-Champaign (UIUC)
+"""Canada,United States""";"""CA,US""";2025;Diffusion Renderer;NVIDIA,University of Toronto,Vector Institute,University of Illinois Urbana-Champaign (UIUC)
 """United States""";"""US""";2025;o1-pro;OpenAI
 """South Korea""";"""KR""";2025;EXAONE Deep 32B;LG AI Research
 """China""";"""CN""";2025;ERNIE-4.5-VL-424B-A47B (文心大模型4.5);Baidu
@@ -204,7 +204,7 @@
 """United Kingdom""";"""UK""";2024;Stable Diffusion 3;Stability AI
 """United States""";"""US""";2024;Sora;OpenAI
 """United States""";"""US""";2024;Gemini 1.5 Pro;Google DeepMind
-"""Canada,United States""";"""US""";2024;Aya;Cohere for AI,Brown University,Cohere,Carnegie Mellon University (CMU),Massachusetts Institute of Technology (MIT)
+"""Canada,United States""";"""CA,US""";2024;Aya;Cohere for AI,Brown University,Cohere,Carnegie Mellon University (CMU),Massachusetts Institute of Technology (MIT)
 """China""";"""CN""";2024;Qwen1.5-72B;Alibaba
 """China""";"""CN""";2024;Qwen-VL-Max;Alibaba
 """United States""";"""US""";2024;AlphaGeometry;Google DeepMind,New York University (NYU)
@@ -246,6 +246,7 @@
 """United States""";"""US""";2023;RT-Trajectory;Google DeepMind,University of California San Diego,Stanford University
 """European Union,United States""";"""EU,US""";2023;BLUUMI;University of Turku,Hugging Face
 """China""";"""CN""";2023;Yi-34B;01.AI
+"""Canada""";"""CA""";2023;Cohere Embed;Cohere
 """China""";"""CN""";2023;Skywork-13B;Kunlun Inc.
 """China""";"""CN""";2023;ChatGLM3-6B;Z.ai (Zhipu AI)
 """Switzerland,United States""";"""US""";2023;DiT-XL/2 + CADS;ETH Zurich,Disney Research
@@ -257,7 +258,7 @@
 """United States""";"""US""";2023;Ferret (13B);Columbia University,Apple
 """South Korea,United Kingdom,United States""";"""KR,UK,US""";2023;RoseTTAFold All-Atom (RFAA);University of Washington,Seoul National University,University of Sheffield
 """United States""";"""US""";2023;FinGPT-13B;University of California Los Angeles (UCLA),Columbia University,New York University (NYU)
-"""United States,Japan""";"""US,""";2023;CTM (CIFAR-10);Stanford University,Sony
+"""United States,Japan""";"""US""";2023;CTM (CIFAR-10);Stanford University,Sony
 """United States""";"""US""";2023;GPT-3.5 Turbo Instruct;OpenAI
 """United States""";"""US""";2023;Amazon Titan;Amazon
 """Singapore""";"""SG""";2023;Show-1;National University of Singapore
@@ -280,7 +281,7 @@
 """China,Hong Kong""";"""CN""";2023;InternLM;Shanghai AI Lab,SenseTime
 """China""";"""CN""";2023;Pangu-Weather;Huawei
 """United Kingdom""";"""UK""";2023;Stable Diffusion XL (SDXL);Stability AI
-"""Canada,United States""";"""US""";2023;HyenaDNA;Stanford University,Harvard University,Mila - Quebec AI (originally Montreal Institute for Learning Algorithms),University of Montreal / Université de Montréal
+"""Canada,United States""";"""CA,US""";2023;HyenaDNA;Stanford University,Harvard University,Mila - Quebec AI (originally Montreal Institute for Learning Algorithms),University of Montreal / Université de Montréal
 """China""";"""CN""";2023;ERNIE 3.5;Baidu
 """United States""";"""US""";2023;GPT-3.5 Turbo;OpenAI
 """United States""";"""US""";2023;MusicGen;Meta AI
@@ -294,7 +295,7 @@
 """United Kingdom,United States""";"""UK,US""";2023;Med-PaLM 2;Google Research,DeepMind
 """Hong Kong,Singapore,United States""";"""SG,US""";2023;InstructBLIP;Salesforce Research,Hong Kong University of Science and Technology (HKUST),Nanyang Technological University
 """United States""";"""US""";2023;PaLM 2;Google
-"""Australia,Canada,European Union,India,Israel,Singapore,United Kingdom,United States,""";"""EU,IN,IL,SG,UK,US""";2023;StarCoder;Hugging Face,ServiceNow,Northeastern University,Mila - Quebec AI (originally Montreal Institute for Learning Algorithms),Carnegie Mellon University (CMU),Johns Hopkins University,Leipzig University,ScaDS.AI,Queen Mary University of London,Roblox,Sea AI Lab,Technion - Israel Institute of Technology,Monash University,CSIRO,Data61,McGill University,Saama,University of British Columbia (UBC),Massachusetts Institute of Technology (MIT),Technical University of Munich,IBM,University of Vermont,UnfoldML,SAP,University of Notre Dame,Columbia University,New York University (NYU),University of Allahabad,Discover Dollar,Toloka,Telefonica,Stanford University,Weizmann Institute of Science,Alan Turing Institute,Wellesley College,EleutherAI,Forschungszentrum Julich
+"""Australia,Canada,European Union,India,Israel,Singapore,United Kingdom,United States,""";"""CA,EU,IN,IL,SG,UK,US""";2023;StarCoder;Hugging Face,ServiceNow,Northeastern University,Mila - Quebec AI (originally Montreal Institute for Learning Algorithms),Carnegie Mellon University (CMU),Johns Hopkins University,Leipzig University,ScaDS.AI,Queen Mary University of London,Roblox,Sea AI Lab,Technion - Israel Institute of Technology,Monash University,CSIRO,Data61,McGill University,Saama,University of British Columbia (UBC),Massachusetts Institute of Technology (MIT),Technical University of Munich,IBM,University of Vermont,UnfoldML,SAP,University of Notre Dame,Columbia University,New York University (NYU),University of Allahabad,Discover Dollar,Toloka,Telefonica,Stanford University,Weizmann Institute of Science,Alan Turing Institute,Wellesley College,EleutherAI,Forschungszentrum Julich
 """United States""";"""US""";2023;ImageBind;Meta AI
 """United States""";"""US""";2023;Agile Soccer Robot;Google DeepMind
 """United States""";"""US""";2023;LLaVA;University of Wisconsin Madison,Microsoft Research,Columbia University
@@ -318,13 +319,13 @@
 """United States""";"""US""";2023;LLaMA-65B;Meta AI
 """United States""";"""US""";2023;BASIC-L + Lion;Google,University of California Los Angeles (UCLA)
 """United States""";"""US""";2023;ViT-22B;Google
-"""Canada,United States""";"""US""";2023;ProteinDT;University of California (UC) Berkeley,California Institute of Technology,University of Toronto,University of Wisconsin Madison,Texas A&M,NVIDIA,Mila - Quebec AI (originally Montreal Institute for Learning Algorithms)
+"""Canada,United States""";"""CA,US""";2023;ProteinDT;University of California (UC) Berkeley,California Institute of Technology,University of Toronto,University of Wisconsin Madison,Texas A&M,NVIDIA,Mila - Quebec AI (originally Montreal Institute for Learning Algorithms)
 """United States""";"""US""";2023;Gen-1;Runway
 """United States""";"""US""";2023;BLIP-2 (Q-Former);Salesforce Research
 """United States""";"""US""";2023;MusicLM;Google
 """European Union,United States""";"""EU,US""";2023;Ankh_large;Technical University of Munich,Columbia University
 """European Union,United Kingdom,United States""";"""EU,UK,US""";2023;Nucleotide Transformer;NVIDIA,Technical University of Munich,InstaDeep
-"""Canada,United Kingdom""";"""UK""";2023;DreamerV3;DeepMind,University of Toronto
+"""Canada,United Kingdom""";"""CA,UK""";2023;DreamerV3;DeepMind,University of Toronto
 """United States""";"""US""";2023;VALL-E;Microsoft
 """United States""";"""US""";2022;Hybrid H3-2.7B;Stanford University,University at Buffalo
 """United Kingdom""";"""UK""";2022;CaLM;University of Oxford
@@ -336,7 +337,7 @@
 """South Korea""";"""KR""";2022;Discriminator Guidance;Korea Advanced Institute of Science and Technology (KAIST),NAVER
 """China""";"""CN""";2022;ALM 1.0;Beijing Academy of Artificial Intelligence / BAAI
 """United States""";"""US""";2022;CICERO;Meta AI
-"""Canada,China""";"""CN""";2022;AR-LDM;Alibaba,University of Waterloo,Vector Institute
+"""Canada,China""";"""CA,CN""";2022;AR-LDM;Alibaba,University of Waterloo,Vector Institute
 """South Korea""";"""KR""";2022;Fusion in Encoder;Samsung
 """United States""";"""US""";2022;Galactica;Meta AI
 """China""";"""CN""";2022;EVA-01;Beijing Academy of Artificial Intelligence / BAAI,Huazhong University of Science and Technology,Zhejiang University (ZJU),Beijing Institute of Technology
@@ -358,7 +359,7 @@
 """United States""";"""US""";2022;Whisper;OpenAI
 """United States""";"""US""";2022;PaLI;Google
 """United States""";"""US""";2022;BEIT-3;Microsoft
-"""Canada,United States""";"""US""";2022;BlenderBot 3;McGill University,Meta AI,Mila - Quebec AI (originally Montreal Institute for Learning Algorithms)
+"""Canada,United States""";"""CA,US""";2022;BlenderBot 3;McGill University,Meta AI,Mila - Quebec AI (originally Montreal Institute for Learning Algorithms)
 """China""";"""CN""";2022;GLM-130B;Tsinghua University
 """United States""";"""US""";2022;AlexaTM 20B;Amazon
 """China,United States""";"""CN,US""";2022;OmegaPLM;Massachusetts Institute of Technology (MIT),Westlake University
@@ -374,7 +375,7 @@
 """China,Hong Kong,United States""";"""CN,US""";2022;DITTO;Tsinghua University,Apple,Westlake University,Chinese University of Hong Kong (CUHK)
 """United States""";"""US""";2022;Diffusion-GAN;UT Austin,Microsoft
 """China""";"""CN""";2022;CogVideo;Tsinghua University,Beijing Academy of Artificial Intelligence / BAAI
-"""United Kingdom,United States,Canada""";"""UK,US""";2022;Tranception;University of Oxford,Harvard Medical School,Cohere
+"""United Kingdom,United States,Canada""";"""UK,US,CA""";2022;Tranception;University of Oxford,Harvard Medical School,Cohere
 """United States""";"""US""";2022;GPT-2 Medium (FlashAttention);Stanford University,University at Buffalo
 """United States""";"""US""";2022;Imagen;Google Brain
 """China,United States""";"""CN,US""";2022;SimCSE;Princeton University,Tsinghua University
@@ -390,7 +391,7 @@
 """United States""";"""US""";2022;PaLM (540B);Google Research
 """United Kingdom""";"""UK""";2022;Chinchilla;DeepMind
 """United States""";"""US""";2022;Make-A-Scene;Meta AI
-"""Canada,United States""";"""US""";2022;Segatron-XL large, M=384 + HCP;Microsoft Research,University of Waterloo
+"""Canada,United States""";"""CA,US""";2022;Segatron-XL large, M=384 + HCP;Microsoft Research,University of Waterloo
 """United States""";"""US""";2022;"GPT-3.5 (davinci-002)
 ";OpenAI
 """Israel,United States""";"""IL,US""";2022;ViT-G (model soup);University of Washington,Columbia University,Google,Meta AI,Tel Aviv University
@@ -460,7 +461,7 @@
 """United Kingdom""";"""UK""";2021;GOAT;DeepMind
 """United States""";"""US""";2021;Codex;OpenAI
 """China""";"""CN""";2021;ERNIE 3.0;Baidu
-"""China,Taiwan""";"""CN,""";2021;Adaptive Input Transformer + RD;Microsoft Research Asia,Soochow University
+"""China,Taiwan""";"""CN""";2021;Adaptive Input Transformer + RD;Microsoft Research Asia,Soochow University
 """United States""";"""US""";2021;Fold2Seq;IBM,Texas A&M
 """United States""";"""US""";2021;EfficientNetV2-XL;Google,Google Brain
 """United States,European Union""";"""US,EU""";2021;StyleGAN3-T;NVIDIA,Aalto University
@@ -468,7 +469,7 @@
 """United States""";"""US""";2021;Denoising Diffusion Probabilistic Models (LSUN Bedroom);University of California (UC) Berkeley
 """United States""";"""US""";2021;ALIGN;Google Research
 """United States""";"""US""";2021;DeBERTa;Microsoft
-"""Canada,United Kingdom""";""",UK""";2021;EMDR;Mila - Quebec AI (originally Montreal Institute for Learning Algorithms),McGill University,DeepMind
+"""Canada,United Kingdom""";"""CA,UK""";2021;EMDR;Mila - Quebec AI (originally Montreal Institute for Learning Algorithms),McGill University,DeepMind
 """United States""";"""US""";2021;CoAtNet;Google,Google Research,Google Brain
 """United States""";"""US""";2021;ViT-G/14;Google Brain,Google Research
 """United States""";"""US""";2021;ByT5-XXL;Google,Google Research
@@ -501,7 +502,7 @@
 """European Union,United States""";"""EU,US""";2020;ESM1b;Facebook AI Research,New York University (NYU)
 """China""";"""CN""";2020;CPM-Large;Tsinghua University,Beijing Academy of Artificial Intelligence / BAAI
 """United Kingdom""";"""UK""";2020;AlphaFold 2;DeepMind
-"""Canada,China,European Union,United States""";"""CN,EU,US""";2020;KEPLER;Tsinghua University,Mila - Quebec AI (originally Montreal Institute for Learning Algorithms),HEC,CIFAR AI Research,Princeton University,University of Montreal / Université de Montréal
+"""Canada,China,European Union,United States""";"""CA,CN,EU,US""";2020;KEPLER;Tsinghua University,Mila - Quebec AI (originally Montreal Institute for Learning Algorithms),HEC,CIFAR AI Research,Princeton University,University of Montreal / Université de Montréal
 """United States""";"""US""";2020;wave2vec 2.0 LARGE;Facebook
 """United States""";"""US""";2020;ViT-Huge/14;Google Brain,Google Research
 """United States""";"""US""";2020;ViT-Base/32;Google Brain
@@ -513,7 +514,7 @@
 """China""";"""CN""";2020;ERNIE-GEN (large);Baidu
 """European Union,United States""";"""EU,US""";2020;DeLighT;University of Washington,Allen Institute for AI,Facebook AI Research
 """United States""";"""US""";2020;EfficientDet;Google Brain
-"""European Union,Norway""";"""EU,Norway""";2020;Hopfield Networks (2020);Johannes Kepler University Linz,Institute of Advanced Research in Artificial Intelligence,University of Oslo
+"""European Union,Norway""";"""EU""";2020;Hopfield Networks (2020);Johannes Kepler University Linz,Institute of Advanced Research in Artificial Intelligence,University of Oslo
 """European Union,United States""";"""EU,US""";2020;SemExp;Carnegie Mellon University (CMU),Facebook AI Research
 """United States""";"""US""";2020;GShard (dense);Google
 """United States""";"""US""";2020;GPT-3 175B (davinci);OpenAI
@@ -538,18 +539,19 @@
 """United States""";"""US""";2020;Turing-NLG;Microsoft
 """United States""";"""US""";2020;SimCLR;Google Brain
 """United States""";"""US""";2020;ALBERT-xxlarge;Toyota Technological Institute at Chicago,Google
+"""Canada""";"""CA""";2020;TaLK Convolution;Carleton University
 """United Kingdom""";"""UK""";2020;Perceiver IO (optical flow);DeepMind
 """China,United States""";"""CN,US""";2020;Theseus 6/768;University of California San Diego,Beihang University,Microsoft
 """United States""";"""US""";2020;Meena;Google Brain
 """United States""";"""US""";2020;ContextNet + Noisy Student;Google
 """United Kingdom""";"""UK""";2020;AlphaFold;DeepMind
 """United States""";"""US""";2019;Big Transfer (BiT-L);Google Brain
-"""Canada,European Union,United States""";"""EU,US""";2019;DD-PPO;Georgia Institute of Technology,Facebook AI Research,Oregon State University,Simon Fraser University
+"""Canada,European Union,United States""";"""CA,EU,US""";2019;DD-PPO;Georgia Institute of Technology,Facebook AI Research,Oregon State University,Simon Fraser University
 """United States""";"""US""";2019;OpenAI Five Rerun;OpenAI
 """United States""";"""US""";2019;OpenAI Five;OpenAI
 """China,United Kingdom""";"""CN,UK""";2019;MMLSTM (WT-2);Beijing University of Posts and Telecommunications,University of West London
 """China,United Kingdom""";"""CN,UK""";2019;MMLSTM (PTB);Beijing University of Posts and Telecommunications,University of West London
-"""South Korea,Switzerland""";"""KR,""";2019;StarGAN v2;NAVER,Yonsei University,Swiss Federal Institute of Technology
+"""South Korea,Switzerland""";"""KR""";2019;StarGAN v2;NAVER,Yonsei University,Swiss Federal Institute of Technology
 """European Union,United States""";"""EU,US""";2019;StyleGAN2;NVIDIA,Aalto University
 """United States""";"""US""";2019;Transformer-XL DeFINE (141M);University of Washington,Allen Institute for AI
 """United Kingdom""";"""UK""";2019;Photo-Geometric Autoencoder;University of Oxford
@@ -593,7 +595,7 @@
 """United Kingdom,United States""";"""UK,US""";2019;CPC v2;DeepMind,University of California (UC) Berkeley
 """United States""";"""US""";2019;ResNeXt-101 Billion-scale;Facebook AI
 """United States""";"""US""";2019;RaptorX-Contact;Toyota Technological Institute at Chicago
-"""China,United Kingdom, United States """;"""CN,UK, US """;2019;Neuro-Symbolic Concept Learner;Massachusetts Institute of Technology (MIT),Tsinghua University,MIT-IBM Watson AI Lab,DeepMind
+"""China,United Kingdom, United States """;"""CN,UK,US """;2019;Neuro-Symbolic Concept Learner;Massachusetts Institute of Technology (MIT),Tsinghua University,MIT-IBM Watson AI Lab,DeepMind
 """United States""";"""US""";2019;MuseNet;OpenAI
 """United States""";"""US""";2019;BERT-Large-CAS (PTB+WT2+WT103);Amazon
 """United Kingdom""";"""UK""";2019;Transformer-XL + RMS dynamic eval;University of Edinburgh
@@ -651,7 +653,7 @@
 """European Union""";"""EU""";2017;TriNet;Visual Computing Institute,RWTH Aachen University
 """United States""";"""US""";2017;AWD-LSTM-MoS + dynamic evaluation (WT2, 2017);Carnegie Mellon University (CMU)
 """United Kingdom""";"""UK""";2017;VQ-VAE;DeepMind
-"""Canada,European Union""";"""EU""";2017;Fraternal dropout + AWD-LSTM 3-layer (WT2);Jagiellonian University,Mila - Quebec AI (originally Montreal Institute for Learning Algorithms),University of Montreal / Université de Montréal
+"""Canada,European Union""";"""CA,EU""";2017;Fraternal dropout + AWD-LSTM 3-layer (WT2);Jagiellonian University,Mila - Quebec AI (originally Montreal Institute for Learning Algorithms),University of Montreal / Université de Montréal
 """United States""";"""US""";2017;DCN+;Salesforce Research
 """United States""";"""US""";2017;S-Norm;University of Washington,Allen Institute for AI
 """United States""";"""US""";2017;PhraseCond;Carnegie Mellon University (CMU),University of Pittsburgh
@@ -680,7 +682,7 @@
 """China""";"""CN""";2017;ShuffleNet v1;Megvii Inc
 """United Kingdom""";"""UK""";2017;NoisyNet-Dueling;DeepMind
 """United States""";"""US""";2017;DeepLabV3;Google
-"""Canada,United States""";"""US""";2017;HRA;Maluuba,Microsoft
+"""Canada,United States""";"""CA,US""";2017;HRA;Maluuba,Microsoft
 """United States""";"""US""";2017;Transformer;Google Research,Google Brain
 """South Korea""";"""KR""";2017;EDSR;Seoul National University
 """United Kingdom""";"""UK""";2017;Reading Twice for NLU;DeepMind
@@ -690,13 +692,13 @@
 """China,United States""";"""CN,US""";2017;Mnemonic Reader;Fudan University,Microsoft Research
 """United Kingdom,United States""";"""UK,US""";2017;DeepLab (2017);Johns Hopkins University,Google,University College London (UCL)
 """United States""";"""US""";2017;MobileNet;Google
-"""Canada,United States""";"""US""";2017;WGAN-GP;Courant Institute of Mathematical Sciences,Mila - Quebec AI (originally Montreal Institute for Learning Algorithms)
+"""Canada,United States""";"""CA,US""";2017;WGAN-GP;Courant Institute of Mathematical Sciences,Mila - Quebec AI (originally Montreal Institute for Learning Algorithms)
 """European Union,United States""";"""EU,US""";2017;Mask R-CNN;Facebook AI Research
-"""Canada,United States""";"""US""";2017;Prototypical networks;University of Toronto,Twitter
+"""Canada,United States""";"""CA,US""";2017;Prototypical networks;University of Toronto,Twitter
 """China,Hong Kong""";"""CN""";2017;DnCNN;Harbin Institute of Technology,Hong Kong Polytechnic University,ULSee Inc.,Xi’an Jiaotong University
 """European Union,United States""";"""EU,US""";2017;MoE-Multi;Jagiellonian University,Google Brain
 """China,United States""";"""CN,US""";2017;OR-WideResNet;Duke University,University of Chinese Academy of Sciences
-"""Canada,European Union""";"""EU""";2017;DeepStack;University of Alberta,Charles University,Czech Technical University
+"""Canada,European Union""";"""CA,EU""";2017;DeepStack;University of Alberta,Charles University,Czech Technical University
 """United States""";"""US""";2016;YOLOv2;University of Washington,Allen Institute for AI
 """European Union""";"""EU""";2016;EnhanceNet;Max Planck Institute for Intelligent Systems
 """United States""";"""US""";2016;3DMM-CNN;University of Southern California
@@ -727,13 +729,14 @@
 """United States""";"""US""";2016;MS-ensemble-speech-recognition;Microsoft
 """United States""";"""US""";2016;LF-MMI;Johns Hopkins University,Cornell University
 """China,European Union,United States""";"""CN,EU,US""";2016;DenseNet-264;Tsinghua University,Facebook AI Research,Cornell University
-"""European Union,Iran""";"""EU,Iran""";2016;SimpleNet;Sensifai,Islamic Azad University,Technicolor R&I,Institute for Research in Fundamental Sciences (IPM)
+"""European Union,Iran""";"""EU""";2016;SimpleNet;Sensifai,Islamic Azad University,Technicolor R&I,Institute for Research in Fundamental Sciences (IPM)
 """European Union,United States""";"""EU,US""";2016;Character-enriched word2vec;Facebook AI Research
 """China,Hong Kong""";"""CN""";2016;CCL;SenseTime,Chinese University of Hong Kong (CUHK),Chinese Academy of Sciences
 """China,United States""";"""CN,US""";2016;R-FCN;Tsinghua University,Microsoft Research
 """United Kingdom,United States""";"""UK,US""";2016;Segmental RNN;University of Edinburgh,Carnegie Mellon University (CMU),University of Washington
 """United States""";"""US""";2016;PixelCNN;Google DeepMind
 """United States""";"""US""";2016;LRR-4X;UC Irvine
+"""Canada""";"""CA""";2016;Gated HORNN (3rd order);York University
 """United States""";"""US""";2016;Dueling DQN;Google DeepMind
 """United Kingdom""";"""UK""";2016;"Template Adaptation
 ";University of Oxford
@@ -742,7 +745,7 @@
 """United States""";"""US""";2016;SqueezeNet;DeepScale,University of California (UC) Berkeley,Stanford University
 """United States""";"""US""";2016;Inceptionv4;Google
 """United States""";"""US""";2016;Inception-ResNet-V2;Google
-"""Canada,United States""";"""US""";2016;A3C FF hs;Google,University of Montreal / Université de Montréal
+"""Canada,United States""";"""CA,US""";2016;A3C FF hs;Google,University of Montreal / Université de Montréal
 """United Kingdom""";"""UK""";2016;AlphaGo Lee;DeepMind
 """United Kingdom""";"""UK""";2015;Variational (untied weights, MC) LSTM (Large);University of Cambridge
 """United States""";"""US""";2015;Advantage Learning;Google DeepMind
@@ -771,10 +774,11 @@
 """United States""";"""US""";2015;TRPO;University of California (UC) Berkeley
 """United States""";"""US""";2015;MSRA (C, PReLU);Microsoft Research
 """United Kingdom""";"""UK""";2015;VGG-Face;University of Oxford
-"""Canada,European Union,United States""";"""EU,US""";2014;ADAM (CIFAR-10);University of Amsterdam,OpenAI,University of Toronto
+"""Canada,European Union,United States""";"""CA,EU,US""";2014;ADAM (CIFAR-10);University of Amsterdam,OpenAI,University of Toronto
 """United Kingdom""";"""UK""";2014;Fractional Max-Pooling;University of Warwick
 """United States""";"""US""";2014;SNM-skip;Google
 """United States""";"""US""";2014;Fully Convolutional Networks;University of California (UC) Berkeley
+"""Canada""";"""CA""";2014;SC-NLM;University of Toronto
 """United States""";"""US""";2014;LRCN;UT Austin,University of Massachusetts Lowell,University of California (UC) Berkeley
 """United Kingdom""";"""UK""";2014;Spatially-Sparse CNN;University of Warwick
 """United States""";"""US""";2014;Deeply-supervised nets;Microsoft Research
@@ -783,16 +787,18 @@
 """United States""";"""US""";2014;Seq2Seq LSTM;Google
 """United Kingdom""";"""UK""";2014;VGG19;University of Oxford
 """United Kingdom""";"""UK""";2014;VGG16;University of Oxford
-"""Canada,European Union""";"""EU""";2014;RNNsearch-50*;Jacobs University Bremen,University of Montreal / Université de Montréal
+"""Canada,European Union""";"""CA,EU""";2014;RNNsearch-50*;Jacobs University Bremen,University of Montreal / Université de Montréal
 """China""";"""CN""";2014;ACF-WIDER;Chinese Academy of Sciences
 """United Kingdom""";"""UK""";2014;SmooCT;University College London (UCL)
 """United States""";"""US""";2014;Multiresolution CNN;Google,Stanford University
 """Israel,United States""";"""IL,US""";2014;DeepFace;Tel Aviv University,Facebook
-"""Canada,United Kingdom""";"""UK""";2014;RNN-WER;DeepMind,University of Toronto
+"""Canada,United Kingdom""";"""CA,UK""";2014;RNN-WER;DeepMind,University of Toronto
 """United States""";"""US""";2014;Fragment embedding;Stanford University
 """China,United States""";"""CN,US""";2014;SPPNet;Microsoft,Xi’an Jiaotong University,University of Science and Technology of China (USTC)
+"""Canada""";"""CA""";2014;GANs;University of Montreal / Université de Montréal
 """United Kingdom""";"""UK""";2014;Two-stream ConvNets for action recognition;University of Oxford
-"""Canada,European Union,United States""";"""EU,US""";2014;GRUs;University of Montreal / Université de Montréal,Jacobs University,University of Maine
+"""Canada,European Union,United States""";"""CA,EU,US""";2014;GRUs;University of Montreal / Université de Montréal,Jacobs University,University of Maine
+"""Canada""";"""CA""";2014;Dropout: SVHN;University of Toronto
 """China""";"""CN""";2014;AdaRNN;Beihang University
 """United States""";"""US""";2014;Paragraph Vector;Google
 """United States""";"""US""";2014;HyperNEAT;University of Texas at Austin
@@ -812,14 +818,20 @@
 """United States""";"""US""";2013;RNTN;Stanford University
 """United Kingdom""";"""UK""";2013;RCTM;University of Oxford
 """United States""";"""US""";2013;Hierarchical Scene Labeling (Stanford Background);New York University (NYU)
-"""Canada,United States""";"""US""";2013;ReLU-Speech;Google,University of Toronto,New York University (NYU)
+"""Canada,United States""";"""CA,US""";2013;ReLU-Speech;Google,University of Toronto,New York University (NYU)
 """United States""";"""US""";2013;Multilingual DNN;Google
 """European Union""";"""EU""";2013;Selective Search;University of Trento,University of Amsterdam
+"""Canada""";"""CA""";2013;PreTrans-3L-250H;University of Toronto
 """United States""";"""US""";2013;DistBelief NNLM;Google
 """United States""";"""US""";2012;DistBelief Vision;Google
 """United States""";"""US""";2012;DistBelief Speech;Google
-"""Canada,United States""";"""US""";2012;Bayesian automated hyperparameter tuning;University of Toronto,University of Sherbrooke,Harvard University
+"""Canada,United States""";"""CA,US""";2012;Bayesian automated hyperparameter tuning;University of Toronto,University of Sherbrooke,Harvard University
 """European Union,United States""";"""EU,US""";2012;RNN+LDA+KN5+cache;Microsoft,Brno University of Technology
+"""Canada""";"""CA""";2012;AlexNet;University of Toronto
 """European Union""";"""EU""";2012;LSTM LM;RWTH Aachen University
 """European Union,United States""";"""EU,US""";2012;Context-dependent RNN;Microsoft Research,Brno University of Technology
 """United States""";"""US""";2012;Unsupervised High-level Feature Learner;Google
+"""Canada""";"""CA""";2012;Dropout (TIMIT);University of Toronto
+"""Canada""";"""CA""";2012;Dropout (MNIST);University of Toronto
+"""Canada""";"""CA""";2012;Dropout (ImageNet);University of Toronto
+"""Canada""";"""CA""";2012;Dropout (CIFAR);University of Toronto

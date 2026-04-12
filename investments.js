@@ -154,6 +154,7 @@ class Investments {
             UK: '#6FA8FF',
             CN: '#F2845C',
             IN: '#5ED3A5',
+            CA: '#E9C46A',
             BR: '#E9C46A',
             IL: '#B3E0FF',
             AE: '#2F9E77',

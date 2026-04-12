@@ -1,4 +1,4 @@
-country;country_code;year;investment
+﻿country;country_code;year;investment
 United States;US;2012;6614
 United States;US;2013;8712
 United States;US;2014;21094
@@ -59,6 +59,21 @@ United Kingdom;UK;2023;4250
 United Kingdom;UK;2024;5464
 United Kingdom;UK;2025;15175
 United Kingdom;UK;2026;3073
+Canada;CA;2012;257
+Canada;CA;2013;364
+Canada;CA;2014;478
+Canada;CA;2015;404
+Canada;CA;2016;762
+Canada;CA;2017;936
+Canada;CA;2018;1470
+Canada;CA;2019;2133
+Canada;CA;2020;1884
+Canada;CA;2021;5999
+Canada;CA;2022;3715
+Canada;CA;2023;2320
+Canada;CA;2024;3379
+Canada;CA;2025;3072
+Canada;CA;2026;1456
 Israel;IL;2012;278
 Israel;IL;2013;142
 Israel;IL;2014;331
@@ -89,21 +104,21 @@ India;IN;2023;2086
 India;IN;2024;2167
 India;IN;2025;2598
 India;IN;2026;483
-Korea;KR;2012;98
-Korea;KR;2013;18
-Korea;KR;2014;110
-Korea;KR;2015;122
-Korea;KR;2016;204
-Korea;KR;2017;734
-Korea;KR;2018;1151
-Korea;KR;2019;1061
-Korea;KR;2020;1206
-Korea;KR;2021;4426
-Korea;KR;2022;4091
-Korea;KR;2023;2458
-Korea;KR;2024;2750
-Korea;KR;2025;2108
-Korea;KR;2026;401
+South Korea;KR;2012;98
+South Korea;KR;2013;18
+South Korea;KR;2014;110
+South Korea;KR;2015;122
+South Korea;KR;2016;204
+South Korea;KR;2017;734
+South Korea;KR;2018;1151
+South Korea;KR;2019;1061
+South Korea;KR;2020;1206
+South Korea;KR;2021;4426
+South Korea;KR;2022;4091
+South Korea;KR;2023;2458
+South Korea;KR;2024;2750
+South Korea;KR;2025;2108
+South Korea;KR;2026;401
 Singapore;SG;2012;75
 Singapore;SG;2013;30
 Singapore;SG;2014;68
@@ -119,21 +134,6 @@ Singapore;SG;2023;2165
 Singapore;SG;2024;3505
 Singapore;SG;2025;2265
 Singapore;SG;2026;348
-Brazil;BR;2012;33
-Brazil;BR;2013;39
-Brazil;BR;2014;83
-Brazil;BR;2015;36
-Brazil;BR;2016;49
-Brazil;BR;2017;90
-Brazil;BR;2018;134
-Brazil;BR;2019;321
-Brazil;BR;2020;849
-Brazil;BR;2021;1414
-Brazil;BR;2022;902
-Brazil;BR;2023;731
-Brazil;BR;2024;1035
-Brazil;BR;2025;854
-Brazil;BR;2026;104
 United Arab Emirates;AE;2012;0
 United Arab Emirates;AE;2013;1
 United Arab Emirates;AE;2014;0
