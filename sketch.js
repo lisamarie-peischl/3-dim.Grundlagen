@@ -38,9 +38,9 @@ function setup () {
 
     // Model selector
     modelSelector = createRadio();
-    modelSelector.option('Alle KI-Modelle');
-    modelSelector.option('Bedeutende KI-Modelle');
-    modelSelector.selected('Alle KI-Modelle');
+    modelSelector.option('All AI models');
+    modelSelector.option('Notable AI models');
+    modelSelector.selected('All AI models');
     modelSelector.addClass('model-selector');
     modelSelector.style('color', 'white');
     modelSelector.style('font-family', 'Helvetica');
@@ -53,7 +53,7 @@ function setup () {
         stopTimelinePlayback();
         selectedModelPoint = null;
         hoveredModelPoint = null;
-        if (modelSelector.value() === 'Alle KI-Modelle') {
+        if (modelSelector.value() === 'All AI models') {
             currentModels = allModelsData;
         } else {
             currentModels = notableModelsData;
@@ -101,7 +101,7 @@ function draw () {
     const titleLineHeight = titleAscent + textDescent();
     const titleSecondLineY = titleTopY + titleLineHeight + 12;
     const titleSecondLineBottomY = titleSecondLineY + titleAscent;
-    text('VOM INVESTMENT\nZUM KI-MODELL', 50, titleTopY);
+    text('FROM INVESTMENT\nTO AI MODEL', 50, titleTopY);
     
     textStyle(NORMAL);
     textSize(28);
@@ -110,9 +110,9 @@ function draw () {
     const chooseY = subtitleY + 100;
     const top3Ascent = textAscent();
     const top3Y = titleSecondLineBottomY - top3Ascent;
-    text('WER DOMINIERT KI?', 50, subtitleY);
+    text('WHO DOMINATES AI?', 50, subtitleY);
     textSize(22);
-    text('Überschrift', 50, chooseY);
+    text('Choose model set', 50, chooseY);
     textSize(28);
     text('TOP 3 in ' + Math.round(yearsSlider.maxYear), line2X + 50, top3Y);
     pop();
@@ -245,9 +245,9 @@ function drawTopCountryMiniViews(rightColumnStartX, rightColumnWidth, topY) {
 
         textStyle(NORMAL);
         textSize(14);
-        text(`Eigene KI-Modelle: ${stats.own}`, textX, textY + info1Offset);
-        text(`Kooperationen: ${stats.cooperation}`, textX, textY + info2Offset);
-        text(`Insgesamt: ${stats.total}`, textX, textY + info3Offset);
+        text(`Domestic AI models: ${stats.own}`, textX, textY + info1Offset);
+        text(`Collaborations: ${stats.cooperation}`, textX, textY + info2Offset);
+        text(`Total: ${stats.total}`, textX, textY + info3Offset);
     }
 
     pop();
@@ -344,8 +344,6 @@ function mouseDragged() {
         redraw();
     }
 }
-
-// lol Hallo
 
 function mouseReleased() {
     yearsSlider.isDragging = false;
