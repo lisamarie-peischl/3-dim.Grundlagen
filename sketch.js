@@ -127,14 +127,16 @@ function draw () {
     const playButtonTopY = height - 50 - playButtonHeight;
     const sliderY = (circleBottomY + playButtonTopY) * 0.5;
     const sliderTrackLeftX = line1X;
+    const selectedMinYear = Math.round(yearsSlider.minYear);
+    const selectedMaxYear = Math.round(yearsSlider.maxYear);
 
     currentModels.drawRings(cx, cy, size);
 
-    hoveredBar = invest.pickBar(mouseX, mouseY, cx, cy, size, yearsSlider.maxYear);
-    invest.drawRingBars(cx, cy, size, hoveredBar, selectedBar, yearsSlider.maxYear, selectedCountryCode, true);
+    hoveredBar = invest.pickBar(mouseX, mouseY, cx, cy, size, selectedMinYear, selectedMaxYear);
+    invest.drawRingBars(cx, cy, size, hoveredBar, selectedBar, selectedMaxYear, selectedCountryCode, true, null, -0.0125, null, selectedMinYear);
 
     hoveredModelPoint = currentModels.pickPoint(mouseX, mouseY);
-    currentModels.drawPoints(cx, cy, size, hoveredModelPoint, selectedModelPoint, yearsSlider.maxYear, selectedCountryCode, true, false);
+    currentModels.drawPoints(cx, cy, size, hoveredModelPoint, selectedModelPoint, selectedMaxYear, selectedCountryCode, true, false, null, selectedMinYear);
 
     const tooltipModel = selectedModelPoint || hoveredModelPoint;
     const tooltipBar = selectedBar || hoveredBar;
@@ -172,6 +174,7 @@ function startTimelinePlayback() {
         return;
     }
 
+    yearsSlider.minYear = PLAYBACK_START_YEAR;
     yearsSlider.maxYear = PLAYBACK_START_YEAR;
     isPlayingTimeline = true;
     timelineStartMs = millis();
@@ -257,7 +260,7 @@ function windowResized() {
 
 function mouseMoved() {
     if (yearsSlider.isDragging) {
-        yearsSlider.setFromMouse(mouseX, width);
+        yearsSlider.setFromMouse(mouseX, width, yearsSlider.activeHandle);
     }
     redraw();
 }
@@ -294,11 +297,14 @@ function mousePressed(event) {
     const playButtonHeight = playButton && playButton.elt ? playButton.elt.offsetHeight : 0;
     const playButtonTopY = height - 50 - playButtonHeight;
     const sliderY = (circleBottomY + playButtonTopY) * 0.5;
+    const selectedMinYear = Math.round(yearsSlider.minYear);
+    const selectedMaxYear = Math.round(yearsSlider.maxYear);
 
     if (yearsSlider.isOver(mouseX, mouseY, width, sliderY)) {
         stopTimelinePlayback();
         yearsSlider.isDragging = true;
-        yearsSlider.setFromMouse(mouseX, width, true);
+        yearsSlider.activeHandle = yearsSlider.pickHandle(mouseX, width);
+        yearsSlider.setFromMouse(mouseX, width, yearsSlider.activeHandle, true);
         redraw();
         return;
     }
@@ -319,7 +325,7 @@ function mousePressed(event) {
         return;
     }
 
-    const picked = invest.pickBar(mouseX, mouseY, cx, cy, size, yearsSlider.maxYear);
+    const picked = invest.pickBar(mouseX, mouseY, cx, cy, size, selectedMinYear, selectedMaxYear);
 
     if (picked) {
         selectedBar = picked;
@@ -334,7 +340,7 @@ function mousePressed(event) {
 
 function mouseDragged() {
     if (yearsSlider.isDragging) {
-        yearsSlider.setFromMouse(mouseX, width);
+        yearsSlider.setFromMouse(mouseX, width, yearsSlider.activeHandle);
         redraw();
     }
 }
@@ -343,6 +349,7 @@ function mouseDragged() {
 
 function mouseReleased() {
     yearsSlider.isDragging = false;
+    yearsSlider.activeHandle = null;
     redraw();
 }
 

@@ -169,7 +169,7 @@ class Investments {
         return color(hue(base), saturation(base), bri);
     }
 
-    pickBar(mx, my, cx, cy, size, maxYear = 2025) {
+    pickBar(mx, my, cx, cy, size, minYear = this.startYear, maxYear = 2025) {
         if (!this.countries.length) {
             return null;
         }
@@ -187,7 +187,7 @@ class Investments {
 
             for (let yearIndex = 0; yearIndex < yearCount; yearIndex += 1) {
                 const year = this.years[yearIndex];
-                               if (year > maxYear) {
+                               if (year < minYear || year > maxYear) {
                                    continue;
                                }
                
@@ -239,7 +239,7 @@ class Investments {
         return null;
     }
 
-    drawRingBars(cx, cy, size, hoveredBar, selectedBar, maxYear = 2025, selectedCountryCode = null, collectForPicking = false, exactYear = null, labelRadiusFactor = -0.0125, labelSizeOverride = null) {
+    drawRingBars(cx, cy, size, hoveredBar, selectedBar, maxYear = 2025, selectedCountryCode = null, collectForPicking = false, exactYear = null, labelRadiusFactor = -0.0125, labelSizeOverride = null, minYear = this.startYear) {
         if (!this.countries.length) {
             return;
         }
@@ -275,7 +275,7 @@ class Investments {
                     continue;
                 }
                 
-                if (year > maxYear) {
+                if (year < minYear || year > maxYear) {
                     continue;
                 }
                 

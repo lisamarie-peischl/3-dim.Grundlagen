@@ -298,7 +298,7 @@ class AIModels {
         // Intentionally empty: no inner guide lines for model rings.
     }
 
-    drawPoints(cx, cy, size, hoveredPoint, selectedPoint, maxYear = 2025, selectedCountryCode = null, collectForPicking = true, strictCountryFilter = false, exactYear = null) {
+    drawPoints(cx, cy, size, hoveredPoint, selectedPoint, maxYear = 2025, selectedCountryCode = null, collectForPicking = true, strictCountryFilter = false, exactYear = null, minYear = this.startYear) {
         if (!this.investments || this.investments.countries.length === 0) {
             return;
         }
@@ -321,7 +321,7 @@ class AIModels {
                 continue;
             }
             
-            if (exactYear === null && year > maxYear) {
+            if (exactYear === null && (year < minYear || year > maxYear)) {
                 continue;
             }
             
