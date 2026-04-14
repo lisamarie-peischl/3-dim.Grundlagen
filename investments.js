@@ -149,16 +149,16 @@ class Investments {
 
     getCountryBaseHex(countryCode) {
         const palette = {
-            US: '#B8AFFF',
-            SG: '#FFC6FF',
-            UK: '#6FA8FF',
-            CN: '#FFA974',
-            IN: '#5ED3A5',
-            CA: '#E9C46A',
-            BR: '#E9C46A',
-            IL: '#B3E0FF',
-            AE: '#2F9E77',
-            KR: '#E0565B'
+            AE: '#F07A98',
+            CA: '#7AE89A',
+            CN: '#E68A77',
+            EU: '#7AE6E6',
+            IL: '#7AD0E6',
+            IN: '#E6BF77', 
+            KR: '#BE7AE6',
+            SG: '#E67AD0',
+            UK: '#7A9AE6',
+            US: '#8A7AE6'
         };
         return palette[countryCode] || '#00D8FF';
     }
