@@ -275,7 +275,7 @@ class AIModels {
         // Keep only a small gap between country-code track and model-point area.
         const outerRadius = max(innerRadius + 16, investmentsLayout.baseRadius - size * 0.025);
         const ringCount = this.years.length;
-        const ringStep = ringCount > 1 ? (outerRadius - innerRadius) / (ringCount - 1) : 0;
+        const ringStep = ringCount > 0 ? (outerRadius - innerRadius) / ringCount : 0;
         const dotRadius = max(0.4, size * 0.001);
 
         return {
@@ -296,7 +296,38 @@ class AIModels {
     }
 
     drawRings(cx, cy, size) {
-        // Intentionally empty: no inner guide lines for model rings.
+        if (!this.investments || this.investments.countries.length === 0) {
+            return;
+        }
+
+        const layout = this.getLayout(size);
+        const countryCount = this.investments.countries.length;
+        const countrySpan = TWO_PI / countryCount;
+
+        push();
+        const ringColor = color('#595959');
+        ringColor.setAlpha(120);
+        stroke(ringColor);
+        strokeWeight(0.5);
+        strokeCap(SQUARE);
+        noFill();
+
+        // Boundaries between adjacent yearly model zones, including gap regions.
+        for (let boundaryIndex = 1; boundaryIndex < this.years.length; boundaryIndex += 1) {
+            const radius = layout.innerRadius + boundaryIndex * layout.ringStep;
+            const diameter = radius * 2;
+
+            for (let countryIndex = 0; countryIndex < countryCount; countryIndex += 1) {
+                const angleRange = this.getCountryAngleRange(countryIndex, countryCount, layout.countryGap);
+                arc(cx, cy, diameter, diameter, angleRange.start, angleRange.end);
+
+                const gapStart = -HALF_PI + (countryIndex + 1) * countrySpan - layout.countryGap * 0.5;
+                const gapEnd = -HALF_PI + (countryIndex + 1) * countrySpan + layout.countryGap * 0.5;
+                arc(cx, cy, diameter, diameter, gapStart, gapEnd);
+            }
+        }
+
+        pop();
     }
 
     drawPoints(cx, cy, size, hoveredPoint, selectedPoint, maxYear = 2025, selectedCountryCode = null, collectForPicking = true, strictCountryFilter = false, exactYear = null, minYear = this.startYear) {
@@ -326,7 +357,7 @@ class AIModels {
                 continue;
             }
             
-            const radius = layout.innerRadius + yearIndex * layout.ringStep;
+            const radius = layout.innerRadius + (yearIndex + 0.5) * layout.ringStep;
 
             for (let countryIndex = 0; countryIndex < countryCount; countryIndex += 1) {
                 const code = countries[countryIndex].code;
@@ -348,13 +379,16 @@ class AIModels {
                     const t = (modelIndex + 1) / (models.length + 1);
                     const baseAngle = lerp(angleRange.start, angleRange.end, t);
                     const segmentWidth = abs(angleRange.end - angleRange.start);
-                    const angleJitterScale = min(segmentWidth * 0.22, 0.07);
+                    const angleJitterScale = min(segmentWidth * 0.14, 0.045);
                     const angleJitter = (this.hashToUnit(`${model.id}-${code}-a`) - 0.5) * 2 * angleJitterScale;
-                    const radialJitterScale = max(1.4, layout.ringStep * 0.44);
+                    const radialJitterScale = max(0.8, layout.ringStep * 0.22);
                     const radialJitter = (this.hashToUnit(`${model.id}-${code}-r`) - 0.5) * 2 * radialJitterScale;
-                    const angle = baseAngle + angleJitter;
-                    const minYearRadius = radius - layout.ringStep * 0.48;
-                    const maxYearRadius = radius + layout.ringStep * 0.48;
+                    const anglePadding = min(segmentWidth * 0.08, 0.02);
+                    const minAngle = angleRange.start + anglePadding;
+                    const maxAngle = angleRange.end - anglePadding;
+                    const angle = constrain(baseAngle + angleJitter, minAngle, maxAngle);
+                    const minYearRadius = radius - layout.ringStep * 0.45;
+                    const maxYearRadius = radius + layout.ringStep * 0.45;
                     const radiusWithJitter = constrain(
                         radius + radialJitter,
                         max(layout.innerRadius, minYearRadius),
