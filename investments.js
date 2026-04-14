@@ -152,7 +152,7 @@ class Investments {
             US: '#B8AFFF',
             SG: '#FFC6FF',
             UK: '#6FA8FF',
-            CN: '#F2845C',
+            CN: '#FFA974',
             IN: '#5ED3A5',
             CA: '#E9C46A',
             BR: '#E9C46A',
