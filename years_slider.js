@@ -35,7 +35,20 @@ class YearsSlider {
 
     setFromMouse(mx, canvasWidth, handle = null, snapToYear = false) {
         const yearValue = this.getYearFromMouse(mx, canvasWidth, snapToYear);
-        const targetHandle = handle || (Math.abs(yearValue - this.minYear) <= Math.abs(yearValue - this.maxYear) ? 'min' : 'max');
+        let targetHandle = handle || (Math.abs(yearValue - this.minYear) <= Math.abs(yearValue - this.maxYear) ? 'min' : 'max');
+
+        // When both handles overlap, decide by drag direction so users can
+        // always pull apart to both sides from the same point.
+        if (Math.abs(this.maxYear - this.minYear) < 0.0001) {
+            if (yearValue < this.minYear) {
+                targetHandle = 'min';
+            } else if (yearValue > this.maxYear) {
+                targetHandle = 'max';
+            } else if (!handle) {
+                // Default to right handle when exactly on top of each other.
+                targetHandle = 'max';
+            }
+        }
 
         if (targetHandle === 'min') {
             this.minYear = constrain(yearValue, this.startYear, this.maxYear);
@@ -62,10 +75,10 @@ class YearsSlider {
     pickHandle(mx, canvasWidth) {
         const { minX, maxX } = this.getHandlePositions(canvasWidth);
 
-        // If both handles overlap (or are nearly overlapping), alternate selection
-        // so both handles remain reachable.
+        // If both handles overlap (or are nearly overlapping), default to the
+        // right handle; drag direction in setFromMouse can still switch to left.
         if (Math.abs(minX - maxX) < 1.5) {
-            return this.activeHandle === 'min' ? 'max' : 'min';
+            return 'max';
         }
 
         return Math.abs(mx - minX) <= Math.abs(mx - maxX) ? 'min' : 'max';
