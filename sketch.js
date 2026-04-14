@@ -114,7 +114,7 @@ function draw () {
     fill('#B3B3B3');
     text('Who dominates AI?', 50, subtitleY);
     textSize(22);
-    fill('0, 0, 50, 0.47');
+    fill('#B3B3B3');
     text('Choose model set', 50, chooseY);
     textSize(28);
     textAlign(CENTER, TOP);
