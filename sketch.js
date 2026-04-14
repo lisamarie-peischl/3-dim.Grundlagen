@@ -42,7 +42,7 @@ function setup () {
     modelSelector.option('Notable AI models');
     modelSelector.selected('All AI models');
     modelSelector.addClass('model-selector');
-    modelSelector.style('color', 'white');
+    modelSelector.style('color', '#B3B3B3');
     modelSelector.style('font-family', 'Helvetica');
     const titleHeight = 40 * 2 + 12;
     const subtitleFontSize = 28;
@@ -71,7 +71,7 @@ function setup () {
     playButton.style('border', '1px solid #808080');
     playButton.style('border-radius', '6px');
     playButton.style('background', '#000000');
-    playButton.style('color', '#808080');
+    playButton.style('color', '#B3B3B3');
     playButton.style('cursor', 'pointer');
     playButton.style('z-index', '20');
     playButton.mousePressed(startTimelinePlayback);
@@ -82,6 +82,24 @@ function setup () {
 function draw () {
     updateTimelinePlayback();
     background(0);
+
+    const selectorBottom = modelSelector && modelSelector.elt
+        ? modelSelector.elt.getBoundingClientRect().bottom
+        : height * 0.5 - 50;
+    const countryLegendY = min(height - 30, selectorBottom + 50);
+    window.countryLegendY = countryLegendY;
+    if (typeof window.updateLandkarteLayout === 'function') {
+        window.updateLandkarteLayout();
+    }
+
+    push();
+    textFont('Helvetica');
+    textStyle(NORMAL);
+    textSize(22);
+    textAlign(LEFT, TOP);
+    fill('#B3B3B3');
+    text('Country legend', 50, countryLegendY);
+    pop();
 
     // Draw column separator lines
     const colWidth = width / 3;
@@ -106,12 +124,19 @@ function draw () {
     textStyle(NORMAL);
     textSize(28);
     text('Who dominates AI?', 50, subtitleY);
+    const subtitleDividerY = subtitleY + 100;
+    stroke('#B3B3B3');
+    strokeWeight(1);
+    noStroke();
     const chooseY = subtitleY + 100;
     fill('#B3B3B3');
-    textSize(28);
+    textSize(22);
     fill('#B3B3B3');
     text('Choose model set', 50, chooseY);
-    textSize(28);
+    if (modelSelector) {
+        modelSelector.position(50, chooseY + 50);
+    }
+    textSize(22);
     textAlign(LEFT, TOP);
     textStyle(NORMAL);
     fill('#B3B3B3');
@@ -154,7 +179,11 @@ function draw () {
     textStyle(NORMAL);
     textSize(14);
     textAlign(LEFT, BOTTOM);
-    fill("#808080");
+    const sourceDividerY = height - 150;
+    stroke('#B3B3B3');
+    strokeWeight(1);
+    noStroke();
+    fill('#B3B3B3');
     text(
         'OECD (2026): VC investments in AI by country. OECD.AI Data Explorer.\nEpoch AI (2026): Data on AI Models.',
         50,
@@ -209,9 +238,7 @@ function drawTopCountryMiniViews(rightColumnStartX, rightColumnWidth, topY) {
     const availableHeight = max(120, height - topY - bottomPadding);
     const slotGap = 18;
     const slotHeight = (availableHeight - slotGap * 2) / 3;
-    const centerX = rightColumnStartX + rightColumnWidth * 0.5;
-    const headingMiniSize = min(rightColumnWidth * 0.86, slotHeight * 0.86);
-    const headingTextX = centerX + headingMiniSize * 0.5 + 20;
+    const textX = rightColumnStartX + 150;
     const headingY = topY - 50;
 
     push();
@@ -220,15 +247,15 @@ function drawTopCountryMiniViews(rightColumnStartX, rightColumnWidth, topY) {
     textStyle(NORMAL);
     textSize(28);
     fill('#B3B3B3');
-    text('Top 3 in ' + selectedYear, headingTextX, headingY);
+    text('Top 3 in ' + selectedYear, textX, headingY);
 
     for (let i = 0; i < topCountries.length; i += 1) {
         const country = topCountries[i];
         const stats = currentModels.getCountryModelStats(country.code, selectedYear);
         const slotTop = topY + i * (slotHeight + slotGap);
-        const miniSize = min(rightColumnWidth * 0.86, slotHeight * 0.86);
+        const miniSize = min(rightColumnWidth * 0.46, slotHeight * 0.86);
+        const circleCenterX = rightColumnStartX + rightColumnWidth - 50 - miniSize * 0.5;
         const centerY = slotTop + slotHeight * 0.56;
-        const textX = centerX + miniSize * 0.5 + 20;
 
         const headingLineHeight = 14;
         const paragraphGap = 16;
@@ -240,10 +267,10 @@ function drawTopCountryMiniViews(rightColumnStartX, rightColumnWidth, topY) {
         const blockHeight = info3Offset + headingLineHeight;
         const textY = centerY - blockHeight * 0.5;
 
-        invest.drawRingBars(centerX, centerY, miniSize, null, null, yearsSlider.maxYear, null, false, selectedYear, 0.02, 12);
-        currentModels.drawPoints(centerX, centerY, miniSize, null, null, yearsSlider.maxYear, country.code, false, true, selectedYear);
+        invest.drawRingBars(circleCenterX, centerY, miniSize, null, null, yearsSlider.maxYear, null, false, selectedYear, 0.02, 12);
+        currentModels.drawPoints(circleCenterX, centerY, miniSize, null, null, yearsSlider.maxYear, country.code, false, true, selectedYear);
 
-        fill("#808080");
+        fill('#B3B3B3');
         noStroke();
         textAlign(LEFT, TOP);
 
@@ -325,6 +352,9 @@ function mousePressed(event) {
     const pickedCountryCode = invest.pickCountryLabel(mouseX, mouseY);
     if (pickedCountryCode) {
         selectedCountryCode = selectedCountryCode === pickedCountryCode ? null : pickedCountryCode;
+        if (typeof refreshLandkarteSelection === 'function') {
+            refreshLandkarteSelection();
+        }
         redraw();
         return;
     }
@@ -347,6 +377,10 @@ function mousePressed(event) {
         selectedBar = null;
         selectedModelPoint = null;
         selectedCountryCode = null;
+    }
+
+    if (typeof refreshLandkarteSelection === 'function') {
+        refreshLandkarteSelection();
     }
     redraw();
 }

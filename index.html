@@ -20,8 +20,8 @@
     .model-selector input[type="radio"] {
         appearance: none;
         -webkit-appearance: none;
-        width: 19px;
-        height: 19px;
+        width: 16px;
+        height: 16px;
         border-radius: 50%;
         border: 1.1px solid #B3B3B3;
         background: #000000;
@@ -46,7 +46,7 @@
     }
 
     .model-selector label {
-        color: #C7CCD4;
+        color: #B3B3B3;
         font-family: Helvetica, Arial, sans-serif;
         font-size: 22px;
         line-height: 1.1;
@@ -85,7 +85,7 @@
         line-height: 1.35;
         font-weight: 400;
         font-style: normal;
-        color: #C7CCD4;
+        color: #B3B3B3;
         white-space: pre-line;
     }
 
@@ -94,16 +94,19 @@
     }
 
     .model-selector label:nth-of-type(2)::after {
-        content: "AI models that:\A- advanced the state of the art\A- were highly cited\A- had more than one million users\A- were historically significant\A- had development costs above USD 1 million";
+        content: "AI models that:\A- advance the state of the art\A- are highly cited in academic publications\A- have over 1 million monthly users\A- are historically significant\A- cost over $1 million to develop";
     }
     </style>
 
     <script src="libs/p5.min.js"></script>
     <script src="libs/p5.dom.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+    <script src="https://cdn.jsdelivr.net/npm/topojson-client@3"></script>
 
     <script src="investments.js"></script>
     <script src="AI_models.js"></script>
-        <script src="years_slider.js"></script>
+    <script src="years_slider.js"></script>
+    <script src="landkarte.js"></script>
     <script src="sketch.js"></script>
 </head>
 

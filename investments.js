@@ -328,7 +328,7 @@ class Investments {
             const labelSize = labelSizeOverride !== null ? labelSizeOverride : min(20, max(10, size * 0.032));
             textSize(labelSize);
             if (selectedCountryCode && country.code === selectedCountryCode) {
-                fill(220);
+                fill('#B3B3B3');
             } else {
                 fill('#B3B3B3');
             }
