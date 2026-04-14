@@ -305,6 +305,20 @@ function mouseMoved() {
     redraw();
 }
 
+function toggleCountrySelection(countryCode) {
+    if (!countryCode) {
+        return;
+    }
+
+    selectedCountryCode = selectedCountryCode === countryCode ? null : countryCode;
+    if (typeof refreshLandkarteSelection === 'function') {
+        refreshLandkarteSelection();
+    }
+    redraw();
+}
+
+window.toggleCountrySelection = toggleCountrySelection;
+
 function isPointerOverPlayButton(clientX, clientY) {
     if (!playButton || !playButton.elt) {
         return false;
@@ -351,11 +365,7 @@ function mousePressed(event) {
 
     const pickedCountryCode = invest.pickCountryLabel(mouseX, mouseY);
     if (pickedCountryCode) {
-        selectedCountryCode = selectedCountryCode === pickedCountryCode ? null : pickedCountryCode;
-        if (typeof refreshLandkarteSelection === 'function') {
-            refreshLandkarteSelection();
-        }
-        redraw();
+        toggleCountrySelection(pickedCountryCode);
         return;
     }
     

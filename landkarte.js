@@ -2,6 +2,7 @@
 	const PANEL_ID = 'landkarte-panel';
 	const SVG_ID = 'landkarte-svg';
 	const LEGEND_ID = 'landkarte-legend';
+	const HOVER_LABEL_ID = 'landkarte-hover-label';
 	const VIEWBOX_WIDTH = 1600;
 	const VIEWBOX_HEIGHT = 900;
 	const FALLBACK_COUNTRY_LEGEND_Y_RATIO = 0.5;
@@ -13,15 +14,15 @@
 	const SELECTED_FILL_OPACITY = 1;
 
 	const countryFillById = new Map([
-		[124, '#66e08a'],
-		[156, '#E0668A'],
-		[356, '#E07A66'],
-		[376, '#66C2E0'],
-		[410, '#B366E0'],
-		[702, '#E066C2'],
-		[784, '#66E0E0'],
-		[826, '#668AE0'],
-		[840, '#7A66E0']
+		[124, '#7AE89A'],
+		[156, '#E68A77'],
+		[356, '#E6BF77'],
+		[376, '#7AD0E6'],
+		[410, '#BE7AE6'],
+		[702, '#E67AD0'],
+		[784, '#F07A98'],
+		[826, '#7A9AE6'],
+		[840, '#8A7AE6']
 	]);
 
 	const euCountriesById = new Set([
@@ -39,6 +40,17 @@
 		['SG', 702],
 		['UK', 826],
 		['US', 840]
+	]);
+	const countryCodeById = new Map([
+		[784, 'AE'],
+		[124, 'CA'],
+		[156, 'CN'],
+		[376, 'IL'],
+		[356, 'IN'],
+		[410, 'KR'],
+		[702, 'SG'],
+		[826, 'UK'],
+		[840, 'US']
 	]);
 	const legendEntries = [
 		{ code: 'AE', name: 'United Arab Emirates' },
@@ -58,20 +70,22 @@
 	let mapPath = null;
 	let panelRef = null;
 	let legendRef = null;
+	let hoverLabelRef = null;
+	let hoveredCountryId = null;
 
 	function getCountryFill(countryId) {
 		if (countryFillById.has(countryId)) {
 			return countryFillById.get(countryId);
 		}
 		if (euCountriesById.has(countryId)) {
-			return '#66E0E0';
+			return '#7AE6E6';
 		}
 		return 'transparent';
 	}
 
 	function getLegendFillByCode(code) {
 		if (code === 'EU') {
-			return '#66E0E0';
+			return '#7AE6E6';
 		}
 
 		const countryId = countryIdByCode.get(code);
@@ -123,9 +137,88 @@
 
 				return countryId === selectedCountryId ? SELECTED_FILL_OPACITY : 0;
 			});
+
+		refreshHoverState();
 	}
 
 	window.refreshLandkarteSelection = refreshMapSelection;
+
+	function getCountryCodeForId(countryId) {
+		if (countryCodeById.has(countryId)) {
+			return countryCodeById.get(countryId);
+		}
+
+		if (euCountriesById.has(countryId)) {
+			return 'EU';
+		}
+
+		return '';
+	}
+
+	function ensureHoverLabel() {
+		let hoverLabel = document.getElementById(HOVER_LABEL_ID);
+		if (!hoverLabel) {
+			hoverLabel = document.createElement('div');
+			hoverLabel.id = HOVER_LABEL_ID;
+			hoverLabel.style.position = 'fixed';
+			hoverLabel.style.zIndex = '7';
+			hoverLabel.style.pointerEvents = 'none';
+			hoverLabel.style.display = 'none';
+			hoverLabel.style.color = '#B3B3B3';
+			hoverLabel.style.fontFamily = 'Helvetica, Arial, sans-serif';
+			hoverLabel.style.fontSize = '14px';
+			hoverLabel.style.fontWeight = '700';
+			hoverLabel.style.background = 'rgba(0, 0, 0, 0.75)';
+			hoverLabel.style.padding = '2px 6px';
+			hoverLabel.style.borderRadius = '4px';
+			document.body.appendChild(hoverLabel);
+		}
+
+		return hoverLabel;
+	}
+
+	function refreshHoverState() {
+		if (!mapSelection) {
+			return;
+		}
+
+		const selectedCountryId = getSelectedCountryId();
+		const isCountryColored = (countryId) => {
+			if (selectedCountryId === null) {
+				return getCountryFill(countryId) !== 'transparent';
+			}
+
+			if (selectedCountryId === 'EU') {
+				return euCountriesById.has(countryId);
+			}
+
+			return countryId === selectedCountryId;
+		};
+
+		mapSelection
+			.attr('stroke', (d) => {
+				const countryId = Number(d.id);
+				return countryId === hoveredCountryId && isCountryColored(countryId) ? '#FFFFFF' : '#595959';
+			})
+			.attr('stroke-width', (d) => {
+				const countryId = Number(d.id);
+				return countryId === hoveredCountryId && isCountryColored(countryId) ? 1.1 : 0.5;
+			});
+	}
+
+	function hideHoverLabel() {
+		hoveredCountryId = null;
+		refreshHoverState();
+		if (hoverLabelRef) {
+			hoverLabelRef.style.display = 'none';
+		}
+	}
+
+	function triggerCountrySelection(countryCode) {
+		if (typeof window.toggleCountrySelection === 'function') {
+			window.toggleCountrySelection(countryCode);
+		}
+	}
 
 	function ensurePanel() {
 		let panel = document.getElementById(PANEL_ID);
@@ -134,7 +227,7 @@
 			panel.id = PANEL_ID;
 			panel.style.position = 'fixed';
 			panel.style.zIndex = '6';
-			panel.style.pointerEvents = 'none';
+			panel.style.pointerEvents = 'auto';
 			panel.style.background = 'transparent';
 
 			const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
@@ -157,7 +250,7 @@
 			legend.id = LEGEND_ID;
 			legend.style.position = 'fixed';
 			legend.style.zIndex = '6';
-			legend.style.pointerEvents = 'none';
+			legend.style.pointerEvents = 'auto';
 			legend.style.background = 'transparent';
 			legend.style.color = '#B3B3B3';
 			legend.style.fontFamily = 'Helvetica, Arial, sans-serif';
@@ -186,7 +279,13 @@
 					swatch.style.height = '12px';
 					swatch.style.display = 'inline-block';
 					swatch.style.flex = '0 0 12px';
+					swatch.style.cursor = 'pointer';
 					swatch.style.background = getLegendFillByCode(entry.code);
+					swatch.addEventListener('click', (event) => {
+						event.preventDefault();
+						event.stopPropagation();
+						triggerCountrySelection(entry.code);
+					});
 					row.appendChild(swatch);
 
 					const code = document.createElement('span');
@@ -265,8 +364,10 @@
 
 		const panel = ensurePanel();
 		const legend = ensureLegendPanel();
+		const hoverLabel = ensureHoverLabel();
 		panelRef = panel;
 		legendRef = legend;
+		hoverLabelRef = hoverLabel;
 		const panelLayout = layoutPanel(panel);
 		layoutLegendPanel(legend, panelLayout);
 
@@ -292,9 +393,30 @@
 			.data(countries.features)
 			.join('path')
 			.attr('d', path)
+			.attr('pointer-events', 'all')
 			.attr('stroke', '#595959')
 			.attr('stroke-width', 0.5)
-			.attr('stroke-linejoin', 'round');
+			.attr('stroke-linejoin', 'round')
+			.on('mousemove', (event, d) => {
+				hoveredCountryId = Number(d.id);
+				refreshHoverState();
+
+				const code = getCountryCodeForId(hoveredCountryId);
+				if (!code) {
+					if (hoverLabelRef) {
+						hoverLabelRef.style.display = 'none';
+					}
+					return;
+				}
+
+				if (hoverLabelRef) {
+					hoverLabelRef.textContent = code;
+					hoverLabelRef.style.display = 'block';
+					hoverLabelRef.style.left = `${event.clientX + 10}px`;
+					hoverLabelRef.style.top = `${event.clientY + 10}px`;
+				}
+			})
+			.on('mouseleave', hideHoverLabel);
 
 		mapCountries = countries;
 		mapPath = path;
