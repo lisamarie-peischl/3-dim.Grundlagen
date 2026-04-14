@@ -379,16 +379,16 @@ class AIModels {
                     const t = (modelIndex + 1) / (models.length + 1);
                     const baseAngle = lerp(angleRange.start, angleRange.end, t);
                     const segmentWidth = abs(angleRange.end - angleRange.start);
-                    const angleJitterScale = min(segmentWidth * 0.14, 0.045);
+                    const angleJitterScale = min(segmentWidth * 0.2, 0.065);
                     const angleJitter = (this.hashToUnit(`${model.id}-${code}-a`) - 0.5) * 2 * angleJitterScale;
-                    const radialJitterScale = max(0.8, layout.ringStep * 0.22);
+                    const radialJitterScale = max(1.0, layout.ringStep * 0.3);
                     const radialJitter = (this.hashToUnit(`${model.id}-${code}-r`) - 0.5) * 2 * radialJitterScale;
-                    const anglePadding = min(segmentWidth * 0.08, 0.02);
-                    const minAngle = angleRange.start + anglePadding;
-                    const maxAngle = angleRange.end - anglePadding;
+                    const angleOverflow = min(segmentWidth * 0.12, 0.03);
+                    const minAngle = angleRange.start - angleOverflow;
+                    const maxAngle = angleRange.end + angleOverflow;
                     const angle = constrain(baseAngle + angleJitter, minAngle, maxAngle);
-                    const minYearRadius = radius - layout.ringStep * 0.45;
-                    const maxYearRadius = radius + layout.ringStep * 0.45;
+                    const minYearRadius = radius - layout.ringStep * 0.47;
+                    const maxYearRadius = radius + layout.ringStep * 0.47;
                     const radiusWithJitter = constrain(
                         radius + radialJitter,
                         max(layout.innerRadius, minYearRadius),
