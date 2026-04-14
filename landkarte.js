@@ -397,6 +397,15 @@
 			.attr('stroke', '#595959')
 			.attr('stroke-width', 0.5)
 			.attr('stroke-linejoin', 'round')
+			.on('click', (_event, d) => {
+				const countryId = Number(d.id);
+				const countryCode = getCountryCodeForId(countryId);
+				if (!countryCode) {
+					return;
+				}
+
+				triggerCountrySelection(countryCode);
+			})
 			.on('mousemove', (event, d) => {
 				hoveredCountryId = Number(d.id);
 				refreshHoverState();
