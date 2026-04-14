@@ -68,10 +68,10 @@ function setup () {
     playButton.style('font-weight', '400');
     playButton.style('font-style', 'normal');
     playButton.style('padding', '6px 16px');
-    playButton.style('border', '1px solid #b7b7b7');
+    playButton.style('border', '1px solid #808080');
     playButton.style('border-radius', '6px');
     playButton.style('background', '#000000');
-    playButton.style('color', '#ffffff');
+    playButton.style('color', '#808080');
     playButton.style('cursor', 'pointer');
     playButton.style('z-index', '20');
     playButton.mousePressed(startTimelinePlayback);
@@ -91,7 +91,7 @@ function draw () {
     // Top left titles
     push();
     textFont('Helvetica');
-    fill(255);
+    fill("0, 0, 50, 0.47");
     textAlign(LEFT, TOP);
     
     textStyle(BOLD);
@@ -101,7 +101,8 @@ function draw () {
     const titleLineHeight = titleAscent + textDescent();
     const titleSecondLineY = titleTopY + titleLineHeight + 12;
     const titleSecondLineBottomY = titleSecondLineY + titleAscent;
-    text('FROM INVESTMENT\nTO AI MODEL', 50, titleTopY);
+    fill('#B3B3B3');
+    text('From Investment\nto AI Model', 50, titleTopY);
     
     textStyle(NORMAL);
     textSize(28);
@@ -110,11 +111,15 @@ function draw () {
     const chooseY = subtitleY + 100;
     const top3Ascent = textAscent();
     const top3Y = titleSecondLineBottomY - top3Ascent;
-    text('WHO DOMINATES AI?', 50, subtitleY);
+    fill('#B3B3B3');
+    text('Who dominates AI?', 50, subtitleY);
     textSize(22);
+    fill('0, 0, 50, 0.47');
     text('Choose model set', 50, chooseY);
     textSize(28);
-    text('TOP 3 in ' + Math.round(yearsSlider.maxYear), line2X + 50, top3Y);
+    textAlign(CENTER, TOP);
+    fill('#B3B3B3');
+    text('Top 3 in ' + Math.round(yearsSlider.maxYear), line2X + colWidth * 0.5, top3Y);
     pop();
 
     const size = min(width, height);
@@ -153,7 +158,7 @@ function draw () {
     textStyle(NORMAL);
     textSize(14);
     textAlign(LEFT, BOTTOM);
-    fill(255);
+    fill("#808080");
     text(
         'OECD (2026): VC investments in AI by country. OECD.AI Data Explorer.\nEpoch AI (2026): Data on AI Models.',
         50,
@@ -235,13 +240,13 @@ function drawTopCountryMiniViews(rightColumnStartX, rightColumnWidth, topY) {
         invest.drawRingBars(centerX, centerY, miniSize, null, null, yearsSlider.maxYear, null, false, selectedYear, 0.02, 12);
         currentModels.drawPoints(centerX, centerY, miniSize, null, null, yearsSlider.maxYear, country.code, false, true, selectedYear);
 
-        fill(255);
+        fill("#808080");
         noStroke();
         textAlign(LEFT, TOP);
 
         textStyle(BOLD);
         textSize(12);
-        text(`${i + 1}. ${country.name.toUpperCase()} (${country.code.toUpperCase()})`, textX, textY);
+        text(`${i + 1}. ${country.name} (${country.code.toUpperCase()})`, textX, textY);
 
         textStyle(NORMAL);
         textSize(14);

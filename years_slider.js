@@ -75,14 +75,17 @@ class YearsSlider {
         const { trackStart, trackEnd, trackWidth, minX, maxX } = this.getHandlePositions(canvasWidth);
         
         push();
-        stroke(255, 120);
-        strokeWeight(2);
+        const sliderColor = color('#B3B3B3');
+        const sliderTrackColor = color('#B3B3B3');
+        sliderTrackColor.setAlpha(120);
+        stroke(sliderTrackColor);
+        strokeWeight(1);
         strokeCap(SQUARE);
         noFill();
         line(trackStart, sliderY, trackEnd, sliderY);
 
-        stroke(255);
-        strokeWeight(4);
+        stroke(sliderColor);
+        strokeWeight(3);
         line(minX, sliderY, maxX, sliderY);
 
         // Range boundary markers.
@@ -96,9 +99,9 @@ class YearsSlider {
         }
         
         noStroke();
-        fill(255);
-        circle(minX, sliderY, 14);
-        circle(maxX, sliderY, 14);
+        fill("#B3B3B3");
+        circle(minX, sliderY, 7);
+        circle(maxX, sliderY, 7);
 
         textSize(12);
         textAlign(CENTER, TOP);
@@ -106,7 +109,7 @@ class YearsSlider {
         for (let year = this.startYear; year <= this.endYear; year += 1) {
             const yearNormalized = (year - this.startYear) / (this.endYear - this.startYear);
             const yearX = trackStart + yearNormalized * trackWidth;
-            fill(year === roundedYear ? 255 : 180);
+            fill(year === roundedYear ? "#B3B3B3" : "#B3B3B3");
             text(String(year), yearX, sliderY + 25);
         }
         pop();
