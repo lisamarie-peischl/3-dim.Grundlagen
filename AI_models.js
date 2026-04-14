@@ -445,7 +445,7 @@ class AIModels {
         const model = point.model;
         const titleText = `${model.modelName} (${model.year})`;
         const countryLabel = model.country && model.country.length > 0
-            ? model.country
+            ? `${model.country} (${model.countryCodes.join(', ')})`
             : model.countryCodes.join(', ');
         const countryText = `Country: ${countryLabel}`;
         const orgText = `Org: ${model.organization || 'Unknown'}`;

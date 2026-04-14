@@ -94,32 +94,28 @@ function draw () {
     fill("0, 0, 50, 0.47");
     textAlign(LEFT, TOP);
     
+    const titleTopY = 50;
+    fill('#B3B3B3');
     textStyle(BOLD);
     textSize(40);
-    const titleTopY = 50;
+    text('From Investment to AI Model', 50, titleTopY);
+
     const titleAscent = textAscent();
-    const titleLineHeight = titleAscent + textDescent();
-    const titleSecondLineY = titleTopY + titleLineHeight + 12;
-    const titleSecondLineBottomY = titleSecondLineY + titleAscent;
-    fill('#B3B3B3');
-    text('From Investment\nto AI Model', 50, titleTopY);
-    
+    const titleDescent = textDescent();
+    const subtitleY = titleTopY + titleAscent + titleDescent + 14;
     textStyle(NORMAL);
     textSize(28);
-    const titleHeight = 40 * 2 + 12;
-    const subtitleY = 50 + titleHeight + 50;
-    const chooseY = subtitleY + 100;
-    const top3Ascent = textAscent();
-    const top3Y = titleSecondLineBottomY - top3Ascent;
-    fill('#B3B3B3');
     text('Who dominates AI?', 50, subtitleY);
-    textSize(22);
+    const chooseY = subtitleY + 100;
+    fill('#B3B3B3');
+    textSize(28);
     fill('#B3B3B3');
     text('Choose model set', 50, chooseY);
     textSize(28);
-    textAlign(CENTER, TOP);
+    textAlign(LEFT, TOP);
+    textStyle(NORMAL);
     fill('#B3B3B3');
-    text('Top 3 in ' + Math.round(yearsSlider.maxYear), line2X + colWidth * 0.5, top3Y);
+    const top3Y = subtitleY;
     pop();
 
     const size = min(width, height);
@@ -214,10 +210,17 @@ function drawTopCountryMiniViews(rightColumnStartX, rightColumnWidth, topY) {
     const slotGap = 18;
     const slotHeight = (availableHeight - slotGap * 2) / 3;
     const centerX = rightColumnStartX + rightColumnWidth * 0.5;
+    const headingMiniSize = min(rightColumnWidth * 0.86, slotHeight * 0.86);
+    const headingTextX = centerX + headingMiniSize * 0.5 + 20;
+    const headingY = topY - 50;
 
     push();
     textFont('Helvetica');
-    textAlign(CENTER, TOP);
+    textAlign(LEFT, TOP);
+    textStyle(NORMAL);
+    textSize(28);
+    fill('#B3B3B3');
+    text('Top 3 in ' + selectedYear, headingTextX, headingY);
 
     for (let i = 0; i < topCountries.length; i += 1) {
         const country = topCountries[i];
@@ -246,7 +249,12 @@ function drawTopCountryMiniViews(rightColumnStartX, rightColumnWidth, topY) {
 
         textStyle(BOLD);
         textSize(12);
-        text(`${i + 1}. ${country.name} (${country.code.toUpperCase()})`, textX, textY);
+        const countryLabelPrefix = `${i + 1}. ${country.name} `;
+        const countryLabelPrefixWidth = textWidth(countryLabelPrefix);
+        text(countryLabelPrefix, textX, textY);
+
+        textStyle(NORMAL);
+        text(`(${country.code.toUpperCase()})`, textX + countryLabelPrefixWidth, textY);
 
         textStyle(NORMAL);
         textSize(14);
